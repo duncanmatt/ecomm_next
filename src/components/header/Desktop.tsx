@@ -1,7 +1,13 @@
-import React from 'react';
+import Logo from './Logo';
 
-const MenuClosed = () => {
-	return <div>MENU CLOSED</div>;
+const Desktop = () => {
+	return (
+		<div>
+			<span>
+				<Logo />
+			</span>
+		</div>
+	);
 };
 
-export default MenuClosed;
+export default Desktop;
