@@ -13,19 +13,19 @@ const BurgerIcon = () => {
 				x2='20'
 				y2='3.16675'
 				stroke='#121212'
-				stroke-width='1'></line>
+				strokeWidth='1'></line>
 			<line
 				y1='10.6667'
 				x2='20'
 				y2='10.6667'
 				stroke='#121212'
-				stroke-width='1'></line>
+				strokeWidth='1'></line>
 			<line
 				y1='18.1667'
 				x2='20'
 				y2='18.1667'
 				stroke='#121212'
-				stroke-width='1'></line>
+				strokeWidth='1'></line>
 		</svg>
 	);
 };

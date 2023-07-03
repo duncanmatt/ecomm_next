@@ -34,12 +34,12 @@ const Mobile = () => {
 					<ul className='flex flex-row justify-evenly basis-40 items-center'>
 						<li className='py-2 inline-block'>
 							<span>
-								<SearchIcon />
+								<CartIcon />
 							</span>
 						</li>
 						<li className='py-2 inline-block'>
 							<span>
-								<CartIcon />
+								<SearchIcon />
 							</span>
 						</li>
 						<li className='py-2 inline-block'>

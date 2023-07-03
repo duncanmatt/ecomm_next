@@ -1,4 +1,3 @@
-import React from 'react';
 
 const SearchIcon = () => {
 	return (
@@ -13,11 +12,11 @@ const SearchIcon = () => {
 				cy='8.5'
 				r='7.5'
 				stroke='#121212'
-				stroke-width='1'></circle>
+				strokeWidth='1'></circle>
 			<path
 				d='M18.7502 18.7499L13.9995 14'
 				stroke='#121212'
-				stroke-width='1'></path>
+				strokeWidth='1'></path>
 		</svg>
 	);
 };
