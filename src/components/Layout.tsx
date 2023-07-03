@@ -8,7 +8,7 @@ const Layout = ({ children }: LayoutProps) => {
 	return (
 		<>
 			<Header />
-			<div>{children}</div>
+			<div className='h-screen z-0'>{children}</div>
 			<div>Footer</div>
 		</>
 	);

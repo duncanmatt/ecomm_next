@@ -8,7 +8,7 @@ const Header = () => {
 				<div className='px-1rem md:hidden h-full'>
 					<Mobile />
 				</div>
-				<div className='px-3rem hidden md:block h-full'>
+				<div className='px-1rem hidden md:block h-full'>
 					<Desktop />
 				</div>
 			</header>
