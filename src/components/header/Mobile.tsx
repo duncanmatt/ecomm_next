@@ -31,19 +31,19 @@ const Mobile = () => {
 					<span>
 						<Logo />
 					</span>
-					<ul className='flex flex-row justify-evenly basis-40 items-center'>
+					<ul className='flex flex-row justify-evenly items-center'>
 						<li className='py-2 inline-block'>
-							<span>
+							<span className='flex me-1rem'>
 								<CartIcon />
 							</span>
 						</li>
 						<li className='py-2 inline-block'>
-							<span>
+							<span className='flex mx-1rem'>
 								<SearchIcon />
 							</span>
 						</li>
 						<li className='py-2 inline-block'>
-							<span onClick={toggleMenu}>
+							<span className='flex ms-1rem' onClick={toggleMenu}>
 								<BurgerIcon />
 							</span>
 						</li>
