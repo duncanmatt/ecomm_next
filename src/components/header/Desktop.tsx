@@ -45,18 +45,22 @@ const Desktop = () => {
 			<div>
 				<ul>
 					<li className='py-2 inline-block'>
-						<span className='flex me-1rem cursor-pointer'>
-							<CartIcon />
+						<span className='flex'>
+							<Link href='/Cart'>
+								<CartIcon />
+							</Link>
 						</span>
 					</li>
-					<li className='py-2 inline-block'>
-						<span className='flex mx-1rem cursor-pointer'>
+					<li className='py-2 mx-1rem inline-block'>
+						<span className='flex cursor-pointer'>
 							<SearchIcon />
 						</span>
 					</li>
 					<li className='py-2 inline-block'>
-						<span className='flex mx-1rem cursor-pointer'>
-							<ProfileIcon />
+						<span className='flex'>
+							<Link href='/Profile'>
+								<ProfileIcon />
+							</Link>
 						</span>
 					</li>
 				</ul>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Logo from './Logo';
 import Menu from './Menu';
 import SearchIcon from './SearchIcon';
@@ -25,8 +26,10 @@ const Mobile = () => {
 					{!menuOpen && (
 						<>
 							<li className='py-2 inline-block'>
-								<span className='flex me-1rem cursor-pointer'>
-									<CartIcon />
+								<span className='flex'>
+									<Link href='/Cart'>
+										<CartIcon />
+									</Link>
 								</span>
 							</li>
 							<li className='py-2 inline-block'>
@@ -38,7 +41,7 @@ const Mobile = () => {
 					)}
 					<li className='py-2 inline-block'>
 						<span
-							className='flex ms-1rem cursor-pointer'
+							className='flex cursor-pointer'
 							onClick={toggleMenu}>
 							{menuOpen ? <CloseIcon /> : <BurgerIcon />}
 						</span>
