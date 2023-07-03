@@ -4,6 +4,7 @@ import Menu from './Menu';
 import SearchIcon from './SearchIcon';
 import CartIcon from './CartIcon';
 import BurgerIcon from './BurgerIcon';
+import CloseIcon from './CloseIcon';
 
 const Mobile = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -39,7 +40,7 @@ const Mobile = () => {
 						<span
 							className='flex ms-1rem cursor-pointer'
 							onClick={toggleMenu}>
-							{menuOpen ? 'X' : <BurgerIcon />}
+							{menuOpen ? <CloseIcon /> : <BurgerIcon />}
 						</span>
 					</li>
 				</ul>
@@ -50,8 +51,13 @@ const Mobile = () => {
 						style={{
 							position: 'absolute',
 							top: '60px',
+							left: '0',
+							right: '0',
+							bottom: '0',
 							height: `calc(100vh-60px)}`,
-							background: `var(--gradient)`,
+							background: `#f9f9f9`,
+							padding: '1rem',
+							zIndex: '100',
 						}}>
 						<Menu />
 					</div>

@@ -25,7 +25,7 @@ const links = [
 
 const Menu = () => {
 	return (
-		<div>
+		<div className='z-100'>
 			<ul>
 				{links.map(link => (
 					<li key={link.id}>
