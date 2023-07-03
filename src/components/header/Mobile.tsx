@@ -23,18 +23,18 @@ const Mobile = () => {
 					<ul className='flex flex-row justify-evenly items-center'>
 						{!menuOpen && <>
 						<li className='py-2 inline-block'>
-							<span className='flex me-1rem'>
+							<span className='flex me-1rem cursor-pointer'>
 								<CartIcon />
 							</span>
 						</li>
 						<li className='py-2 inline-block'>
-							<span className='flex mx-1rem'>
+							<span className='flex mx-1rem cursor-pointer'>
 								<SearchIcon />
 							</span>
 						</li>
 						</>}
 						<li className='py-2 inline-block'>
-							<span className='flex ms-1rem' onClick={toggleMenu}>
+							<span className='flex ms-1rem cursor-pointer' onClick={toggleMenu}>
 								{menuOpen ? 'X' : <BurgerIcon />}
 							</span>
 						</li>
