@@ -7,17 +7,17 @@ const links = [
 		target_url: '/Shirts',
 	},
 	{
-		id: 0,
+		id: 1,
 		target: 'Shorts',
 		target_url: '/Shorts',
 	},
 	{
-		id: 0,
+		id: 2,
 		target: 'Pants',
 		target_url: '/Pants',
 	},
 	{
-		id: 0,
+		id: 3,
 		target: 'Accessories',
 		target_url: '/Accessories',
 	},
