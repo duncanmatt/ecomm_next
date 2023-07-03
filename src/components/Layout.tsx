@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
 		<>
 			<Header />
 			<div className='h-screen z-0'>{children}</div>
-			<div>Footer</div>
+			<div className='text-center'>Footer</div>
 		</>
 	);
 };
