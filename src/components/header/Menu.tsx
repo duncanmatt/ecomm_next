@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import CaretRightIcon from '../icons/CaretRightIcon';
 
 const links = [
 	{
@@ -25,11 +26,20 @@ const links = [
 
 const Menu = () => {
 	return (
-		<div className='z-100'>
-			<ul>
+		<div className='h-full w-full'>
+			<ul className='block'>
 				{links.map(link => (
-					<li key={link.id}>
-						<Link href={link.target_url}>{link.target}</Link>
+					<li
+						key={link.id}
+						className='pb-2rem'>
+						<Link
+							className='flex flex-1 flex-row justify-between items-center text-l font-bold'
+							href={link.target_url}>
+							<span>{link.target}</span>
+							<span className='flex'>
+								<CaretRightIcon />
+							</span>
+						</Link>
 					</li>
 				))}
 			</ul>
