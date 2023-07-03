@@ -16,22 +16,12 @@ const Mobile = () => {
 
 	return (
 		<nav className='h-full flex items-center'>
-			{menuOpen ? (
-				<>
-					<div className='flex flex-row w-full justify-between'>
-						<Logo />
-						<button onClick={toggleMenu}>X</button>
-					</div>
-					<div>
-						<Menu />
-					</div>
-				</>
-			) : (
 				<div className='flex flex-row w-full justify-between items-center'>
 					<span>
 						<Logo />
 					</span>
 					<ul className='flex flex-row justify-evenly items-center'>
+						{!menuOpen && <>
 						<li className='py-2 inline-block'>
 							<span className='flex me-1rem'>
 								<CartIcon />
@@ -42,14 +32,19 @@ const Mobile = () => {
 								<SearchIcon />
 							</span>
 						</li>
+						</>}
 						<li className='py-2 inline-block'>
 							<span className='flex ms-1rem' onClick={toggleMenu}>
-								<BurgerIcon />
+								{menuOpen ? 'X' : <BurgerIcon />}
 							</span>
 						</li>
 					</ul>
 				</div>
-			)}
+				{menuOpen && <>
+					<div style={{position: 'absolute', top: '60px',height: `calc(100vh-60px)}`}}>
+						<Menu />
+					</div>
+				</>}
 		</nav>
 	);
 };
