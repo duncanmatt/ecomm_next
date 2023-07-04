@@ -4,7 +4,7 @@ import Desktop from './Desktop';
 const Header = () => {
 	return (
 		<>
-			<header className='h-60 bg-g'>
+			<header className='h-60 border-b border-g'>
 				<div className='px-1rem md:hidden h-full'>
 					<Mobile />
 				</div>

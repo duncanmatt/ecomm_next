@@ -33,9 +33,9 @@ const Menu = () => {
 						key={link.id}
 						className='pb-2rem'>
 						<Link
-							className='flex flex-1 flex-row justify-between items-center text-l font-bold'
+							className='flex flex-1 flex-row justify-between items-center text-l font-semibold'
 							href={link.target_url}>
-							<span>{link.target}</span>
+							<span className='uppercase'>{link.target}</span>
 							<span className='flex'>
 								<CaretRightIcon />
 							</span>

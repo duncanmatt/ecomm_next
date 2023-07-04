@@ -37,7 +37,7 @@ const Desktop = () => {
 				<ul className='flex flex-row flex-1 justify-evenly ps-3rem'>
 					{links.map(link => (
 						<li key={link.id}>
-							<Link href={link.target_url}>{link.target}</Link>
+							<Link className='uppercase text-xs font-semibold' href={link.target_url}>{link.target}</Link>
 						</li>
 					))}
 				</ul>
