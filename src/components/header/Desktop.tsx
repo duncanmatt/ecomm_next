@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
+import SearchBar from './SearchBar';
 import SearchIcon from '../icons/SearchIcon';
 import CartIcon from '../icons/CartIcon';
 import ProfileIcon from '../icons/ProfileIcon';
+import CloseIcon from '../icons/CloseIcon';
 
 const links = [
 	{
@@ -28,6 +31,14 @@ const links = [
 ];
 
 const Desktop = () => {
+	const [searchActive, setSearchActive] = useState(false);
+
+	const toggleSearch = (
+		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+	) => {
+		setSearchActive(!searchActive);
+	};
+
 	return (
 		<nav className='flex flex-row h-full items-center justify-between'>
 			<div className='flex flex-row justify-between items-center basis-60'>
@@ -56,8 +67,10 @@ const Desktop = () => {
 						</span>
 					</li>
 					<li className='py-2 mx-1rem inline-block'>
-						<span className='flex cursor-pointer'>
-							<SearchIcon />
+						<span
+							onClick={toggleSearch}
+							className='flex cursor-pointer'>
+							{!searchActive && <SearchIcon />}
 						</span>
 					</li>
 					<li className='py-2 inline-block'>
@@ -69,6 +82,31 @@ const Desktop = () => {
 					</li>
 				</ul>
 			</div>
+			{searchActive && (
+				<>
+					<div className='absolute top-[60px] left-60 right-0'>
+						<div className='relative w-full h-full bg-g'>
+							<div className='block p-1rem'>
+								<div className='flex flex-col w-full'>
+									<span
+										className='self-end pb-1rem'
+										onClick={toggleSearch}>
+										<CloseIcon />
+									</span>
+									<SearchBar />
+									<div className='block h-80 p-1rem'>
+										<ul className='flex flex-wrap py-1rem justify-center gap-8'>
+											<li>MATCH 1</li>
+											<li>MATCH 2</li>
+											<li>MATCH 3</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</>
+			)}
 		</nav>
 	);
 };
