@@ -10,12 +10,12 @@ const ProfileIcon = () => {
 				d='M17.5 14.748L15.0016 12H4.97639L2.5 14.748V18H10.011H17.5V14.748Z'
 				stroke='#121212'
 				strokeWidth='1'
-				stroke-miterlimit='14.45'></path>
+				strokeMiterlimit='14.45'></path>
 			<path
 				d='M12 9H8L7 8V3L8 2H12L13 3V8L12 9Z'
 				stroke='#121212'
 				strokeWidth='1'
-				stroke-miterlimit='14.45'></path>
+				strokeMiterlimit='14.45'></path>
 		</svg>
 	);
 };
