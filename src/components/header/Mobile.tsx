@@ -3,10 +3,10 @@ import Link from 'next/link';
 import Logo from './Logo';
 import Menu from './Menu';
 import SearchBar from './SearchBar';
-import SearchIcon from './SearchIcon';
-import CartIcon from './CartIcon';
-import BurgerIcon from './BurgerIcon';
-import CloseIcon from './CloseIcon';
+import SearchIcon from '../icons/SearchIcon';
+import CartIcon from '../icons/CartIcon';
+import BurgerIcon from '../icons/BurgerIcon';
+import CloseIcon from '../icons/CloseIcon';
 
 const Mobile = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
@@ -66,7 +66,6 @@ const Mobile = () => {
 								</span>
 							</li>
 						</ul>
-
 						{menuOpen && (
 							<>
 								<div
