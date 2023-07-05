@@ -8,9 +8,10 @@ const SearchBar = () => {
 	};
 
 	return (
-		<div>
-			<div>
+		<div className='flex flex-1'>
+			<div className='flex basis-60'>
 				<input
+					className='w-full rounded-md'
 					type='text'
 					placeholder='Search Products'
 					onChange={handleChange}
