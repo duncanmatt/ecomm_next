@@ -95,7 +95,7 @@ const Desktop = () => {
 									</span>
 									<SearchBar />
 									<div className='block h-80 p-1rem'>
-										<ul className='flex flex-wrap py-1rem justify-center gap-8'>
+										<ul className='flex flex-wrap py-2rem justify-center gap-8'>
 											<li>MATCH 1</li>
 											<li>MATCH 2</li>
 											<li>MATCH 3</li>
