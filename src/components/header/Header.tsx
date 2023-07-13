@@ -1,5 +1,6 @@
 import Mobile from './Mobile';
 import Desktop from './Desktop';
+import React from 'react';
 
 const Header = () => {
 	return (

@@ -8,6 +8,8 @@ module.exports = {
   theme: {
     colors: {
       'g': '#c1c1c1',
+      'success': '#389466',
+      'warning': '#e4300c',
     },
     extend: {
       height: {
