@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { signIn } from 'next-auth/react';
 
 const Register = () => {
 	const router = useRouter();
@@ -9,15 +10,11 @@ const Register = () => {
 		const formData = new FormData(e.currentTarget);
 		const email = formData.get('email');
 		const password = formData.get('password');
+		const password2 = formData.get('password2');
 
-		const response = await fetch('/api/auth/register', {
-			method: 'POST',
-			body: JSON.stringify({
-				email,
-				password,
-			}),
-		});
-		if (response.redirected) return router.push(response.url); // redirect on redirect responses
+		if (password === password2) {
+			signIn('email', { email });
+		}
 	};
 	return (
 		<div>

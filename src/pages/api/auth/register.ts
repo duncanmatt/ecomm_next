@@ -1,4 +1,4 @@
-import create from '../../../util/user/create';
+import { PutCommand } from '@aws-sdk/lib-dynamodb';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -12,10 +12,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		return res.status(400).json({ error: 'Invalid Credentials Format' });
 	}
 
-	const id = 132381431;
+	const newUser = {
+		TableName: 'ecomm',
+		Item: {
+			pk: {
+				S: `user#${Math.floor(Math.random() * 11111)}`,
+			},
+			sk: {
+				S: '',
+			},
+		},
+	};
 
 	try {
-		create(id, email, password);
 		return res.redirect(302, '/'); // redirect user on account creations
 	} catch (e) {
 		// username taken
