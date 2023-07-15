@@ -10,7 +10,8 @@ const Profile = () => {
 			<>
 				<Layout>
 					<div className='py-3 flex flex-col items-center justify-center'>
-						Signed in as {session.user.email} <br />
+						<div>Signed in as {session.user.email}</div>
+						<br />
 						<button onClick={() => signOut()}>Sign out</button>
 					</div>
 				</Layout>
@@ -20,7 +21,7 @@ const Profile = () => {
 	return (
 		<>
 			Not signed in <br />
-			<button onClick={() => signIn('email')}>Login</button>
+			<Link href='/api/auth/signin'>Login</Link>
 		</>
 	);
 };
