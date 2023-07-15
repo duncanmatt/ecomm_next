@@ -6,12 +6,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    colors: {
-      'g': '#c1c1c1',
-      'success': '#389466',
-      'warning': '#e4300c',
-    },
     extend: {
+      colors: {
+        'g': '#c1c1c1',
+        'success': '#389466',
+        'warning': '#e4300c',
+      },
       height: {
         '60': '60px',
       },
@@ -32,6 +32,9 @@ module.exports = {
         '2rem':'2rem',
         '3rem': '3rem',
       },
+      borderRadius: {
+        'reg': '1.25rem' 
+      }
     },
   },
   plugins: [],
