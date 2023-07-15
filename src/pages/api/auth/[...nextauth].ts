@@ -38,4 +38,7 @@ export default NextAuth({
 	adapter: DynamoDBAdapter(client, {
 		tableName: 'ecomm',
 	}) as Adapter,
+	pages: {
+		signIn: '/Login',
+	},
 });
