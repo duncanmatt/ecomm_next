@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { useSession, signIn } from 'next-auth/react';
 import Layout from '@/components/Layout';
 
@@ -83,6 +84,9 @@ const Login = ({}) => {
 									</span>
 								</div>
 							</form>
+						</div>
+						<div>
+							Don't have an account? <Link href='/Register'>Create</Link>
 						</div>
 					</div>
 				</div>

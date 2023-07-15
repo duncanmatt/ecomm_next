@@ -49,10 +49,12 @@ const Register = () => {
 				<br />
 				<input
 					type='submit'
-					value='Continue'
+					value='Create'
 				/>
 			</form>
-			<Link href='/login'>Login</Link>
+			<div>
+				Already have an account? <Link href='/Login'>Login</Link>
+			</div>
 		</div>
 	);
 };

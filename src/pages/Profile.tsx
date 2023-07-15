@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Layout from '@/components/Layout';
-import { useSession, signOut, signIn } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 
 const Profile = () => {
 	const { data: session } = useSession();
@@ -21,7 +21,7 @@ const Profile = () => {
 	return (
 		<>
 			Not signed in <br />
-			<Link href='/api/auth/signin'>Login</Link>
+			<Link href='/Login'>Login</Link>
 		</>
 	);
 };
