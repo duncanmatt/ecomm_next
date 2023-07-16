@@ -35,9 +35,8 @@ module.exports = {
       borderRadius: {
         reg: '1.25rem',
       },
-      transitionProperty: {
-        header:
-          '-webkit-transition: -webkit-transform .5s ease-in-out; transition: -webkit-transform .5s ease-in-out; transition: transform .5s ease-in-out; transition:transform .5s ease-in-out, -webkit-transform .5s ease-in-out',
+      minHeight: {
+        main: 'calc(100vh - 60px)',
       },
     },
   },
