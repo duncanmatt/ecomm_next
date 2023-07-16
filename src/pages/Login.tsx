@@ -2,8 +2,9 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useSession, signIn } from 'next-auth/react';
 import Layout from '@/components/Layout';
+import client from '../../lib/db';
 
-const Login = ({}) => {
+const Login = () => {
 	const { data: session } = useSession();
 	const router = useRouter();
 	const activeUser = session?.user;
@@ -17,8 +18,12 @@ const Login = ({}) => {
 		const formData = new FormData(e.currentTarget);
 		const email = formData.get('email');
 
+		// check if email already exists in db
+		// redirect to register if it does NOT
+		// set registered state var to true if it does
+
 		if (email) {
-			signIn('email', { email });
+			signIn('email', { redirect: false, email });
 		}
 	};
 
@@ -29,37 +34,9 @@ const Login = ({}) => {
 					<div className='m-auto'>
 						<div className='flex bg-neutral-700 rounded-lg'>
 							<form
-								className='p-4 lg:min-h-[15em] justify-between flex flex-1 gap-3 flex-col '
-								onSubmit={handleSubmit}
-								method='post'
-								action='/api/auth/signin'>
+								className='p-4 justify-between flex flex-1 gap-3 flex-col '
+								onSubmit={handleSubmit}>
 								<div className='flex flex-col flex-1 justify-evenly'>
-									<span className='flex flex-row gap-2 items-center h-8'>
-										<label
-											className='text-white font-semibold basis-30'
-											htmlFor='first_name'>
-											First Name
-										</label>
-										<input
-											className='rounded-xl border-2 bg-inherit border-g flex flex-1 h-full text-white px-4'
-											type='text'
-											id='first_name'
-											name='first_name'
-										/>
-									</span>
-									<span className='flex flex-row  gap-2 items-center h-8'>
-										<label
-											className='text-white font-semibold basis-30'
-											htmlFor='last_name'>
-											Last Name
-										</label>
-										<input
-											className='rounded-xl border-2 bg-inherit border-g flex flex-1 h-full text-white px-4'
-											type='text'
-											id='last_name'
-											name='last_name'
-										/>
-									</span>
 									<span className='flex flex-row gap-2 items-center h-8'>
 										<label
 											className='text-white text-center font-semibold basis-30'

@@ -12,10 +12,12 @@ const Register = () => {
 		const password = formData.get('password');
 		const password2 = formData.get('password2');
 
-		if (password === password2) {
-			signIn('email', { email });
+		if (password2 !== password) {
+			// toast message
+			throw new Error("passwords don't match");
 		}
 	};
+
 	return (
 		<div>
 			<h1>Create an account</h1>
