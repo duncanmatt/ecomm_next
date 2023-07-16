@@ -8,34 +8,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'g': '#c1c1c1',
-        'success': '#389466',
-        'warning': '#e4300c',
+        g: '#c1c1c1',
+        success: '#389466',
+        warning: '#e4300c',
       },
       height: {
-        '60': '60px',
+        60: '60px',
       },
       flexBasis: {
-        '100': '100%',
-        '60': '60%',
-        '50': '50%',
-        '40': '40%',
-        '30': '30%',
+        100: '100%',
+        60: '60%',
+        50: '50%',
+        40: '40%',
+        30: '30%',
       },
       padding: {
         '1rem': '1rem',
-        '2rem':'2rem',
+        '2rem': '2rem',
         '3rem': '3rem',
       },
       margin: {
         '1rem': '1rem',
-        '2rem':'2rem',
+        '2rem': '2rem',
         '3rem': '3rem',
       },
       borderRadius: {
-        'reg': '1.25rem' 
-      }
+        reg: '1.25rem',
+      },
+      transitionProperty: {
+        header:
+          '-webkit-transition: -webkit-transform .5s ease-in-out; transition: -webkit-transform .5s ease-in-out; transition: transform .5s ease-in-out; transition:transform .5s ease-in-out, -webkit-transform .5s ease-in-out',
+      },
     },
   },
   plugins: [],
-}
+};

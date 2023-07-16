@@ -38,9 +38,8 @@ const Header = () => {
   return (
     <>
       <header
-        className={`h-60 ${
-          scrollDir === 'up' ? 'block' : 'hidden'
-        } z-[60] border-b fixed top-0 right-0 left-0 border-g`}
+        data-action={`${scrollDir}`}
+        className={`h-60 z-[60] border-b fixed transition-header top-0 right-0 left-0 border-g`}
       >
         <div className='relative bg-scroll px-1rem md:hidden h-full'>
           <Mobile />

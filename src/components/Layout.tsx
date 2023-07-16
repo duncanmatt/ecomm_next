@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div className='container'>{children}</div>
+      <div className=''>{children}</div>
       <div className='text-center'>Footer</div>
     </>
   );
