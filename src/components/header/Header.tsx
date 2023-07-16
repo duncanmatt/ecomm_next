@@ -4,7 +4,7 @@ import Desktop from './Desktop';
 import React from 'react';
 
 const Header = () => {
-  const [scrollDir, setScrollDir] = useState('down');
+  const [scrollDir, setScrollDir] = useState('up');
 
   useEffect(() => {
     const threshold = 3;
@@ -39,7 +39,7 @@ const Header = () => {
     <>
       <header
         data-action={`${scrollDir}`}
-        className={`h-60 z-[60] border-b fixed transition-header top-0 right-0 left-0 border-g`}
+        className={`h-60 z-[60] bg-[#f9f9f9] border-b fixed bottom-auto top-0 right-0 left-0 border-g`}
       >
         <div className='relative bg-scroll px-1rem md:hidden h-full'>
           <Mobile />
