@@ -19,16 +19,16 @@ const Home = ({ featured }: InferGetStaticPropsType<typeof getStaticProps>) => {
 							<ul>
 								{featured?.map((product: Product, index: number) => (
 									<li
-										className='relative'
+										className='relative bg-gradi'
 										key={index}>
-										<div className='mb-12 aspect-[1/1]'>
+										<div className='mb-12 min-h-[30em] min-w-[30em]'>
 											<Image
 												alt='description'
 												src={product.imgUrl}
 												fill
-												className='absolute'
+												className='absolute aspect-[1/1] rounded-reg'
 											/>
-											<span className='relative'>{product.sk}</span>
+											<span className='relative ms-2'>{product.sk}</span>
 										</div>
 									</li>
 								))}
