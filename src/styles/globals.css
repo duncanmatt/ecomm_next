@@ -10,11 +10,6 @@
   --font-ss: 'Jost', sans-serif;
   --font-display: 'Playfair Display', serif;
   --bg-color: #f9f9f9;
-  --gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
-  );
 }
 
 * {
