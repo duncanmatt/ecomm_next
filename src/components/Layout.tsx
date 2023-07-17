@@ -9,7 +9,8 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div className='block mt-[60px] relative'>{children}</div>
+      <div className='h-[60px]'></div>
+      <div className='block relative'>{children}</div>
       <div className='text-center'>Footer</div>
     </>
   );
