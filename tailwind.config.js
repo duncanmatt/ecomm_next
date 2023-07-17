@@ -38,7 +38,7 @@ module.exports = {
       minHeight: {
         main: 'calc(100vh - 60px)',
       },
-      background: {
+      backgroundImage: {
         gradi:
           'linear-gradient(180deg,rgba(255, 255, 255, 0.15),rgba(255, 255, 255, 0));',
       },
