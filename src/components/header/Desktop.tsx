@@ -10,23 +10,19 @@ import CloseIcon from '../icons/CloseIcon';
 const links = [
 	{
 		id: 0,
-		target: 'Shirts',
-		target_url: '/Shirts',
+		target: 'shirts',
 	},
 	{
 		id: 1,
-		target: 'Shorts',
-		target_url: '/Shorts',
+		target: 'shorts',
 	},
 	{
 		id: 2,
-		target: 'Pants',
-		target_url: '/Pants',
+		target: 'pants',
 	},
 	{
 		id: 3,
-		target: 'Accessories',
-		target_url: '/Accessories',
+		target: 'accessories',
 	},
 ];
 
@@ -50,7 +46,7 @@ const Desktop = () => {
 						<li key={link.id}>
 							<Link
 								className='uppercase text-xs font-semibold'
-								href={link.target_url}>
+								href={`products/${link.target}`}>
 								{link.target}
 							</Link>
 						</li>
