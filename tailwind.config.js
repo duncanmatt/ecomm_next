@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         g: '#c1c1c1',
+        tile: 'hsl(0,0%,90%)',
         success: '#389466',
         warning: '#e4300c',
       },

@@ -74,4 +74,18 @@ a {
 	text-decoration: none;
 	outline: 2px solid transparent;
 	outline-offset: 2px;
+	background-color: transparent;
+}
+
+img {
+	border-style: none;
+}
+
+img,
+svg {
+	vertical-align: middle;
+}
+
+svg {
+	overflow: hidden;
 }
