@@ -20,7 +20,7 @@ export default ({
 				<ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
 					{products?.map((product: Product, index: number) => (
 						<li
-							className='relative bg-gradi m-2'
+							className='relative bg-gradi mx-2 my-3'
 							key={index}>
 							<div className='relative aspect-[1/1]'>
 								<Image
@@ -31,8 +31,10 @@ export default ({
 								/>
 							</div>
 							<div className='p-2 bg-g rounded-b-reg'>
-								<span className='flex flex-col'>{product.name}</span>
-								<span>{product.price}</span>
+								<div className='flex flex-col'>
+									<span className=''>{product.name}</span>
+									<span>{product.price}</span>
+								</div>
 							</div>
 						</li>
 					))}
