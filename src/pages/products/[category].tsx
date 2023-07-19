@@ -17,25 +17,26 @@ export default ({
 				<div className='mb-3rem text-2xl uppercase'>
 					<h2 className='font-bold'>{category}</h2>
 				</div>
-				<div className='flex justify-center'>
-					<ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
-						{products?.map((product: Product, index: number) => (
-							<li
-								className='relative bg-gradi m-2'
-								key={index}>
-								<div className='min-h-[30em] min-w-[30em]'>
-									<Image
-										alt='description'
-										src={product.imgUrl}
-										fill
-										className='absolute aspect-[1/1] rounded-reg'
-									/>
-									<span className='relative ms-2'>{product.sk}</span>
-								</div>
-							</li>
-						))}
-					</ul>
-				</div>
+				<ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4'>
+					{products?.map((product: Product, index: number) => (
+						<li
+							className='relative bg-gradi m-2'
+							key={index}>
+							<div className='relative aspect-[1/1]'>
+								<Image
+									alt='description'
+									src={product.imgUrl}
+									fill
+									className='absolute rounded-t-reg'
+								/>
+							</div>
+							<div className='p-2 bg-g rounded-b-reg'>
+								<span className='flex flex-col'>{product.name}</span>
+								<span>{product.price}</span>
+							</div>
+						</li>
+					))}
+				</ul>
 			</div>
 		</Layout>
 	);
