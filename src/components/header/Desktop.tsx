@@ -14,15 +14,11 @@ const links = [
 	},
 	{
 		id: 1,
-		target: 'shorts',
+		target: 'sweatshirts',
 	},
 	{
 		id: 2,
-		target: 'pants',
-	},
-	{
-		id: 3,
-		target: 'accessories',
+		target: 'outerwear',
 	},
 ];
 
@@ -46,7 +42,7 @@ const Desktop = () => {
 						<li key={link.id}>
 							<Link
 								className='uppercase text-xs font-semibold'
-								href={`products/${link.target}`}>
+								href={`/products/${link.target}`}>
 								{link.target}
 							</Link>
 						</li>

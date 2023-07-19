@@ -8,15 +8,11 @@ const links = [
 	},
 	{
 		id: 1,
-		target: 'shorts',
+		target: 'sweatshirts',
 	},
 	{
 		id: 2,
-		target: 'pants',
-	},
-	{
-		id: 3,
-		target: 'accessories',
+		target: 'outerwear',
 	},
 ];
 
@@ -30,7 +26,7 @@ const Menu = () => {
 						className='pb-2rem'>
 						<Link
 							className='flex flex-1 flex-row justify-between items-center text-l font-semibold'
-							href={`products/${link.target}`}>
+							href={`/products/${link.target}`}>
 							<span className='uppercase'>{link.target}</span>
 							<span className='flex'>
 								<CaretRightIcon />
