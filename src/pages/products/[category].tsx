@@ -30,9 +30,7 @@ export default ({
 							<div className='relative z-0 aspect-[168/227]'>
 								<button
 									className='absolute right-8 top-5 rounded-full flex z-100'
-									onClick={() =>
-										dispath(cartSlice.actions.addToCart(product.pk.toString()))
-									}>
+									onClick={() => dispath(cartSlice.actions.addToCart(product))}>
 									<CartIcon />
 								</button>
 								<Image

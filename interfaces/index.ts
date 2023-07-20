@@ -7,8 +7,16 @@ export interface Product {
 	name: string;
 	categoryId: number;
 	productId: number;
-	qty: number;
+	stock: number;
 	type: string;
 	price: string | number;
 	desc: string;
+}
+
+export interface CartItem {
+	pk: string;
+	name: string;
+	price: number;
+	imgUrl: string;
+	qty: number;
 }

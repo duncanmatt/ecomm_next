@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { Product } from '../../../../interfaces';
+import { CartItem } from '../../../../interfaces';
 
 const initialState: CartSliceState = {
 	items: [],
@@ -12,17 +12,23 @@ export const cartSlice = createSlice({
 	reducers: {
 		addToCart: (state, action) => {
 			const item = state.items.find(
-				(product: Product) => product.pk === action.payload.pk,
+				(product: CartItem) => product.name === action.payload?.name,
 			);
 			if (item) {
 				item.qty++;
 			} else {
-				state.items.push({ ...action.payload, qty: 1 });
+				state.items.push({
+					name: action.payload?.name,
+					qty: 1,
+					price: action.payload?.price,
+					pk: action.payload?.pk,
+					imgUrl: action.payload?.imgUrl,
+				});
 			}
 		},
 		incrementQty: (state, action) => {
 			const product = state.items.find(
-				(item: Product) => item.pk === action.payload,
+				(item: CartItem) => item.pk === action.payload,
 			);
 
 			if (product) {
@@ -31,7 +37,7 @@ export const cartSlice = createSlice({
 		},
 		decrementQty: (state, action) => {
 			const product = state.items.find(
-				(item: Product) => item.pk === action.payload,
+				(item: CartItem) => item.pk === action.payload,
 			);
 			if (product) {
 				product.qty === 1 ? (product.qty = 1) : product.qty--;
@@ -39,7 +45,7 @@ export const cartSlice = createSlice({
 		},
 		removeItem: (state, action) => {
 			const prodIdx = state.items.findIndex(
-				(item: Product) => item.pk === action.payload,
+				(item: CartItem) => item.pk === action.payload,
 			);
 
 			if (prodIdx !== -1) {
@@ -65,7 +71,7 @@ export const { addToCart, incrementQty, decrementQty, removeItem, getTotal } =
 	cartSlice.actions;
 
 export interface CartSliceState {
-	items: Product[];
+	items: CartItem[];
 	totalPrice: number;
 }
 
