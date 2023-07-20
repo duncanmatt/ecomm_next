@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Cart from '../cart/Cart';
 import Link from 'next/link';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
@@ -24,11 +25,18 @@ const links = [
 
 const Desktop = () => {
 	const [searchActive, setSearchActive] = useState(false);
+	const [cartOpen, setCartOpen] = useState(false);
 
 	const toggleSearch = (
 		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
 	) => {
 		setSearchActive(!searchActive);
+	};
+
+	const toggleCart = (
+		event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+	) => {
+		setCartOpen(!cartOpen);
 	};
 
 	return (
@@ -52,10 +60,10 @@ const Desktop = () => {
 			<div>
 				<ul>
 					<li className='py-2 inline-block'>
-						<span className='flex'>
-							<Link href='/Cart'>
-								<CartIcon />
-							</Link>
+						<span
+							onClick={toggleCart}
+							className='flex'>
+							<CartIcon />
 						</span>
 					</li>
 					<li className='py-2 mx-1rem inline-block'>
@@ -94,6 +102,17 @@ const Desktop = () => {
 										</ul>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</>
+			)}
+			{cartOpen && (
+				<>
+					<div className='absolute top-[60px] right-60 left-0'>
+						<div className='relative w-full h-full bg-g'>
+							<div className='flex flex-col'>
+								<Cart />
 							</div>
 						</div>
 					</div>
