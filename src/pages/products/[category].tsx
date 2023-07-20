@@ -5,12 +5,17 @@ import type {
 	GetServerSideProps,
 	InferGetServerSidePropsType,
 } from 'next';
+import CartIcon from '@/components/icons/CartIcon';
 import { Product } from '../../../interfaces';
+import { cartSlice } from '../../../lib/redux/slices/cartSlice';
+import { useDispatch } from '../../../lib/redux/store';
 
 export default ({
 	products,
 	category,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+	const dispath = useDispatch();
+
 	return (
 		<Layout>
 			<div className='p-1rem'>
@@ -22,15 +27,22 @@ export default ({
 						<li
 							className='relative mb-20'
 							key={index}>
-							<div className='bg-gradi relative aspect-[168/227]'>
+							<div className='relative z-0 aspect-[168/227]'>
+								<button
+									className='absolute right-8 top-5 rounded-full flex z-100'
+									onClick={() =>
+										dispath(cartSlice.actions.addToCart(product.pk.toString()))
+									}>
+									<CartIcon />
+								</button>
 								<Image
 									alt='description'
 									src={product.imgUrl}
 									fill
-									className='absolute'
+									className='absolute flex -z-10 bg-[rgba(0,0,0,0.03)]'
 								/>
 							</div>
-							<div className='pt-2'>
+							<div className='pt-2 flex flex-row justify-between'>
 								<div className='flex flex-col text-xs'>
 									<span className='uppercase'>{product.name}</span>
 									<span>${product.price}.00</span>
