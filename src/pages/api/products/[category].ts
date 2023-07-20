@@ -31,7 +31,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 			const response = await client.send(new QueryCommand(params));
 			if (response) {
 				const products = response.Items?.map(i => unmarshall(i));
-				console.log(products);
 				return res.status(200).json(products);
 			}
 		} catch (error) {
