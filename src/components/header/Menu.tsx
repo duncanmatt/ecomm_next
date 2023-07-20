@@ -16,7 +16,7 @@ const links = [
 	},
 ];
 
-const Menu = () => {
+const Menu = ({ fn }: any) => {
 	return (
 		<div className='h-[calc(100vh-60px)] bg-[#f9f9f9] w-full p-1rem'>
 			<ul className='block relative transition-all'>
@@ -25,6 +25,7 @@ const Menu = () => {
 						key={link.id}
 						className='pb-2rem'>
 						<Link
+							onClick={fn}
 							className='flex flex-1 flex-row justify-between items-center text-l font-semibold'
 							href={`/products/${link.target}`}>
 							<span className='uppercase'>{link.target}</span>
