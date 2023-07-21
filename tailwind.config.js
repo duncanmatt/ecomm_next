@@ -43,6 +43,9 @@ module.exports = {
         gradi:
           'linear-gradient(180deg,rgba(255, 255, 255, 0.15),rgba(255, 255, 255, 0));',
       },
+      boxShadow: {
+        bag: 'rgb(18,18,18) 0px 0px 10px -6px',
+      },
     },
   },
   plugins: [],

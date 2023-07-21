@@ -104,8 +104,8 @@ const Desktop = () => {
       )}
       {cartOpen && (
         <>
-          <div className='absolute top-[65px] left-60 right-0'>
-            <div className='relative w-full h-full p-4 bg-white'>
+          <div className='absolute top-[70px] left-[60%] right-[10px]'>
+            <div className='relative w-full h-full p-4 bg-white shadow-bag rounded-reg'>
               <div className='flex flex-col'>
                 <Cart />
               </div>
