@@ -1,12 +1,15 @@
-import { useSelector } from '../../../lib/redux/store';
+import { useSelector, useDispatch } from '../../../lib/redux/store';
+import { removeItem } from '../../../lib/redux/slices/cartSlice';
 import {
 	cartTotal,
 	cartItems,
 } from '../../../lib/redux/slices/cartSlice/selectors';
 import { CartItem } from '../../../interfaces';
 import Image from 'next/image';
+import CloseIcon from '../icons/CloseIcon';
 
-const Cart = () => {
+const CartModal = () => {
+	const dispatch = useDispatch();
 	const items = useSelector(cartItems);
 	const price = useSelector(cartTotal);
 
@@ -27,13 +30,17 @@ const Cart = () => {
 													alt={item.name}
 													src={item.imgUrl}
 													fill
-													className=''
 												/>
 											</div>
 											<div className='flex flex-1 justify-around px-1rem flex-col'>
 												<span className='font-bold'>{item.name}</span>
 												<div className='flex justify-between'>
-													<span>({item.qty})</span>
+													<div className='flex flex-row gap-2'>
+														<span>({item.qty})</span>
+														<span onClick={() => dispatch(removeItem(item.pk))}>
+															<CloseIcon />
+														</span>
+													</div>
 													<span>${item.price}</span>
 												</div>
 											</div>
@@ -49,7 +56,7 @@ const Cart = () => {
 						</div>
 					</div>
 					<div className='bg-b text-white font-semibold rounded-xs text-center border-transparent border-2'>
-						Checkout
+						View Cart
 					</div>
 				</div>
 			</div>
@@ -57,4 +64,4 @@ const Cart = () => {
 	);
 };
 
-export default Cart;
+export default CartModal;

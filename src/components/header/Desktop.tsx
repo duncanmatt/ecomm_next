@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Cart from '../cart/Cart';
+import CartModal from '../cart/CartModal';
 import Link from 'next/link';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
@@ -109,7 +109,7 @@ const Desktop = () => {
 			)}
 			{cartOpen && (
 				<>
-					<Cart />
+					<CartModal />
 				</>
 			)}
 		</nav>
