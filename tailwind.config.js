@@ -6,6 +6,17 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    borderRadius: {
+      xs: '0.75rem',
+      sm: '1.125rem',
+      reg: '1.25rem',
+    },
+    boxShadowColor: {
+      bag: 'rgb(18,18,18)'
+    },
+    boxShadow: {
+      bag: '0px 0px 10px -6px',
+    },
     extend: {
       colors: {
         g: '#c1c1c1',
@@ -33,9 +44,6 @@ module.exports = {
         '2rem': '2rem',
         '3rem': '3rem',
       },
-      borderRadius: {
-        reg: '1.25rem',
-      },
       minHeight: {
         main: 'calc(100vh - 60px)',
       },
@@ -43,9 +51,12 @@ module.exports = {
         gradi:
           'linear-gradient(180deg,rgba(255, 255, 255, 0.15),rgba(255, 255, 255, 0));',
       },
-      boxShadow: {
-        bag: 'rgb(18,18,18) 0px 0px 10px -6px',
+      backdropBlur: {
+        '6xl': '135px',
       },
+      backgroundColor: {
+        faded: 'rgba(249,249,249,0.95)'
+      }
     },
   },
   plugins: [],
