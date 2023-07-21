@@ -2,6 +2,8 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import { Providers } from '../../lib/providers';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from '../../lib/redux/store';
 
 export default function App({
 	Component,
@@ -9,9 +11,13 @@ export default function App({
 }: AppProps) {
 	return (
 		<Providers>
-			<SessionProvider session={session}>
-				<Component {...pageProps} />
-			</SessionProvider>
+			<PersistGate
+				loading={null}
+				persistor={persistor}>
+				<SessionProvider session={session}>
+					<Component {...pageProps} />
+				</SessionProvider>
+			</PersistGate>
 		</Providers>
 	);
 }

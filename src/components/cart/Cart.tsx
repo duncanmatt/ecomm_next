@@ -4,6 +4,7 @@ import {
 	cartTotal,
 	cartItems,
 } from '../../../lib/redux/slices/cartSlice/selectors';
+import { CartItem } from '../../../interfaces';
 
 const Cart = () => {
 	const count = useSelector(cartCount);
@@ -18,7 +19,7 @@ const Cart = () => {
 			<span>${price}</span>
 			<div>
 				<ul>
-					{items.map((item, index) => (
+					{items.map((item: CartItem, index: number) => (
 						<li key={index}>
 							<span>
 								{item.name}({item.qty})

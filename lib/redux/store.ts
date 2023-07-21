@@ -10,8 +10,27 @@ import {
 	type TypedUseSelectorHook,
 } from 'react-redux';
 
+import {
+	FLUSH,
+	PERSIST,
+	persistReducer,
+	persistStore,
+	PURGE,
+	PAUSE,
+	REGISTER,
+	REHYDRATE,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
 import { reducer } from './rootReducer';
 import { middleware } from './middleware';
+
+const persistConfig = {
+	key: 'root',
+	storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
 
 const configureStoreDefaultOptions: ConfigureStoreOptions = { reducer };
 
@@ -23,16 +42,23 @@ export const makeReduxStore = (
 };
 
 export const reduxStore = configureStore({
-	reducer,
+	reducer: persistedReducer,
 	middleware: getDefaultMiddleware => {
-		return getDefaultMiddleware().concat(middleware);
+		return getDefaultMiddleware({
+			serializableCheck: {
+				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+			},
+		}).concat(middleware);
 	},
 });
+
+export const persistor = persistStore(reduxStore);
 
 export const useDispatch = () => useReduxDispatch<ReduxDispatch>();
 export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;
 
 export type ReduxStore = typeof reduxStore;
+
 export type ReduxState = ReturnType<typeof reduxStore.getState>;
 export type ReduxDispatch = typeof reduxStore.dispatch;
 export type ReduxThunkAction<ReturnType = void> = ThunkAction<
