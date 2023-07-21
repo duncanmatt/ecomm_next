@@ -1,9 +1,8 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { CartItem } from '../../../../interfaces';
 
 const initialState: CartSliceState = {
 	items: [],
-	totalPrice: 0,
 };
 
 export const cartSlice = createSlice({
@@ -52,27 +51,14 @@ export const cartSlice = createSlice({
 				state.items.splice(prodIdx, 1);
 			}
 		},
-		getTotal: state => {
-			let { total } = state.items.reduce(
-				(cartTotal: any, cartItems: any) => {
-					const { price, qty } = cartItems;
-					const prodTotal = price * qty;
-					cartTotal.total += prodTotal;
-					return cartTotal;
-				},
-				{ total: 0 },
-			);
-			state.totalPrice = total;
-		},
 	},
 });
 
-export const { addToCart, incrementQty, decrementQty, removeItem, getTotal } =
+export const { addToCart, incrementQty, decrementQty, removeItem } =
 	cartSlice.actions;
 
 export interface CartSliceState {
 	items: CartItem[];
-	totalPrice: number;
 }
 
 export default cartSlice.reducer;
