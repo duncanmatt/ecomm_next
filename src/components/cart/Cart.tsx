@@ -1,6 +1,5 @@
 import { useSelector } from '../../../lib/redux/store';
 import {
-	cartCount,
 	cartTotal,
 	cartItems,
 } from '../../../lib/redux/slices/cartSlice/selectors';
@@ -8,7 +7,6 @@ import { CartItem } from '../../../interfaces';
 import Image from 'next/image';
 
 const Cart = () => {
-	const count = useSelector(cartCount);
 	const items = useSelector(cartItems);
 	const price = useSelector(cartTotal);
 
@@ -50,7 +48,7 @@ const Cart = () => {
 							</div>
 						</div>
 					</div>
-					<div className='bg-g rounded-xs text-center border-transparent border-2'>
+					<div className='bg-b text-white font-semibold rounded-xs text-center border-transparent border-2'>
 						Checkout
 					</div>
 				</div>

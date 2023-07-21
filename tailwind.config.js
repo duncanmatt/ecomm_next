@@ -20,7 +20,7 @@ module.exports = {
     extend: {
       colors: {
         g: '#c1c1c1',
-        tile: 'hsl(0,0%,90%)',
+        b: '#121212',
         success: '#389466',
         warning: '#e4300c',
       },
@@ -55,7 +55,7 @@ module.exports = {
         '6xl': '135px',
       },
       backgroundColor: {
-        faded: 'rgba(249,249,249,0.95)'
+        faded: 'rgba(249,249,249,0.95)',
       }
     },
   },
