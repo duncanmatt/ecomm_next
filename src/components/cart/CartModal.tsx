@@ -15,9 +15,9 @@ const CartModal = () => {
 	const price = useSelector(cartTotal);
 
 	return (
-		<div className='absolute z-6 top-[64px] w-[20rem]  right-[0px]'>
+		<div className='absolute z-6 top-[64px] w-[20rem] right-[0px]'>
 			<div className='p-[0.75rem]'>
-				<div className='w-full h-full p-[0.75rem] backdrop-blur-[135px] bg-faded shadow-bag rounded-xs'>
+				<div className='w-full h-full p-[0.75rem] backdrop-blur-6xl bg-faded shadow-bag rounded-xs'>
 					<div className='w-full min-h-[14rem]'>
 						<div className='grid grid-rows-cart grid-cols-1'>
 							<ul className='grid grid-rows-1'>

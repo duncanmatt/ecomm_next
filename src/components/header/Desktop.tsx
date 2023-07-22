@@ -40,60 +40,19 @@ const Desktop = () => {
 	};
 
 	return (
-		<nav className='flex flex-row h-full items-center justify-between'>
-			<div className='flex flex-row justify-between items-center basis-60'>
-				<span>
-					<Logo />
-				</span>
-				<ul className='flex flex-row flex-1 justify-evenly ps-3rem'>
-					{links.map(link => (
-						<li key={link.id}>
-							<Link
-								className='uppercase text-xs font-semibold'
-								href={`/products/${link.target}`}>
-								{link.target}
-							</Link>
-						</li>
-					))}
-				</ul>
-			</div>
-			<div>
-				<ul>
-					<li className='py-2 inline-block'>
-						<span
-							onClick={toggleCart}
-							className='flex'>
-							<CartIcon />
-						</span>
-					</li>
-					<li className='py-2 mx-1rem inline-block'>
-						<span
-							onClick={toggleSearch}
-							className='flex cursor-pointer'>
-							{!searchActive && <SearchIcon />}
-						</span>
-					</li>
-					<li className='py-2 inline-block'>
-						<span className='flex'>
-							<Link href='/Profile'>
-								<ProfileIcon />
-							</Link>
-						</span>
-					</li>
-				</ul>
-			</div>
-			{searchActive && (
+		<>
+			{searchActive ? (
 				<>
-					<div className='absolute top-[60px] left-60 right-0'>
-						<div className='relative w-full h-full bg-g'>
+					<div className='h-full flex flex-row items-center justify-between'>
+						<SearchBar />{' '}
+						<span onClick={toggleSearch}>
+							<CloseIcon />
+						</span>
+					</div>
+					<div className='absolute top-[60px] backdrop-blur-6xl bg-faded left-0 right-0 z-7'>
+						<div className='relative w-full h-full '>
 							<div className='block p-1rem'>
 								<div className='flex flex-col w-full'>
-									<span
-										className='self-end pb-1rem'
-										onClick={toggleSearch}>
-										<CloseIcon />
-									</span>
-									<SearchBar />
 									<div className='block h-80 p-1rem'>
 										<ul className='flex flex-wrap py-2rem justify-center gap-8'>
 											<li>MATCH 1</li>
@@ -106,13 +65,58 @@ const Desktop = () => {
 						</div>
 					</div>
 				</>
+			) : (
+				<nav className='flex flex-row h-full items-center justify-between'>
+					<div className='flex flex-row justify-between items-center basis-60'>
+						<span>
+							<Logo />
+						</span>
+						<ul className='flex flex-row flex-1 justify-evenly ps-3rem'>
+							{links.map(link => (
+								<li key={link.id}>
+									<Link
+										className='uppercase text-xs font-semibold'
+										href={`/products/${link.target}`}>
+										{link.target}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li className='py-2 inline-block'>
+								<span
+									onClick={toggleCart}
+									className='flex'>
+									<CartIcon />
+								</span>
+							</li>
+							<li className='py-2 mx-1rem inline-block'>
+								<span
+									onClick={toggleSearch}
+									className='flex cursor-pointer'>
+									{!searchActive && <SearchIcon />}
+								</span>
+							</li>
+							<li className='py-2 inline-block'>
+								<span className='flex'>
+									<Link href='/Profile'>
+										<ProfileIcon />
+									</Link>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					{cartOpen && (
+						<>
+							<CartModal />
+						</>
+					)}
+				</nav>
 			)}
-			{cartOpen && (
-				<>
-					<CartModal />
-				</>
-			)}
-		</nav>
+		</>
 	);
 };
 
