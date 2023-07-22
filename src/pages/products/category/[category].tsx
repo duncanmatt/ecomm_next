@@ -7,9 +7,9 @@ import type {
 	InferGetServerSidePropsType,
 } from 'next';
 import CartIcon from '@/components/icons/CartIcon';
-import { Product } from '../../../interfaces';
-import { cartSlice } from '../../../lib/redux/slices/cartSlice';
-import { useDispatch } from '../../../lib/redux/store';
+import { Product } from '../../../../interfaces';
+import { cartSlice } from '../../../../lib/redux/slices/cartSlice';
+import { useDispatch } from '../../../../lib/redux/store';
 
 export default ({
 	products,
@@ -28,7 +28,7 @@ export default ({
 						<li
 							className='relative mb-20'
 							key={index}>
-							<Link href={`/products/product/${product.pk}`}>
+							<Link href={`/products/${product.pk}`}>
 								<div className='relative z-0 aspect-[168/227]'>
 									<button
 										className='absolute right-5 top-4 rounded-full flex z-1'

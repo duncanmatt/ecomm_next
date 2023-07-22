@@ -1,4 +1,4 @@
-import client from '../../../../lib/db';
+import client from '../../../lib/db';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import type {
@@ -6,12 +6,13 @@ import type {
 	GetServerSideProps,
 	InferGetServerSidePropsType,
 } from 'next';
-import type { GetItemInput } from 'aws-sdk/clients/dynamodb';
+import { GetItemCommand } from '@aws-sdk/client-dynamodb';
+import type { GetItemCommandInput } from '@aws-sdk/client-dynamodb';
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 import CartIcon from '@/components/icons/CartIcon';
-import { Product } from '../../../../interfaces';
-import { useDispatch } from '../../../../lib/redux/store';
-import { addToCart } from '../../../../lib/redux/slices/cartSlice';
+import { Product } from '../../../interfaces';
+import { useDispatch } from '../../../lib/redux/store';
+import { addToCart } from '../../../lib/redux/slices/cartSlice';
 
 export default ({
 	product,
@@ -55,17 +56,15 @@ export const getServerSideProps: GetServerSideProps = async (
 ) => {
 	const pk = context.params?.product;
 
-	const params: GetItemInput = {
-		TableName: 'ecomm',
+	const params: GetItemCommandInput = {
 		Key: {
-			pk: `${pk}`,
+			pk: { S: `${pk}` },
 		},
-		ProjectionExpression:
-			'pk,sk,imgUrl,GSI1PK,GSI1SK,categoryId,productId,stock,price',
+		TableName: 'ecomm',
 	};
 
-	const item = await client.get(params);
-	const product = item.Item;
-	console.log(JSON.stringify(product));
-	return { props: { product } };
+	const item = await client.send(new GetItemCommand(params));
+	console.log(item);
+
+	return { props: { product: item } };
 };

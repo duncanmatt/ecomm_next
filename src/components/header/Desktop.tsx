@@ -76,7 +76,7 @@ const Desktop = () => {
 								<li key={link.id}>
 									<Link
 										className='uppercase text-xs font-semibold'
-										href={`/products/${link.target}`}>
+										href={`/products/category/${link.target}`}>
 										{link.target}
 									</Link>
 								</li>
