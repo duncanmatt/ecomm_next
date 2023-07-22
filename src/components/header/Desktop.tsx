@@ -108,7 +108,6 @@ const Desktop = () => {
 							</li>
 						</ul>
 					</div>
-
 					{cartOpen && (
 						<>
 							<CartModal />
