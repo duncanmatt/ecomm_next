@@ -44,7 +44,7 @@ const Desktop = () => {
 			{searchActive ? (
 				<>
 					<div className='h-full flex flex-row items-center justify-between'>
-						<SearchBar />{' '}
+						<SearchBar />
 						<span onClick={toggleSearch}>
 							<CloseIcon />
 						</span>
