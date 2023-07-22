@@ -10,7 +10,7 @@ import {
 } from '../../../lib/redux/slices/cartSlice/selectors';
 import { CartItem } from '../../../interfaces';
 import Image from 'next/image';
-import CloseIcon from '../icons/CloseIcon';
+import TrashCan from '../icons/TrashCan';
 import Link from 'next/link';
 
 const CartModal = () => {
@@ -35,14 +35,16 @@ const CartModal = () => {
                         <span className='font-bold'>{item.name}</span>
                         <div className='flex justify-between'>
                           <div className='flex flex-1 items-center flex-row gap-4'>
-                            <div className='bg-[#f5f5f5]'>
+                            <div className=''>
                               <span
+                                className='cursor-pointer'
                                 onClick={() => dispatch(incrementQty(item.pk))}
                               >
                                 +
                               </span>
-                              <span className='mx-1'>({item.qty})</span>
+                              <span className='mx-1 font-bold'>{item.qty}</span>
                               <span
+                                className='cursor-pointer'
                                 onClick={() => dispatch(decrementQty(item.pk))}
                               >
                                 -
@@ -50,9 +52,10 @@ const CartModal = () => {
                             </div>
                             <div>
                               <span
+                                className='cursor-pointer'
                                 onClick={() => dispatch(removeItem(item.pk))}
                               >
-                                <CloseIcon />
+                                <TrashCan />
                               </span>
                             </div>
                           </div>
