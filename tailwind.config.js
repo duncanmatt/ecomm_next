@@ -56,6 +56,9 @@ module.exports = {
       },
       backgroundColor: {
         faded: 'rgba(249,249,249,0.95)',
+      },
+      gridTemplateRows: {
+        cart: '1fr, min-content'
       }
     },
   },

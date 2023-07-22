@@ -7,6 +7,7 @@ import {
 import { CartItem } from '../../../interfaces';
 import Image from 'next/image';
 import CloseIcon from '../icons/CloseIcon';
+import Link from 'next/link';
 
 const CartModal = () => {
 	const dispatch = useDispatch();
@@ -16,10 +17,10 @@ const CartModal = () => {
 	return (
 		<div className='absolute z-6 top-[64px] w-[20rem]  right-[0px]'>
 			<div className='p-[0.75rem]'>
-				<div className='w-full min-h-[20rem] p-[0.75rem] backdrop-blur-[135px] bg-faded shadow-bag rounded-xs'>
-					<div className='flex flex-col'>
-						<div>
-							<ul>
+				<div className='w-full h-full p-[0.75rem] backdrop-blur-[135px] bg-faded shadow-bag rounded-xs'>
+					<div className='w-full min-h-[14rem]'>
+						<div className='grid grid-rows-cart grid-cols-1'>
+							<ul className='grid grid-rows-1'>
 								{items.map((item: CartItem, index: number) => (
 									<li
 										className='mb-3'
@@ -48,15 +49,21 @@ const CartModal = () => {
 									</li>
 								))}
 							</ul>
-							<div className='w-full py-2'>
-								<div className='flex flex-row font-bold'>
-									Total<span className='flex flex-1 justify-end'>${price}</span>
+							<div className='flex shrink gap-3 flex-col self-end'>
+								<div className='w-full'>
+									<div className='flex flex-row font-bold'>
+										Total
+										<span className='flex flex-1 justify-end'>${price}</span>
+									</div>
 								</div>
+								<div></div>
+								<Link
+									href='/Cart'
+									className='bg-b w-full text-white font-semibold rounded-xs text-center border-transparent border-2'>
+									View Cart
+								</Link>
 							</div>
 						</div>
-					</div>
-					<div className='bg-b text-white font-semibold rounded-xs text-center border-transparent border-2'>
-						View Cart
 					</div>
 				</div>
 			</div>
