@@ -25,25 +25,25 @@ export default ({
         <div className='mb-3rem text-2xl uppercase'>
           <h2 className='font-bold'>{product.name}</h2>
         </div>
-        <div className='relative aspect-[168/227]'>
-          <div className=''>
-            <button
-              className='absolute right-5 top-4 rounded-full flex z-1'
-              onClick={() => dispath(addToCart(product))}
-            >
-              <CartIcon />
-            </button>
+        <div className='flex flex-col md:flex-row '>
+          <div className='relative w-full h-full aspect-[168/227]'>
             <Image
               alt='description'
               src={product.imgUrl}
               fill
-              className='absolute ] flex -z-10 bg-[rgba(0,0,0,0.03)]'
+              className='absolute flex -z-10 bg-[rgba(0,0,0,0.03)]'
             />
           </div>
           <div className='pt-2 flex flex-row justify-between'>
             <div className='flex flex-col text-xs'>
               <span className='uppercase'>{product.name}</span>
               <span>${product.price}.00</span>
+              <button
+                onClick={() => dispath(addToCart(product))}
+                className='bg-b text-white rounded-xs w-full'
+              >
+                Add to cart
+              </button>
             </div>
           </div>
         </div>
