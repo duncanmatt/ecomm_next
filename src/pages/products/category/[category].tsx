@@ -29,19 +29,13 @@ export default ({
 							className='relative mb-20'
 							key={index}>
 							<Link
+								className='z-0'
 								// as='/products/product'
 								href={{
 									pathname: `/products/product`,
 									query: { pk: product.pk },
 								}}>
-								<div className='relative z-0 aspect-[168/227]'>
-									<button
-										className='absolute right-5 top-4 rounded-full flex z-1'
-										onClick={() =>
-											dispath(cartSlice.actions.addToCart(product))
-										}>
-										<CartIcon />
-									</button>
+								<div className='relative aspect-[168/227] z-5'>
 									<Image
 										alt='description'
 										src={product.imgUrl}
@@ -49,13 +43,18 @@ export default ({
 										className='absolute flex -z-10 bg-[rgba(0,0,0,0.03)]'
 									/>
 								</div>
-								<div className='pt-2 flex flex-row justify-between'>
-									<div className='flex flex-col text-xs'>
-										<span className='uppercase'>{product.name}</span>
-										<span>${product.price}.00</span>
-									</div>
-								</div>
 							</Link>
+							<div className='pt-2 flex flex-row justify-between'>
+								<div className='flex flex-col text-xs'>
+									<span className='font-bold'>{product.name}</span>
+									<span>${product.price}.00</span>
+								</div>
+								<button
+									className=' rounded-full flex z-5'
+									onClick={() => dispath(cartSlice.actions.addToCart(product))}>
+									<CartIcon />
+								</button>
+							</div>
 						</li>
 					))}
 				</ul>
