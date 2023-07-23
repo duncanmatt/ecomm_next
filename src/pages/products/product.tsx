@@ -6,8 +6,8 @@ import type {
 	GetServerSideProps,
 	InferGetServerSidePropsType,
 } from 'next';
-import { GetItemCommand } from '@aws-sdk/client-dynamodb';
-import type { GetItemCommandInput } from '@aws-sdk/client-dynamodb';
+import { GetCommand, GetCommandInput } from '@aws-sdk/lib-dynamodb';
+
 import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 import CartIcon from '@/components/icons/CartIcon';
 import { Product } from '../../../interfaces';
@@ -54,17 +54,15 @@ export default ({
 export const getServerSideProps: GetServerSideProps = async (
 	context: GetServerSidePropsContext,
 ) => {
-	const pk = context.params?.product;
+	const pk = context.query?.pk;
 
-	const params: GetItemCommandInput = {
-		Key: {
-			pk: { S: `${pk}` },
-		},
+	const params: GetCommandInput = {
 		TableName: 'ecomm',
+		Key: { pk: `${pk}`, sk: 'METADATA' },
 	};
 
-	const item = await client.send(new GetItemCommand(params));
-	console.log(item);
+	const item = await client.send(new GetCommand(params));
+	console.log(item.Item);
 
-	return { props: { product: item } };
+	return { props: { product: item.Item } };
 };
