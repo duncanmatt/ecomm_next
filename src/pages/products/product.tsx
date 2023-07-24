@@ -21,7 +21,7 @@ export default ({
         <div className='mb-3rem text-2xl uppercase'>
           <h2 className='font-bold'>{product.name}</h2>
         </div>
-        <div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'>
+        <div className='grid grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-1'>
           <div className='relative w-full h-full aspect-[168/227]'>
             <Image
               alt='description'
@@ -30,16 +30,21 @@ export default ({
               className='absolute flex -z-10 bg-[rgba(0,0,0,0.03)]'
             />
           </div>
-          <div className='pt-2 flex flex-row justify-between'>
-            <div className='flex flex-col text-xs'>
-              <span className='uppercase'>{product.name}</span>
-              <span>${product.price}.00</span>
+          <div className=''>
+            <div className='flex flex-wrap text-xs'>
+              <div className='flex flex-col'>
+                <span className='uppercase'>{product.name}</span>
+                <span>${product.price}.00</span>
+              </div>
               <button
                 onClick={() => dispath(addToCart(product))}
                 className='bg-b text-white rounded-xs w-full'
               >
                 Add to cart
               </button>
+              <div className='w-full text-center py-1rem'>
+                <span className=''>{product.desc}</span>
+              </div>
             </div>
           </div>
         </div>
