@@ -4,7 +4,37 @@ import SearchScroll from './SearchScroll';
 import { SearchItem } from '../../interfaces';
 import CloseIcon from './icons/CloseIcon';
 
-const Search = ({ details }: any, { toggler }: any) => {
+const details = [
+	{
+		pk: 'PRODUCT#1',
+		sk: 'METADATA',
+		name: 'angel black red',
+		imgUrl:
+			'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/short-sleeve-black-red.jpg',
+		productId: 1,
+		price: 450,
+	},
+	{
+		pk: 'PRODUCT#2',
+		sk: 'METADATA',
+		name: 'angel black',
+		imgUrl:
+			'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/short-sleeve-black.jpg',
+		productId: 2,
+		price: 450,
+	},
+	{
+		pk: 'PRODUCT#3',
+		sk: 'METADATA',
+		name: 'angel brown blue',
+		imgUrl:
+			'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/short-sleeve-black-red.jpg',
+		productId: 3,
+		price: 450,
+	},
+];
+
+const Search = ({ fn }: any) => {
 	const [search, setSearch] = useState('');
 
 	const filteredProducts = details.filter((product: SearchItem) => {
@@ -36,7 +66,7 @@ const Search = ({ details }: any, { toggler }: any) => {
 						/>
 					</div>
 				</div>
-				<span onClick={toggler}>
+				<span onClick={fn}>
 					<CloseIcon />
 				</span>
 			</div>
