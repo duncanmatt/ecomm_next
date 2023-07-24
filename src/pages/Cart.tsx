@@ -19,43 +19,45 @@ const Cart = () => {
 		<Layout>
 			<div className='p-2rem'>
 				<h2 className='font-bold text-xl text-center'>Cart ({count})</h2>
-				<div className='flex py-1rem '>
-					<ul className='p-1rem '>
-						{items.map((item: CartItem, index: number) => (
-							<li
-								key={index}
-								className='mb-10'>
-								<div className='grid grid-row-1 gap-x-5 grid-cols-2'>
-									<div className='relative h-full w-full '>
-										<Image
-											alt={item.name}
-											src={item.imgUrl}
-											width={168}
-											height={227}
-										/>
+				<div className='grid '>
+					<div className='flex py-1rem '>
+						<ul className='p-1rem '>
+							{items.map((item: CartItem, index: number) => (
+								<li
+									key={index}
+									className='mb-10'>
+									<div className='grid grid-row-1 gap-x-5 grid-cols-2'>
+										<div className='relative h-full w-full '>
+											<Image
+												alt={item.name}
+												src={item.imgUrl}
+												width={168}
+												height={227}
+											/>
+										</div>
+										<div className='flex flex-col justify-around'>
+											<span className=''>
+												{item.name} - ${item.price}
+											</span>
+											<span className='flex'>quantity: {item.qty}</span>
+										</div>
 									</div>
-									<div className='flex flex-col justify-around'>
-										<span className=''>
-											{item.name} - ${item.price}
-										</span>
-										<span className='flex'>quantity: {item.qty}</span>
-									</div>
-								</div>
-							</li>
-						))}
-					</ul>
-				</div>
-				<div>
-					<div className='flex flex-row justify-between my-3'>
-						<span>Total</span>
-						<span>${price}</span>
+								</li>
+							))}
+						</ul>
 					</div>
-					<div className='flex'>
-						<Link
-							className='flex flex-1 text-center justify-center border-2 border-transparent h-[2rem] items-center font-semibold bg-b rounded-xs text-white'
-							href='/Checkout'>
-							Checkout
-						</Link>
+					<div>
+						<div className='flex flex-row justify-between my-3'>
+							<span>Total</span>
+							<span>${price}</span>
+						</div>
+						<div className='flex'>
+							<Link
+								className='flex flex-1 text-center justify-center border-2 border-transparent h-[2rem] items-center font-semibold bg-b rounded-xs text-white'
+								href='/Checkout'>
+								Checkout
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>

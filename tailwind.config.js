@@ -19,7 +19,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        g: '#c1c1c1',
+        g: '#e1e1e1',
         b: '#121212',
         success: '#389466',
         warning: '#e4300c',

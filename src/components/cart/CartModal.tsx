@@ -1,9 +1,5 @@
 import { useSelector, useDispatch } from '../../../lib/redux/store';
-import {
-	removeItem,
-	incrementQty,
-	decrementQty,
-} from '../../../lib/redux/slices/cartSlice';
+import QuantityBar from './QuantityBar';
 import {
 	cartTotal,
 	cartItems,
@@ -41,26 +37,10 @@ const CartModal = () => {
 												<span className='font-bold'>{item.name}</span>
 												<div className='flex justify-between'>
 													<div className='flex flex-1 items-center flex-row gap-4'>
-														<div className=''>
-															<span
-																className='cursor-pointer'
-																onClick={() => dispatch(incrementQty(item.pk))}>
-																+
-															</span>
-															<span className='mx-1 font-bold'>{item.qty}</span>
-															<span
-																className='cursor-pointer'
-																onClick={() => dispatch(decrementQty(item.pk))}>
-																-
-															</span>
-														</div>
-														<div>
-															<span
-																className='cursor-pointer'
-																onClick={() => dispatch(removeItem(item.pk))}>
-																<TrashCanIcon />
-															</span>
-														</div>
+														<QuantityBar
+															pk={item.pk}
+															qty={item.qty}
+														/>
 													</div>
 													<span>${item.price * item.qty}</span>
 												</div>
