@@ -52,14 +52,18 @@ const Cart = () => {
 							))}
 						</ul>
 					</div>
-					<div className='md:self-end'>
+					<div className='md:self-end bg-g p-1rem rounded-sm h-min'>
+						<div className='flex flex-row justify-between my-3'>
+							<span>Shipping</span>
+							<span>FREE</span>
+						</div>
 						<div className='flex flex-row justify-between my-3'>
 							<span>Total</span>
 							<span>${price}</span>
 						</div>
 						<div className='flex'>
 							<Link
-								className='flex flex-1 text-center justify-center border-2 border-transparent h-[2rem] items-center font-semibold bg-b rounded-xs text-white'
+								className='flex flex-1 text-center justify-center border-2 border-transparent h-[2.125rem] items-center font-semibold bg-b rounded-xs text-white'
 								href='/Checkout'>
 								Checkout
 							</Link>
