@@ -9,7 +9,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 	if (req.method === 'POST') {
-		const amount: number = req.body.amount;
+		const amount: number = req.body.price_data.unit_amount;
 		try {
 			// Validate the amount that was passed from the client.
 			if (!(amount >= MIN_AMOUNT && amount <= MAX_AMOUNT)) {

@@ -4,12 +4,13 @@ import getStripe from '../../utils/get-stripe';
 import { fetchPostJSON } from '../../utils/api-helpers';
 import { formatAmountForDisplay } from '../../utils/stripe-helpers';
 import * as config from '../../config';
-import { CognitoIdentity } from 'aws-sdk';
 
 const CheckoutForm = () => {
 	const [loading, setLoading] = useState(false);
 	const [input, setInput] = useState({
-		customDonation: Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
+		customDonation: Math.floor(
+			Math.round(config.MAX_AMOUNT / config.AMOUNT_STEP),
+		),
 	});
 
 	const handleInputChange: React.ChangeEventHandler<HTMLInputElement> = e =>
@@ -47,11 +48,12 @@ const CheckoutForm = () => {
 		<form onSubmit={handleSubmit}>
 			<label>
 				Custom donation amount (
-				{formatAmountForDisplay(config.MIN_AMOUNT, config.CURRENCY)})
+				{formatAmountForDisplay(config.MIN_AMOUNT, config.CURRENCY)}-
+				{formatAmountForDisplay(config.MAX_AMOUNT, config.CURRENCY)});
 				<input
 					type='number'
 					name='customDonation'
-					value={input.customDonation}
+					value={Number(input.customDonation)}
 					min={config.MIN_AMOUNT}
 					max={config.MAX_AMOUNT}
 					step={config.AMOUNT_STEP}
@@ -59,7 +61,7 @@ const CheckoutForm = () => {
 				<input
 					type='range'
 					name='customDonation'
-					value={input.customDonation}
+					value={Number(input.customDonation)}
 					min={config.MIN_AMOUNT}
 					max={config.MAX_AMOUNT}
 					step={config.AMOUNT_STEP}
