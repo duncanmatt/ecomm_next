@@ -18,7 +18,7 @@ const Cart = () => {
 	return (
 		<Layout>
 			<div className='p-2rem'>
-				<h2 className='font-bold text-center'>Cart ({count})</h2>
+				<h2 className='font-bold text-xl text-center'>Cart ({count})</h2>
 				<div className='flex py-1rem '>
 					<ul className='p-1rem '>
 						{items.map((item: CartItem, index: number) => (
