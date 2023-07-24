@@ -21,7 +21,7 @@ export default ({
         <div className='mb-3rem text-2xl uppercase'>
           <h2 className='font-bold'>{product.name}</h2>
         </div>
-        <div className='flex flex-col md:flex-row '>
+        <div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'>
           <div className='relative w-full h-full aspect-[168/227]'>
             <Image
               alt='description'
