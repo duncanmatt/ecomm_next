@@ -20,3 +20,12 @@ export interface CartItem {
 	imgUrl: string;
 	qty: number;
 }
+
+export interface SearchItem {
+	pk: string;
+	sk: string;
+	imgUrl: string;
+	productId: number;
+	name: string;
+	price: string | number;
+}
