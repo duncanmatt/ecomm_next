@@ -19,24 +19,26 @@ const Cart = () => {
 		<Layout>
 			<div className='p-2rem'>
 				<h2 className='font-bold text-center'>Cart ({count})</h2>
-				<div className='flex py-1rem'>
-					<ul>
+				<div className='flex py-1rem '>
+					<ul className='p-1rem '>
 						{items.map((item: CartItem, index: number) => (
 							<li
 								key={index}
 								className='mb-10'>
-								<div className='flex flex-row gap-4'>
-									<Image
-										alt={item.name}
-										src={item.imgUrl}
-										width={168}
-										height={227}
-									/>
+								<div className='grid grid-row-1 gap-x-5 grid-cols-2'>
+									<div className='relative h-full w-full '>
+										<Image
+											alt={item.name}
+											src={item.imgUrl}
+											width={168}
+											height={227}
+										/>
+									</div>
 									<div className='flex flex-col justify-around'>
-										<span>
-											{item.name} ({item.qty})
+										<span className=''>
+											{item.name} - ${item.price}
 										</span>
-										<span className='flex self-end'>${item.price}</span>
+										<span className='flex'>quantity: {item.qty}</span>
 									</div>
 								</div>
 							</li>
