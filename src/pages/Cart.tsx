@@ -50,7 +50,7 @@ const Cart = () => {
 					</div>
 					<div className='flex'>
 						<Link
-							className='flex flex-1 text-center justify-center h-[2rem] items-center font-semibold bg-b rounded-xs text-white'
+							className='flex flex-1 text-center justify-center border-2 border-transparent h-[2rem] items-center font-semibold bg-b rounded-xs text-white'
 							href='/Checkout'>
 							Checkout
 						</Link>
