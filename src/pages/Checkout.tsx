@@ -1,7 +1,12 @@
 import Layout from '@/components/Layout';
+import CheckoutForm from '@/components/CheckoutForm';
 
-const Cart = () => {
-	return <Layout>CART</Layout>;
+const Checkout = () => {
+	return (
+		<Layout>
+			<CheckoutForm />
+		</Layout>
+	);
 };
 
-export default Cart;
+export default Checkout;

@@ -4,6 +4,7 @@ import getStripe from '../../utils/get-stripe';
 import { fetchPostJSON } from '../../utils/api-helpers';
 import { formatAmountForDisplay } from '../../utils/stripe-helpers';
 import * as config from '../../config';
+import { CognitoIdentity } from 'aws-sdk';
 
 const CheckoutForm = () => {
 	const [loading, setLoading] = useState(false);
@@ -44,11 +45,31 @@ const CheckoutForm = () => {
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<input
+			<label>
+				Custom donation amount (
+				{formatAmountForDisplay(config.MIN_AMOUNT, config.CURRENCY)})
+				<input
+					type='number'
+					name='customDonation'
+					value={input.customDonation}
+					min={config.MIN_AMOUNT}
+					max={config.MAX_AMOUNT}
+					step={config.AMOUNT_STEP}
+					onChange={handleInputChange}></input>
+				<input
+					type='range'
+					name='customDonation'
+					value={input.customDonation}
+					min={config.MIN_AMOUNT}
+					max={config.MAX_AMOUNT}
+					step={config.AMOUNT_STEP}
+					onChange={handleInputChange}></input>
+			</label>
+			<button
 				type='submit'
-				value='place order'
-				disabled={loading}
-			/>
+				disabled={loading}>
+				Donate {formatAmountForDisplay(input.customDonation, config.CURRENCY)}
+			</button>
 		</form>
 	);
 };
