@@ -27,7 +27,7 @@ const Menu = ({ fn }: any) => {
 						<Link
 							onClick={fn}
 							className='flex flex-1 flex-row justify-between items-center text-l font-semibold'
-							href={`/products/${link.target}`}>
+							href={`/products/category/${link.target}`}>
 							<span className='uppercase'>{link.target}</span>
 							<span className='flex'>
 								<CaretRightIcon />
