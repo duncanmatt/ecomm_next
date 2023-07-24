@@ -5,7 +5,6 @@ import {
 	decrementQty,
 } from '../../../lib/redux/slices/cartSlice';
 import TrashCanIcon from '../icons/TrashCanIcon';
-import { CartItem } from '../../../interfaces';
 
 type Qty = {
 	pk: string;

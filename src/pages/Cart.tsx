@@ -20,7 +20,7 @@ const Cart = () => {
 		<Layout>
 			<div className='p-2rem'>
 				<h2 className='font-bold text-xl text-center'>Cart ({count})</h2>
-				<div className='grid '>
+				<div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'>
 					<div className='flex py-1rem '>
 						<ul className='p-1rem '>
 							{items.map((item: CartItem, index: number) => (
@@ -52,7 +52,7 @@ const Cart = () => {
 							))}
 						</ul>
 					</div>
-					<div>
+					<div className='md:self-end'>
 						<div className='flex flex-row justify-between my-3'>
 							<span>Total</span>
 							<span>${price}</span>
