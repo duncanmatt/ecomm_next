@@ -54,12 +54,12 @@ const Cart = () => {
 					</div>
 					<div className='md:self-end bg-g p-1rem rounded-sm h-min'>
 						<div className='flex flex-row justify-between my-3'>
-							<span>Shipping</span>
-							<span>FREE</span>
+							<span className='font-medium'>Shipping</span>
+							<span className='font-medium'>FREE</span>
 						</div>
 						<div className='flex flex-row justify-between my-3'>
-							<span>Total</span>
-							<span>${price}</span>
+							<span className='font-medium'>Total</span>
+							<span className='font-semibold text-xl'>${price}</span>
 						</div>
 						<div className='flex'>
 							<Link
