@@ -16,7 +16,7 @@ const QuantityBar = ({ pk, qty }: Qty) => {
 	const dispatch = useDispatch();
 
 	return (
-		<>
+		<div className='flex flex-row flex-nowrap items-center justify-evenly'>
 			<div>
 				<span
 					className='cursor-pointer'
@@ -37,7 +37,7 @@ const QuantityBar = ({ pk, qty }: Qty) => {
 					<TrashCanIcon />
 				</span>
 			</div>
-		</>
+		</div>
 	);
 };
 

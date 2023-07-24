@@ -5,6 +5,7 @@ import {
 	cartItems,
 	cartCount,
 } from '../../lib/redux/slices/cartSlice/selectors';
+import QuantityBar from '@/components/cart/QuantityBar';
 import { CartItem } from '../../interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -36,10 +37,15 @@ const Cart = () => {
 											/>
 										</div>
 										<div className='flex flex-col justify-around'>
-											<span className=''>
-												{item.name} - ${item.price}
-											</span>
-											<span className='flex'>quantity: {item.qty}</span>
+											<div>
+												<span className='flex flex-wrap'>
+													{item.name} - ${item.price}
+												</span>
+											</div>
+											<QuantityBar
+												pk={item.pk}
+												qty={item.qty}
+											/>
 										</div>
 									</div>
 								</li>
