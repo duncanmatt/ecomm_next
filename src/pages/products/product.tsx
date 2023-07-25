@@ -29,7 +29,7 @@ export default ({
           </div>
           <div className='md:p-1rem'>
             <div className='flex flex-wrap text-xs'>
-              <div className='flex flex-col font- pt-1rem'>
+              <div className='flex flex-col pt-1rem'>
                 <h2 className='font-bold uppercase'>{product.name}</h2>
                 <span>${product.price}.00</span>
               </div>
