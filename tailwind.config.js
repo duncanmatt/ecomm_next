@@ -12,10 +12,14 @@ module.exports = {
       reg: '1.25rem',
     },
     boxShadowColor: {
-      bag: 'rgb(18,18,18)'
+      bag: 'rgb(18,18,18)',
     },
     boxShadow: {
       bag: '0px 0px 10px -6px',
+    },
+    borderWidth: {
+      1: '1px',
+      2: '2px',
     },
     extend: {
       colors: {
@@ -58,8 +62,8 @@ module.exports = {
         faded: 'rgba(249,249,249,0.95)',
       },
       gridTemplateRows: {
-        cart: '1fr, min-content'
-      }
+        cart: '1fr, min-content',
+      },
     },
   },
   plugins: [],
