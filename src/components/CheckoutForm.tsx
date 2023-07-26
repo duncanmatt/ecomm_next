@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Stripe from 'stripe';
 import getStripe from '../../utils/get-stripe';
 import { fetchPostJSON } from '../../utils/api-helpers';
 import { formatAmountForDisplay } from '../../utils/stripe-helpers';
