@@ -27,7 +27,7 @@ const CartModal = () => {
 										<li
 											className='mb-3'
 											key={index}>
-											<div className='flex w-fu flex-row'>
+											<div className='flex w-full flex-row'>
 												<div className='relative h-[7.25rem] w-[5.75rem]'>
 													<Image
 														alt={item.name}
