@@ -1,9 +1,12 @@
 import { SearchItem } from '../../interfaces';
+import Link from 'next/link';
 
 const SearchList = ({ filteredProducts }: any) => {
 	const filtered = filteredProducts.map((product: SearchItem) => (
 		<div key={product.productId}>
-			<span>{product.name}</span>
+			<Link href={{ pathname: 'products/product', query: { pk: product.pk } }}>
+				{product.name}
+			</Link>
 		</div>
 	));
 
