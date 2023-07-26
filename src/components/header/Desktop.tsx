@@ -68,7 +68,7 @@ const Desktop = () => {
 							<li className='py-2 inline-block'>
 								<span
 									onClick={toggleCart}
-									className='flex'>
+									className='flex cursor-pointer'>
 									<CartIcon />
 								</span>
 							</li>
