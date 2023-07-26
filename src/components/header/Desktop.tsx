@@ -55,7 +55,7 @@ const Desktop = () => {
 							{links.map(link => (
 								<li key={link.id}>
 									<Link
-										className='uppercase text-xs font-semibold'
+										className='hover:underline uppercase text-xs font-semibold'
 										href={`/products/category/${link.target}`}>
 										{link.target}
 									</Link>
