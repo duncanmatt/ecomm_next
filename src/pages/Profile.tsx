@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import Layout from '@/components/Layout';
 import { signOut, useSession } from 'next-auth/react';
-import { getServerSession } from 'next-auth';
-import Nextauth from './api/auth/[...nextauth]';
-import type { GetServerSidePropsContext } from 'next';
 
 const Profile = () => {
 	const { data: session } = useSession();
