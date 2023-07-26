@@ -27,7 +27,7 @@ const CartModal = () => {
 										<li
 											className='mb-3'
 											key={index}>
-											<div className='flex flex-row'>
+											<div className='flex w-fu flex-row'>
 												<div className='relative h-[7.25rem] w-[5.75rem]'>
 													<Image
 														alt={item.name}
@@ -35,16 +35,18 @@ const CartModal = () => {
 														fill
 													/>
 												</div>
-												<div className='flex flex-1 justify-around px-1rem flex-col'>
-													<span className='font-bold'>{item.name}</span>
+												<div className='flex flex-1 justify-around ps-1rem flex-col'>
+													<div className='flex items-center justify-between'>
+														<span className='font-bold'>{item.name}</span>
+														<span>${item.price * item.qty}</span>
+													</div>
 													<div className='flex justify-between'>
-														<div className='flex flex-1 items-center flex-row gap-4'>
+														<div className='flex items-center flex-row'>
 															<QuantityBar
 																pk={item.pk}
 																qty={item.qty}
 															/>
 														</div>
-														<span>${item.price * item.qty}</span>
 													</div>
 												</div>
 											</div>
