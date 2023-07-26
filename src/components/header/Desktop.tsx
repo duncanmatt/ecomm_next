@@ -6,7 +6,6 @@ import Search from '../Search';
 import SearchIcon from '../icons/SearchIcon';
 import CartIcon from '../icons/CartIcon';
 import ProfileIcon from '../icons/ProfileIcon';
-import CloseIcon from '../icons/CloseIcon';
 
 const links = [
 	{
