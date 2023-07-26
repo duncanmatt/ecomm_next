@@ -89,3 +89,20 @@ svg {
 svg {
 	overflow: hidden;
 }
+
+.btn--plus::after,
+.btn--plus::before,
+.btn--minus::before {
+	content: '';
+	width: 1.125rem;
+	height: 0.09rem;
+	background: #121212;
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.btn--plus::after {
+	-webkit-transform: translate(-50%, -50%) rotate(90deg);
+	transform: translate(-50%, -50%) rotate(90deg);
+}
