@@ -53,14 +53,21 @@ const CartModal = () => {
 										</li>
 									))}
 								</ul>
-								<div className='flex shrink gap-3 flex-col self-end'>
+								<div className='flex shrink gap-2 flex-col self-end font-medium'>
 									<div className='w-full'>
-										<div className='flex flex-row font-bold'>
-											Total
-											<span className='flex flex-1 justify-end'>${price}</span>
+										<div className='flex flex-row '>
+											Tax
+											<span className='flex flex-1 justify-end'>TBD</span>
 										</div>
 									</div>
-									<div></div>
+									<div className='w-full'>
+										<div className='flex flex-row'>
+											Subtotal
+											<span className='flex flex-1 justify-end font-semibold'>
+												${price}
+											</span>
+										</div>
+									</div>
 									<Link
 										href='/Cart'
 										className='bg-b w-full text-white font-semibold rounded-xs text-center border-transparent border-2'>
