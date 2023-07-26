@@ -6,6 +6,9 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    maxWidth: {
+      container: '1280px',
+    },
     borderRadius: {
       xs: '0.75rem',
       sm: '1.125rem',
