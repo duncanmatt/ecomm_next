@@ -10,6 +10,7 @@ module.exports = {
       xs: '0.75rem',
       sm: '1.125rem',
       reg: '1.25rem',
+      circle: '1.875rem'
     },
     boxShadowColor: {
       bag: 'rgb(18,18,18)',
