@@ -4,9 +4,9 @@ const Logo = () => {
 	return (
 		<span>
 			<Link
-				className='font-bold'
+				className='font-bold text-3xl'
 				href='/'>
-				LOGO
+				BSW
 			</Link>
 		</span>
 	);
