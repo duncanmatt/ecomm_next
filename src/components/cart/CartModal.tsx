@@ -7,7 +7,6 @@ import {
 import { CartItem } from '../../../interfaces';
 import Image from 'next/image';
 import Empty from './Empty';
-import TrashCanIcon from '../icons/TrashCanIcon';
 import Link from 'next/link';
 
 const CartModal = () => {
