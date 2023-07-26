@@ -62,7 +62,7 @@ const Cart = () => {
 												</div>
 												<div className='flex flex-col justify-around'>
 													<div>
-														<span className='flex flex-wrap'>
+														<span className='flex flex-wrap text-xl'>
 															{item.name} - ${item.price}
 														</span>
 													</div>
