@@ -30,6 +30,14 @@ export interface SearchItem {
 	price: string | number;
 }
 
-export interface UserSliceState {
-	user: null | object;
+export interface User {
+	id: string;
+	firstName: string | undefined;
+	lastName: string | undefined;
+	email: string;
+	password: string;
+}
+
+export interface AuthSliceState {
+	user: null | User;
 }
