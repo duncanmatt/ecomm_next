@@ -17,7 +17,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 			}
 			// Create Checkout Sessions from body params.
 			const params: Stripe.Checkout.SessionCreateParams = {
-				submit_type: 'donate',
+				submit_type: 'pay',
 				payment_method_types: ['card'],
 				mode: 'payment',
 				line_items: [
