@@ -29,3 +29,7 @@ export interface SearchItem {
 	name: string;
 	price: string | number;
 }
+
+export interface UserSliceState {
+	user: null | object;
+}
