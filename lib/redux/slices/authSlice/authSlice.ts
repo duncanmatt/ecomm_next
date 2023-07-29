@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthSliceState } from '../../../../interfaces';
-import { uid } from '../../../../utils/uid';
 
 const initialState: AuthSliceState = {
 	loading: false,
@@ -12,6 +11,7 @@ const initialState: AuthSliceState = {
 		lastName: '',
 		email: '',
 		password: '',
+		verified: false,
 	},
 };
 
@@ -21,6 +21,8 @@ export const authSlice = createSlice({
 	reducers: {
 		setProfile: (state, action) => {
 			state.profile.email = action.payload.email;
+			state.profile.verified = action.payload.verified;
+			state.profile.id = action.payload.id;
 		},
 	},
 });

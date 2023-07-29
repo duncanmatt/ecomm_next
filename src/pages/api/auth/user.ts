@@ -3,6 +3,8 @@ import client from '../../../../lib/db';
 import { QueryCommand } from '@aws-sdk/client-dynamodb';
 import type { QueryCommandInput } from '@aws-sdk/client-dynamodb';
 import { unmarshall } from '@aws-sdk/util-dynamodb';
+import { setProfile } from "../../../../lib/redux/slices/authSlice";
+import { Profile } from "../../../../interfaces";
 
 export default async (req: NextApiRequest, res:NextApiResponse) => {
   if (req.method === 'POST') {
@@ -28,6 +30,7 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
         const user = {...response.Items?.map(i => unmarshall(i))[0]};
 
         if (user && user.password === password) {
+          setProfile({email: user.email, verified: true, id: user.id,})
           return res.status(200).json(user);
         }
         return res.status(400).json({error: 'unrecognized credentials'})
