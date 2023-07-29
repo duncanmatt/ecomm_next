@@ -20,6 +20,7 @@ export const authSlice = createSlice({
 	reducers: {
 		setProfile: (state, action) => {
 			state.profile.email = action.payload.email;
+			state.profile.id = action.payload.id;
 		},
 	},
 });
