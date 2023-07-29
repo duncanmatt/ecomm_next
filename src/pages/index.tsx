@@ -40,16 +40,16 @@ const Home = ({ featured }: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch('http://localhost:3000/api/products/featured', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  const res = await fetch(
+    'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/featured',
+    {
+      method: 'GET',
+    }
+  );
 
-  const featured: Product[] = await res.json();
+  const data = await res.json();
 
-  return { props: { featured } };
+  return { props: { featured: data.Items } };
 };
 
 export default Home;
