@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import client from '../../../../lib/db';
 import { QueryCommand } from '@aws-sdk/client-dynamodb';
 import type { QueryCommandInput } from '@aws-sdk/client-dynamodb';
-import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
+import { unmarshall } from '@aws-sdk/util-dynamodb';
 
 export default async (req: NextApiRequest, res:NextApiResponse) => {
   if (req.method === 'POST') {
@@ -25,13 +25,15 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
       const response = await client.send(new QueryCommand(params));
       if (response) {
 
-        const user = response.Items?.map(i => unmarshall(i));
-        if (user) {
-          return res.status(200).json({...user[0]});
+        const user = {...response.Items?.map(i => unmarshall(i))[0]};
+
+        if (user && user.password === password) {
+          return res.status(200).json(user);
         }
+        return res.status(400).json({error: 'unrecognized credentials'})
       } 
     } catch (error) {
-      console.error(error);
+      return res.status(400).json({error});
     }
   }
 }

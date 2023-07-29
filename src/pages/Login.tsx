@@ -1,18 +1,16 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useSession, signIn } from 'next-auth/react';
-import { useDispatch } from 'react-redux';
-import { setProfile } from '../../lib/redux/slices/authSlice';
+// import { useDispatch } from 'react-redux';
 import Layout from '@/components/Layout';
 
 const Login = () => {
   const { data: session } = useSession();
   const router = useRouter();
   const activeUser = session?.user;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   if (activeUser) {
-    dispatch(setProfile({ email: activeUser.email }));
     router.push('/Profile');
   }
 
