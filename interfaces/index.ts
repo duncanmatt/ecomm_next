@@ -36,7 +36,6 @@ export interface Profile {
 	lastName: string | undefined;
 	email: string;
 	password: string;
-	verified: boolean;
 }
 
 export interface AuthSliceState {
