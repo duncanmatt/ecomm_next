@@ -1,3 +1,4 @@
 import type { ReduxState } from '../../store';
+import { Profile } from '../../../../interfaces';
 
-export const user = (state: ReduxState) => state.auth.user;
+export const userProfile = (state: ReduxState): Profile => state.auth.profile;

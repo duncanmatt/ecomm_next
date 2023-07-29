@@ -30,7 +30,7 @@ export interface SearchItem {
 	price: string | number;
 }
 
-export interface User {
+export interface Profile {
 	id: string;
 	firstName: string | undefined;
 	lastName: string | undefined;
@@ -39,5 +39,8 @@ export interface User {
 }
 
 export interface AuthSliceState {
-	user: null | User;
+	loading: boolean;
+	success: boolean;
+	error: string | null;
+	profile: Profile;
 }

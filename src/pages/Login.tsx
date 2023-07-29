@@ -1,14 +1,18 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useSession, signIn } from 'next-auth/react';
+import { useDispatch } from 'react-redux';
+import { setProfile } from '../../lib/redux/slices/authSlice';
 import Layout from '@/components/Layout';
 
 const Login = () => {
 	const { data: session } = useSession();
 	const router = useRouter();
 	const activeUser = session?.user;
+	const dispatch = useDispatch();
 
 	if (activeUser) {
+		dispatch(setProfile({ email: activeUser.email }));
 		router.push('/Profile');
 	}
 
@@ -16,14 +20,9 @@ const Login = () => {
 		e.preventDefault();
 		const formData = new FormData(e.currentTarget);
 		const email = formData.get('email');
+		const password = formData.get('password');
 
-		// check if email already exists in db
-		// redirect to register if it does NOT
-		// set registered state var to true if it does
-
-		if (email) {
-			signIn('email', { redirect: false, email });
-		}
+		signIn('email', { redirect: false, email });
 	};
 
 	return (
@@ -47,6 +46,19 @@ const Login = () => {
 											type='email'
 											id='email'
 											name='email'
+										/>
+									</span>
+									<span className='flex flex-row gap-2 items-center h-8'>
+										<label
+											className='text-white text-center font-semibold basis-30'
+											htmlFor='password'>
+											Password
+										</label>
+										<input
+											className='rounded-xl border-2 bg-inherit border-g flex flex-1 h-full flex-0 text-white px-4'
+											type='password'
+											id='password'
+											name='password'
 										/>
 									</span>
 								</div>

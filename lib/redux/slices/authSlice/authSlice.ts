@@ -1,12 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthSliceState } from '../../../../interfaces';
+import { uid } from '../../../../utils/uid';
 
 const initialState: AuthSliceState = {
-	user: null,
+	loading: false,
+	success: false,
+	error: null,
+	profile: {
+		id: '',
+		firstName: '',
+		lastName: '',
+		email: '',
+		password: '',
+	},
 };
 
 export const authSlice = createSlice({
-	name: 'user',
+	name: 'auth',
 	initialState,
-	reducers: {},
+	reducers: {
+		setProfile: (state, action) => {
+			state.profile.email = action.payload.email;
+		},
+	},
 });
+
+export const { setProfile } = authSlice.actions;
+
+export default authSlice.reducer;
