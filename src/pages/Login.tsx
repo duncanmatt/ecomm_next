@@ -44,21 +44,21 @@ const Login = () => {
       <div className='min-h-main relative'>
         <div className='p-3rem'>
           <div className='flex flex-col justify-center'>
-            <div className='flex bg-neutral-700 rounded-lg'>
+            <div className='flex bg-[#f2f2f2] rounded-sm'>
               <form
                 className='p-4 justify-between flex flex-1 gap-3 flex-col '
                 onSubmit={handleSubmit}
               >
-                <div className='flex flex-col flex-1 justify-evenly'>
+                <div className='flex flex-col flex-1 gap-2'>
                   <span className='flex flex-row gap-2 items-center h-8'>
                     <label
-                      className='text-white text-center font-semibold basis-30'
+                      className='text-center font-semibold basis-30'
                       htmlFor='email'
                     >
                       Email
                     </label>
                     <input
-                      className='rounded-xl border-2 bg-inherit border-g flex flex-1 h-full flex-0 text-white px-4'
+                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
                       type='email'
                       id='email'
                       name='email'
@@ -66,13 +66,13 @@ const Login = () => {
                   </span>
                   <span className='flex flex-row gap-2 items-center h-8'>
                     <label
-                      className='text-white text-center font-semibold basis-30'
+                      className=' text-center font-semibold basis-30'
                       htmlFor='password'
                     >
                       Password
                     </label>
                     <input
-                      className='rounded-xl border-2 bg-inherit border-g flex flex-1 h-full flex-0 text-white px-4'
+                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
                       type='password'
                       id='password'
                       name='password'
@@ -82,7 +82,7 @@ const Login = () => {
                 <div>
                   <span className='flex mb-2 h-10'>
                     <input
-                      className='border-2 border-transparent text-neutral-700 font-bold bg-slate-300 hover:bg-slate-400 rounded-reg flex-1'
+                      className='border-2 border-transparent text-white font-bold bg-b hover:bg-[#c1c1c1] hover:text-b rounded-reg flex-1'
                       type='submit'
                       value='Login'
                     />
