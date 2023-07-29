@@ -33,8 +33,8 @@ const Login = () => {
     });
 
     const user = await response.json();
-    console.log(user.password);
-    if (user && user.password == password) {
+
+    if (user && user.password === password) {
       signIn('email', { redirect: false, email });
     }
   };
