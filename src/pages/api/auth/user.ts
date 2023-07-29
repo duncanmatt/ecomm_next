@@ -18,6 +18,7 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
 			ExpressionAttributeValues: {
 				':email': {S: `USER#${email}`},
 			},
+      ProjectionExpression: 'id, emailVerified, email, password'
 		};
 
     try {
@@ -25,7 +26,9 @@ export default async (req: NextApiRequest, res:NextApiResponse) => {
       if (response) {
 
         const user = response.Items?.map(i => unmarshall(i));
-        return res.status(200).json(user);
+        if (user) {
+          return res.status(200).json({...user[0]});
+        }
       } 
     } catch (error) {
       console.error(error);
