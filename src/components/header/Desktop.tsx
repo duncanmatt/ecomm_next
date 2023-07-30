@@ -9,15 +9,15 @@ import ProfileIcon from '../icons/ProfileIcon';
 
 const links = [
   {
-    id: 0,
+    id: 1,
     target: 'shirts',
   },
   {
-    id: 1,
+    id: 2,
     target: 'sweatshirts',
   },
   {
-    id: 2,
+    id: 3,
     target: 'outerwear',
   },
 ];
@@ -55,7 +55,10 @@ const Desktop = () => {
                 <li key={link.id}>
                   <Link
                     className='hover:underline uppercase text-sm font-semibold'
-                    href={`/products/category/${link.target}`}
+                    href={{
+                      pathname: `/products/category/${link.target}`,
+                      query: { categoryId: link.id },
+                    }}
                   >
                     {link.target}
                   </Link>

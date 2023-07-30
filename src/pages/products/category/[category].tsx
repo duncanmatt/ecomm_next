@@ -66,19 +66,17 @@ export default ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const category = context.params?.category;
+  const id = context.query?.categoryId;
 
   const response = await fetch(
-    `http://localhost:3000/api/products/${category}`,
+    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/category/?id=${id}`,
     {
       method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
     }
   );
 
-  const products: Product[] = await response.json();
+  const data = await response.json();
+  console.log(data);
 
-  return { props: { products, category } };
+  return { props: { products: data.Items } };
 };
