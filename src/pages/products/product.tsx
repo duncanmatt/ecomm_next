@@ -57,17 +57,15 @@ export const getServerSideProps: GetServerSideProps = async (
 ) => {
   const pk = context.query?.pk;
   console.log(pk);
-  const response = await fetch(
-    'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/product' +
-      new URLSearchParams({
-        pk: `${pk}`,
-      }),
+  const res = await fetch(
+    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/product/pk?${pk}`,
     {
       method: 'GET',
     }
   );
 
-  const data = await response.json();
+  const data = await res.json();
+  console.log(data);
 
   return { props: { product: data.Item } };
 };
