@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Layout from '@/components/Layout';
+import { uid } from '../../utils/uid';
 
 const Register = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -11,6 +12,7 @@ const Register = () => {
     const password2 = formData.get('password2');
     const firstName = formData.get('firstName');
     const lastName = formData.get('lastName');
+    const newId = uid();
 
     if (password2 !== password) {
       // toast message
@@ -22,7 +24,13 @@ const Register = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ firstName, lastName, newEmai: email, password }),
+      body: JSON.stringify({
+        newId,
+        firstName,
+        lastName,
+        newEmai: email,
+        password,
+      }),
     });
 
     const profile = await response.json();
