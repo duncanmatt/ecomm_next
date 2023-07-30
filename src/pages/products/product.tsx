@@ -1,4 +1,3 @@
-import client from '../../../lib/db';
 import Layout from '@/components/Layout';
 import Image from 'next/image';
 import type {
@@ -6,7 +5,6 @@ import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
 } from 'next';
-import { GetCommand, GetCommandInput } from '@aws-sdk/lib-dynamodb';
 import { useDispatch } from '../../../lib/redux/store';
 import { addToCart } from '../../../lib/redux/slices/cartSlice';
 
@@ -55,10 +53,10 @@ export default ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const pk = context.query?.pk;
-  console.log(pk);
+  const id = context.query?.productId;
+
   const res = await fetch(
-    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/product/pk?${pk}`,
+    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/product/?id=${id}`,
     {
       method: 'GET',
     }
