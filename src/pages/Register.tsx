@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Layout from '@/components/Layout';
+import { uid } from '../../utils/uid';
 
 const Register = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -23,6 +24,7 @@ const Register = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        newId: uid(),
         firstName,
         lastName,
         newEmai: email,
