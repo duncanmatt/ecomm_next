@@ -18,19 +18,22 @@ const Register = () => {
       throw new Error("passwords don't match");
     }
 
-    const response = await fetch('http://localhost:3000/api/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        newId: uid(),
-        firstName,
-        lastName,
-        newEmai: email,
-        password,
-      }),
-    });
+    const response = await fetch(
+      'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/auth/register',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          newId: uid(),
+          firstName,
+          lastName,
+          newEmai: email,
+          password,
+        }),
+      }
+    );
 
     const profile = await response.json();
     console.log(profile);
