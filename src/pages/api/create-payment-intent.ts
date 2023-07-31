@@ -1,13 +1,17 @@
+import Stripe from 'stripe';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { CartItem } from '../../../interfaces';
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+	apiVersion: '2022-11-15',
+});
 
 const calculateOrderAmount = (items: CartItem[]) => {
 	// Replace this constant with a calculation of the order's amount
 	// Calculate the order total on the server to prevent
 	// people from directly manipulating the amount on the client
-	return 1400;
+	const total = items.reduce((acc, item) => acc + item.qty * item.price, 0);
+	return total;
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -16,7 +20,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	// Create a PaymentIntent with the order amount and currency
 	const paymentIntent = await stripe.paymentIntents.create({
 		amount: calculateOrderAmount(items),
-		currency: 'us',
+		currency: 'usd',
 		automatic_payment_methods: {
 			enabled: true,
 		},

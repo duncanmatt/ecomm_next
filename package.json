@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@auth/dynamodb-adapter": "^1.0.0",
 		"@reduxjs/toolkit": "^1.9.5",
+		"@stripe/react-stripe-js": "^2.1.1",
 		"@stripe/stripe-js": "^1.54.1",
 		"autoprefixer": "10.4.14",
 		"aws-sdk": "^2.1415.0",
