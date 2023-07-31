@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { CartItem } from '../../../interfaces';
+import { formatAmountForStripe } from '../../../utils/stripe-helpers';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 	apiVersion: '2022-11-15',
@@ -11,7 +12,8 @@ const calculateOrderAmount = (items: CartItem[]) => {
 	// Calculate the order total on the server to prevent
 	// people from directly manipulating the amount on the client
 	const total = items.reduce((acc, item) => acc + item.qty * item.price, 0);
-	return total;
+	const formattedTotal = formatAmountForStripe(total, 'usd');
+	return formattedTotal;
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
