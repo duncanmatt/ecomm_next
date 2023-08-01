@@ -62,8 +62,12 @@ const Cart = () => {
 									<span className='font-medium'>FREE</span>
 								</div>
 								<div className='flex flex-row border-b-1 border-g py-2 justify-between my-3'>
-									<span className='font-medium'>Total</span>
-									<span className='font-semibold text-xl'>${price}</span>
+									<span className='font-medium'>Est. Sales Tax</span>
+									<span className=''>To be calculated</span>
+								</div>
+								<div className='flex flex-row border-b-1 border-g py-2 justify-between my-3'>
+									<span className='font-medium'>Subtotal</span>
+									<span className='font-semibold'>$ {price}.00</span>
 								</div>
 								<div className='flex'>
 									<Link
