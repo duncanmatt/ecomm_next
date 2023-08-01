@@ -9,6 +9,14 @@ module.exports = {
     maxWidth: {
       container: '1280px',
     },
+    colors: {
+      g: '#e1e1e1',
+      b: '#121212',
+      success: '#389466',
+      warning: '#e4300c',
+      white: '#fff',
+      transparent: 'rgba(0,0,0,0)'
+    },
     borderRadius: {
       xs: '0.75rem',
       sm: '1.125rem',
@@ -26,12 +34,6 @@ module.exports = {
       2: '2px',
     },
     extend: {
-      colors: {
-        g: '#e1e1e1',
-        b: '#121212',
-        success: '#389466',
-        warning: '#e4300c',
-      },
       height: {
         60: '60px',
       },
@@ -62,11 +64,12 @@ module.exports = {
       backdropBlur: {
         '6xl': '135px',
       },
-      backgroundColor: {
-        faded: 'rgba(249,249,249,0.95)',
-      },
       gridTemplateRows: {
         cart: '1fr, min-content',
+      },
+      backgroundColor: {
+        faded: 'rgba(249,249,249,0.95)',
+        light: '#f9f9f9'
       },
     },
   },
