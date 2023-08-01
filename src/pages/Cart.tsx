@@ -56,12 +56,12 @@ const Cart = () => {
 									))}
 								</ul>
 							</div>
-							<div className='md:self-end bg-[#f2f2f2] p-1rem rounded-sm h-min'>
-								<div className='flex flex-row justify-between my-3'>
+							<div className='md:self-end p-1rem rounded-sm h-min'>
+								<div className='flex flex-row border-b-1 border-g py-2 justify-between my-3'>
 									<span className='font-medium'>Shipping</span>
 									<span className='font-medium'>FREE</span>
 								</div>
-								<div className='flex flex-row justify-between my-3'>
+								<div className='flex flex-row border-b-1 border-g py-2 justify-between my-3'>
 									<span className='font-medium'>Total</span>
 									<span className='font-semibold text-xl'>${price}</span>
 								</div>
