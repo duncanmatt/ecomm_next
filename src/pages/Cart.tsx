@@ -30,7 +30,7 @@ const Cart = () => {
 									{items.map((item: CartItem, index: number) => (
 										<li
 											key={index}
-											className='mb-10 py-3 flex flex-1 bg-white rounded-reg w-full'>
+											className='mb-6 py-3 flex flex-1 bg-white rounded-reg w-full'>
 											<div className='grid grid-row-1 gap-x-5 grid-cols-2'>
 												<div className='ms-2 relative h-full w-full '>
 													<Image
