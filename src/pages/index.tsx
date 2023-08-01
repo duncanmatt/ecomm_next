@@ -18,16 +18,18 @@ const Home = ({ featured }: InferGetStaticPropsType<typeof getStaticProps>) => {
             <div className='flex justify-center'>
               <ul>
                 {featured?.map((product: Product, index: number) => (
-                  <li className='relative bg-gradi' key={index}>
-                    <div className='mb-12 min-h-[30em] min-w-[30em]'>
+                  <li className='relative bg-gradi mb-12' key={index}>
+                    <div className='min-h-[30em] min-w-[30em]'>
                       <Image
                         alt='description'
                         src={product.imgUrl}
                         fill
                         className='absolute aspect-[1/1] rounded-reg'
                       />
-                      <span className='relative ms-2'>{product.name}</span>
                     </div>
+                    <span className='relative text-[rgba(0,0,0,0.5)] font-bold uppercase ms-2'>
+                      {product.name}
+                    </span>
                   </li>
                 ))}
               </ul>
