@@ -1,10 +1,10 @@
 import client from '../../../../lib/db';
-import NextAuth from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import Email from 'next-auth/providers/email';
 import { DynamoDBAdapter } from '@auth/dynamodb-adapter';
 import type { Adapter } from 'next-auth/adapters';
 
-export default NextAuth({
+export const authOptions: NextAuthOptions = {
 	providers: [
 		Email({
 			server: {
@@ -23,7 +23,7 @@ export default NextAuth({
 	}) as Adapter,
 	pages: {
 		signIn: '/Login',
-		newUser: '/auth/new-user'
+		newUser: '/auth/new-user',
 	},
 	secret: process.env.NEXTAUTH_SECRET,
 	session: {
@@ -31,4 +31,6 @@ export default NextAuth({
 		maxAge: 30 * 24 * 60 * 60,
 		updateAge: 24 * 60 * 60,
 	},
-});
+};
+
+export default NextAuth(authOptions);

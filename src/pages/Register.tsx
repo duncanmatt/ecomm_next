@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React from 'react';
 import Layout from '@/components/Layout';
 import { useRouter } from 'next/router';
-
 import { uid } from '../../utils/uid';
 
 const Register = () => {
