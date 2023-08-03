@@ -70,7 +70,7 @@ const Search = ({ fn }: any) => {
           <CloseIcon />
         </span>
       </div>
-      <div className='absolute top-[60px] backdrop-blur-6xl bg-faded  left-0 right-0 z-7'>
+      <div className='absolute top-[60px] bg-faded  left-0 right-0 z-7'>
         <div className='relative w-full h-full'>
           <div className='p-1rem'>
             <div className='flex flex-col'>{list()}</div>

@@ -39,7 +39,7 @@ const Header = () => {
     <>
       <header
         data-action={`${scrollDir}`}
-        className={`h-60 z-[60] backdrop-blur-6xl bg-faded fixed bottom-auto top-0 right-0 left-0`}
+        className={`h-60 z-[60] fixed bottom-auto bg-body  backdrop-blur-6xl top-0 right-0 left-0`}
       >
         <div className='relative bg-scroll px-1rem md:hidden h-full'>
           <Mobile />

@@ -10,18 +10,18 @@ module.exports = {
       container: '1280px',
     },
     colors: {
-      g: '#e1e1e1',
+      g: '#eeeeee',
       b: '#121212',
       success: '#389466',
       warning: '#e4300c',
       white: '#fff',
-      transparent: 'rgba(0,0,0,0)'
+      transparent: 'rgba(0,0,0,0)',
     },
     borderRadius: {
       xs: '0.75rem',
       sm: '1.125rem',
       reg: '1.25rem',
-      circle: '1.875rem'
+      circle: '1.875rem',
     },
     boxShadowColor: {
       bag: 'rgb(18,18,18)',
@@ -68,8 +68,9 @@ module.exports = {
         cart: '1fr, min-content',
       },
       backgroundColor: {
-        faded: 'rgba(249,249,249,0.95)',
-        light: '#f9f9f9'
+        faded: 'rgba(252,252,252,0.95)',
+        light: '#f9f9f9',
+        body: '#fcfcfc',
       },
     },
   },
