@@ -11,7 +11,7 @@ module.exports = {
     },
     colors: {
       g: '#eeeeee',
-      b: '#121212',
+      b: '#070707',
       success: '#389466',
       warning: '#e4300c',
       white: '#fff',
