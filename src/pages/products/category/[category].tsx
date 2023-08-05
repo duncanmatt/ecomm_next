@@ -20,41 +20,51 @@ export default ({
   return (
     <Layout>
       <div className='p-1rem'>
-        <div className='mb-3rem text-2xl uppercase'>
+        <div className='mb-3rem text-3xl uppercase'>
           <h2 className='font-bold'>{category}</h2>
         </div>
         <ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4'>
           {products?.map((product: Product, index: number) => (
-            <li className='relative mb-20' key={index}>
+            <li className='mb-16 h-[inherit] relative' key={index}>
+              <Image
+                alt={product.name}
+                src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
+                fill
+                className='aspect-[116/227] -z-[1] rounded-xs'
+              />
+              <span className='bg-white rounded-circle absolute z-10 top-3 right-4'>
+                <button
+                  className='relative -translate-y-[1px] flex items-center justify-center h-[1.875rem] w-[1.875rem] z-5'
+                  onClick={() => dispath(cartSlice.actions.addToCart(product))}
+                >
+                  <CartIcon />
+                </button>
+              </span>
               <Link
-                className='z-0'
+                className='z-0 h-full w-full'
                 // as='/products/product'
                 href={{
                   pathname: `/products/product`,
                   query: { productId: product.productId },
                 }}
               >
-                <div className='relative aspect-[168/227] z-5'>
+                <div className='relative aspect-[1]'>
                   <Image
                     alt='description'
                     src={product.imgUrl}
                     fill
-                    className='absolute flex -z-10 bg-[rgba(0,0,0,0.03)]'
+                    className='flex'
                   />
                 </div>
-              </Link>
-              <div className='pt-2 flex flex-row justify-between'>
-                <div className='flex flex-col text-xs'>
-                  <span className='font-bold'>{product.name}</span>
-                  <span>${product.price}.00</span>
+                <div className='p-2 z-[4]'>
+                  <div className='flex flex-col text-xs'>
+                    <span className='text-base'>{product.name}</span>
+                    <span className='font-semibold text-sm'>
+                      ${product.price}.00
+                    </span>
+                  </div>
                 </div>
-                <button
-                  className=' rounded-full flex z-5'
-                  onClick={() => dispath(cartSlice.actions.addToCart(product))}
-                >
-                  <CartIcon />
-                </button>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>
