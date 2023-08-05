@@ -57,6 +57,9 @@ module.exports = {
       minHeight: {
         main: 'calc(100vh - 60px)',
       },
+      maxHeight: {
+        main: 'calc(100vh - 60px)',
+      },
       backgroundImage: {
         gradi:
           'linear-gradient(180deg,rgba(255, 255, 255, 0.15),rgba(255, 255, 255, 0));',

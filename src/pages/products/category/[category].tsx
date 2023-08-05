@@ -48,7 +48,7 @@ export default ({
                   query: { productId: product.productId },
                 }}
               >
-                <div className='relative aspect-[1]'>
+                <div className='relative aspect-[0.85/1]'>
                   <Image
                     alt='description'
                     src={product.imgUrl}

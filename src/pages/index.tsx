@@ -2,37 +2,47 @@ import Layout from '@/components/Layout';
 import Image from 'next/image';
 import { InferGetStaticPropsType } from 'next';
 import { GetStaticProps } from 'next';
-
-type Product = {
-  pk: string;
-  name: string;
-  imgUrl: string;
-};
+import Link from 'next/link';
+import { FeaturedProduct } from '../../interfaces';
 
 const Home = ({ featured }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Layout>
         <main className='min-h-main relative'>
-          <div className='p-1rem'>
-            <div className='flex justify-center'>
-              <ul>
-                {featured?.map((product: Product, index: number) => (
-                  <li className='mb-12' key={index}>
-                    <div className='relative bg-gradi min-h-[30em] min-w-[30em]'>
-                      <Image
-                        alt='description'
-                        src={product.imgUrl}
-                        fill
-                        className='absolute -z-[1] aspect-[1/1] rounded-reg'
-                      />
+          <div className=''>
+            <div className=''>
+              <div>
+                {featured?.map((product: FeaturedProduct, index: number) => (
+                  <div className='relative flex overflow-hidden' key={index}>
+                    <div className='w-full aspect-[0.8/1] max-h-main'>
+                      <Link
+                        href={{
+                          pathname: `/products/product`,
+                          query: { productId: product.prodQuery },
+                        }}
+                        className='h-full'
+                      >
+                        <picture className='absolute object-center-top bg-gradi w-full h-full'>
+                          <Image
+                            alt='description'
+                            src={product.featImgUrl}
+                            placeholder='blur'
+                            blurDataURL='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
+                            fill
+                            className='object-cover -z-10'
+                          />
+                        </picture>
+                      </Link>
                     </div>
-                    <div className='w-full pt-1rem text-center font-bold uppercase ms-2'>
-                      <span>{product.name}</span>
+                    <div className='right-0 flex left-0 absolute bottom-[1.125rem]'>
+                      <span className='relative text-center font-bold text-white uppercase'>
+                        {product.name}
+                      </span>
                     </div>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </main>

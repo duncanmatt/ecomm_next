@@ -13,6 +13,12 @@ export interface Product {
 	desc: string;
 }
 
+export interface FeaturedProduct {
+	name: string;
+	featImgUrl: string;
+	prodQuery: number;
+} 
+
 export interface CartItem {
 	pk: string;
 	name: string;
