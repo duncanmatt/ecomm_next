@@ -24,7 +24,7 @@ const Home = ({ featured }: InferGetStaticPropsType<typeof getStaticProps>) => {
                         alt='description'
                         src={product.imgUrl}
                         fill
-                        className='absolute -z-[1] bg-[#f9f9f9] aspect-[1/1] rounded-reg'
+                        className='absolute -z-[1] aspect-[1/1] rounded-reg'
                       />
                     </div>
                     <div className='w-full pt-1rem text-center font-bold uppercase ms-2'>
