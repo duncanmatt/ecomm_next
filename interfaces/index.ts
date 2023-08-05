@@ -13,6 +13,13 @@ export interface Product {
 	desc: string;
 }
 
+export interface CarouselProduct {
+	name: string;
+	imgUrl: string;
+	categoryId: number;
+	productId: number;
+}
+
 export interface FeaturedProduct {
 	name: string;
 	featImgUrl: string;

@@ -56,9 +56,11 @@ export default ({
                     className='flex'
                   />
                 </div>
-                <div className='p-2 z-[4]'>
-                  <div className='flex flex-col text-xs'>
-                    <span className='text-base'>{product.name}</span>
+                <div className='px-3 pb-3 z-[4]'>
+                  <div className='flex flex-col'>
+                    <span className='text-base uppercase tracking-tight font-medium'>
+                      {product.name}
+                    </span>
                     <span className='font-semibold text-sm'>
                       ${product.price}.00
                     </span>
