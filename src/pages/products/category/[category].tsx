@@ -10,6 +10,7 @@ import CartIcon from '@/components/icons/CartIcon';
 import { Product } from '../../../../interfaces';
 import { cartSlice } from '../../../../lib/redux/slices/cartSlice';
 import { useDispatch } from '../../../../lib/redux/store';
+import { formatAmountForDisplay } from '../../../../utils/stripe-helpers';
 
 export default ({
   products,
@@ -57,11 +58,18 @@ export default ({
                   />
                 </div>
                 <div className='px-3 pb-3 z-[4]'>
-                  <div className='flex flex-col'>
-                    <span className='text-base font-ss uppercase tracking-tight font-medium'>
-                      {product.name}
+                  <div className='flex flex-col w-full'>
+                    <div className='flex flex-wrap justify-between items-center w-full'>
+                      <span className='text-base uppercase tracking-wide font-semibold'>
+                        <h5>{product.name}</h5>
+                      </span>
+                      <span>
+                        {formatAmountForDisplay(Number(product.price), 'usd')}
+                      </span>
+                    </div>
+                    <span className='font-medium text-xs uppercase tracking-tight text-warning'>
+                      sold out
                     </span>
-                    <span className='font-semibold text-sm'>sold out</span>
                   </div>
                 </div>
               </Link>

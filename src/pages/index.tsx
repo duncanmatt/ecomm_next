@@ -9,24 +9,24 @@ const Home = () => {
     <>
       <Layout>
         <main className='min-h-main relative'>
-          <div className='h-full'>
-            <div className='relative h-main w-full bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-zinc-700 via-zinc-500 to-zinc-300'>
-              <Image
-                alt='tile'
-                src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/home-mobile.jpg'
-                fill
-                className='backdrop-blur-6xl'
-              />
-            </div>
-            <div>
-              <div className='text-center py-8'>
-                <h4 className='text-2xl font-d font-semibold tracking-wider'>
-                  THE BLACK SHEEP
+          <div className='h-main relative w-full'>
+            <div className='absolute left-0 right-0 bottom-auto top-[40%] mx-auto'>
+              <div className='text-center uppercase p-8 text-white'>
+                <h4 className='text-2xl font-d font-semibold tracking-widest'>
+                  Summer 2023
                 </h4>
-                <p className='text-sm font-light tracking-tight'>
-                  fashionably comfortable streetwear
+                <p className='text-sm font-light tracking-tight underline'>
+                  shop collection
                 </p>
               </div>
+            </div>
+            <div className='h-main w-full'>
+              <Image
+                alt='tile'
+                src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg'
+                fill
+                className='-z-10'
+              />
             </div>
           </div>
         </main>
