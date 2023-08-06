@@ -1,6 +1,4 @@
 import Layout from '@/components/Layout';
-import { InferGetStaticPropsType } from 'next';
-import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -15,9 +13,11 @@ const Home = () => {
                 <h4 className='text-2xl font-d font-semibold tracking-widest'>
                   Summer 2023
                 </h4>
-                <p className='text-sm font-light tracking-tight underline'>
-                  shop collection
-                </p>
+                <Link href='/products/collection'>
+                  <p className='text-sm font-light tracking-tight underline'>
+                    shop collection
+                  </p>
+                </Link>
               </div>
             </div>
             <div className='h-main w-full'>

@@ -14,6 +14,11 @@ module.exports = {
       container: '1400px',
     },
     colors: {
+      5: '#070707',
+      10: '#111111',
+      15: '#1a1a1a',
+      20: '#242424',
+      25: '2e2e2e',
       g: '#eeeeee',
       b: '#070707',
       success: '#389466',
@@ -33,7 +38,7 @@ module.exports = {
     boxShadow: {
       bag: '0px 0px 10px -6px',
       glass:
-        'h-full w-full bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-50 saturate-100 backdrop-contrast-100',
+        'w-full h-full bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-50 saturate-100 backdrop-contrast-100',
     },
     borderWidth: {
       1: '1px',
