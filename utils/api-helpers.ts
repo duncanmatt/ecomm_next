@@ -1,6 +1,6 @@
-export async function fetchGetJSON(url: string) {
+export const fetchGetJSON = async (url: string) => {
 	try {
-		const data = await fetch(url).then(res => res.json());
+		const data = await fetch(url, {method: 'GET'}).then(res => res.json());
 		return data;
 	} catch (err) {
 		if (err instanceof Error) {
@@ -10,7 +10,7 @@ export async function fetchGetJSON(url: string) {
 	}
 }
 
-export async function fetchPostJSON(url: string, data?: {}) {
+export const fetchPostJSON = async (url: string, data?: {}) => {
 	try {
 		// Default options are marked with *
 		const response = await fetch(url, {

@@ -1,18 +1,10 @@
 import React from 'react';
-import { CarouselProduct, FeaturedProduct } from '../../interfaces';
 import Link from 'next/link';
 import Image from 'next/image';
-import ShirtCarousel from './ShirtCarousel';
 
-type Featured = {
-  featured: Array<FeaturedProduct>;
-  shirts: Array<CarouselProduct>;
-};
-
-const Featured = ({ featured, shirts }: Featured) => {
+const Featured = () => {
   return (
     <div>
-      <ShirtCarousel shirts={shirts} />
       <div className='text-center py-8'>
         <h4 className='text-2xl font-semibold tracking-wider'>
           THE BLACK SHEEP
@@ -25,15 +17,14 @@ const Featured = ({ featured, shirts }: Featured) => {
         <div className='w-full aspect-[0.8/1] '>
           <Link
             href={{
-              pathname: `/products/product`,
-              query: { productId: featured[0].prodQuery },
+              pathname: `/products/collection`,
             }}
             className='h-full'
           >
             <picture className='absolute object-center-top bg-gradi w-full h-full'>
               <Image
-                alt='description'
-                src={featured[0].featImgUrl}
+                alt='Spring/Summer 2023 Collection'
+                src='https://ecomm-imgs-test.s3.amazonaws.com/ss-home.jpg'
                 placeholder='blur'
                 blurDataURL='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
                 fill

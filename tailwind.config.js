@@ -6,8 +6,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      ss: 'Jost, sans-serif',
+      d: 'Playfair Display, serif',
+    },
     maxWidth: {
-      container: '1280px',
+      container: '1400px',
     },
     colors: {
       g: '#eeeeee',
@@ -28,6 +32,8 @@ module.exports = {
     },
     boxShadow: {
       bag: '0px 0px 10px -6px',
+      glass:
+        'h-full w-full bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-50 saturate-100 backdrop-contrast-100',
     },
     borderWidth: {
       1: '1px',

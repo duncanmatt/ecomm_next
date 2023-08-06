@@ -16,22 +16,19 @@ export default ({
   return (
     <Layout>
       <div className='p-1rem'>
-        <div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1'>
-          <div className='relative w-full h-full aspect-[168/227]'>
-            <Image
-              alt='description'
-              src={product.imgUrl}
-              fill
-              className='absolute flex -z-10 bg-[rgba(0,0,0,0.03)]'
-            />
+        <div className='grid grid-cols-1 grid-rows-cart md:grid-cols-2'>
+          <div className='relative py-4 w-full h-full aspect-[168/227]'>
+            <div className='relative aspect-square h-full w-full p-3rem'>
+              <Image alt='description' src={product.imgUrl} fill />
+            </div>
           </div>
-          <div className='md:p-1rem'>
-            <div className='flex flex-wrap text-xs'>
-              <div className='flex flex-col pt-1rem'>
+          <div className='ps-1rem md:m-auto'>
+            <div className='flex bg-[#cbcbcb] rounded-reg md:w-[24em] md:h-[12em] lg:w-[30em] lg:h-[16em] flex-wrap text-xs'>
+              <div className='flex flex-wrap justify-between w-full p-1rem'>
                 <h2 className='font-bold uppercase'>{product.name}</h2>
-                <span>${product.price}.00</span>
+                <span className='text-warning'>sold out</span>
               </div>
-              <div className='w-full my-1rem'>
+              <div className='w-full flex self-end p-1rem'>
                 <button
                   onClick={() => dispath(addToCart(product))}
                   className='bg-b h-[2.4rem] font-xl font-semibold border-2 border-transparent text-white rounded-xs w-full'
@@ -39,10 +36,10 @@ export default ({
                   Add to cart
                 </button>
               </div>
-              <div className='w-full text-center py-1rem'>
-                <span className=''>{product.desc}</span>
-              </div>
             </div>
+          </div>
+          <div className='w-full row-2 text-center py-1rem'>
+            <span className=''>{product.desc}</span>
           </div>
         </div>
       </div>
@@ -63,7 +60,6 @@ export const getServerSideProps: GetServerSideProps = async (
   );
 
   const data = await res.json();
-  console.log(data);
 
   return { props: { product: data.Item } };
 };

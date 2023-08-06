@@ -1,27 +1,27 @@
-import Layout from '@/components/Layout';
-import Image from 'next/image';
-import Link from 'next/link';
-import type {
-  GetServerSidePropsContext,
+import { cartSlice } from '../../../../lib/redux/slices/cartSlice/cartSlice';
+import {
   GetServerSideProps,
+  GetServerSidePropsContext,
   InferGetServerSidePropsType,
 } from 'next';
-import CartIcon from '@/components/icons/CartIcon';
-import { Product } from '../../../../interfaces';
-import { cartSlice } from '../../../../lib/redux/slices/cartSlice';
 import { useDispatch } from '../../../../lib/redux/store';
+import { fetchGetJSON } from '../../../../utils/api-helpers';
+import { Product } from '../../../../interfaces';
+import Image from 'next/image';
+import Layout from '@/components/Layout';
+import Link from 'next/link';
+import CartIcon from '@/components/icons/CartIcon';
 
 export default ({
   products,
-  category,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const dispatch = useDispatch();
 
   return (
     <Layout>
       <div className='p-1rem'>
-        <div className='mt-8 mb-2rem uppercase'>
-          <h2 className='font-medium text-2xl tracking-wide'>{category}</h2>
+        <div className='mb-3rem text-3xl uppercase'>
+          <h2 className='font-bold'>Messiah Collection</h2>
         </div>
         <ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4'>
           {products?.map((product: Product, index: number) => (
@@ -58,10 +58,12 @@ export default ({
                 </div>
                 <div className='px-3 pb-3 z-[4]'>
                   <div className='flex flex-col'>
-                    <span className='text-base font-ss uppercase tracking-tight font-medium'>
+                    <span className='text-base uppercase tracking-tight font-medium'>
                       {product.name}
                     </span>
-                    <span className='font-semibold text-sm'>sold out</span>
+                    <span className='font-semibold text-sm'>
+                      ${product.price}.00
+                    </span>
                   </div>
                 </div>
               </Link>
@@ -76,17 +78,13 @@ export default ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const id = context.query?.categoryId;
-  const category = context.params?.category;
-
-  const response = await fetch(
-    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/category/?id=${id}`,
-    {
-      method: 'GET',
-    }
+  const response = await fetchGetJSON(
+    'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products'
   );
 
-  const data = await response.json();
+  console.log(response);
 
-  return { props: { products: data.Items, category } };
+  const products: Product[] = response.Items;
+
+  return { props: { products } };
 };
