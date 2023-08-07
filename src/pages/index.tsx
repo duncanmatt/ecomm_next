@@ -8,12 +8,12 @@ const Home = () => {
       <Layout>
         <main className='min-h-main'>
           <div className='h-main relative w-full'>
-            <div className='absolute left-0 right-0 bottom-auto top-[40%] mx-auto'>
+            <div className='absolute z-10 left-0 right-0 bottom-auto top-[40%] mx-auto'>
               <div className='text-center uppercase p-8 text-white'>
                 <h4 className='text-2xl font-d font-semibold tracking-widest'>
                   Summer 2023
                 </h4>
-                <Link href='/products/collection'>
+                <Link className='z-10' href='/products/collection'>
                   <p className='text-sm font-light tracking-tight underline'>
                     shop collection
                   </p>

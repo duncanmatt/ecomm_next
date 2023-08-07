@@ -6,6 +6,7 @@ import {
 } from 'next';
 import { useDispatch } from '../../../../lib/redux/store';
 import { fetchGetJSON } from '../../../../utils/api-helpers';
+import { formatAmountForDisplay } from '../../../../utils/stripe-helpers';
 import { Product } from '../../../../interfaces';
 import Image from 'next/image';
 import Layout from '@/components/Layout';
@@ -20,8 +21,8 @@ export default ({
   return (
     <Layout>
       <div className='p-1rem'>
-        <div className='mb-3rem text-3xl uppercase'>
-          <h2 className='font-bold'>Messiah Collection</h2>
+        <div className='mt-8 mb-2rem uppercase'>
+          <h2 className='font-medium text-2xl'>summer 2023</h2>
         </div>
         <ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4'>
           {products?.map((product: Product, index: number) => (
@@ -57,12 +58,17 @@ export default ({
                   />
                 </div>
                 <div className='px-3 pb-3 z-[4]'>
-                  <div className='flex flex-col'>
-                    <span className='text-base uppercase tracking-tight font-medium'>
-                      {product.name}
-                    </span>
-                    <span className='font-semibold text-sm'>
-                      ${product.price}.00
+                  <div className='flex flex-col w-full'>
+                    <div className='flex flex-wrap justify-between items-center w-full'>
+                      <span className='text-base uppercase tracking-wide font-semibold'>
+                        <h5>{product.name}</h5>
+                      </span>
+                      <span>
+                        {formatAmountForDisplay(Number(product.price), 'usd')}
+                      </span>
+                    </div>
+                    <span className='font-medium text-xs uppercase tracking-tight text-warning'>
+                      sold out
                     </span>
                   </div>
                 </div>
@@ -81,8 +87,6 @@ export const getServerSideProps: GetServerSideProps = async (
   const response = await fetchGetJSON(
     'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products'
   );
-
-  console.log(response);
 
   const products: Product[] = response.Items;
 
