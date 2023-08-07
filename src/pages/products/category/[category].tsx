@@ -21,7 +21,7 @@ export default ({
   return (
     <Layout>
       <div className='p-1rem'>
-        <div className='mt-8 mb-2rem uppercase'>
+        <div className='mt-8 mb-2rem uppercase text-center'>
           <h2 className='font-medium text-2xl tracking-wide'>{category}</h2>
         </div>
         <ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4'>

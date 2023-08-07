@@ -25,7 +25,9 @@ const Cart = () => {
           <Empty />
         ) : (
           <>
-            <h2 className='font-bold text-xl text-center'>Cart ({count})</h2>
+            <h2 className='font-bold font-ss text-xl text-center'>
+              Cart ({count})
+            </h2>
             <div className='grid grid-cols-1 grid-rows-cart md:grid-cols-2 md:grid-rows-1'>
               <div className='flex py-1rem '>
                 <ul className='p-1rem w-full'>
