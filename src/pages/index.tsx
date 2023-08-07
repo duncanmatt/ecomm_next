@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       <Layout>
-        <main className='min-h-main relative'>
+        <main className='min-h-main'>
           <div className='h-main relative w-full'>
             <div className='absolute left-0 right-0 bottom-auto top-[40%] mx-auto'>
               <div className='text-center uppercase p-8 text-white'>
@@ -21,12 +21,14 @@ const Home = () => {
               </div>
             </div>
             <div className='h-main w-full'>
-              <Image
-                alt='tile'
-                src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg'
-                fill
-                className='-z-10'
-              />
+              <div className='relative h-full w-full object-cover overflow-hidden'>
+                <Image
+                  alt='tile'
+                  src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg'
+                  fill
+                  className='-z-10'
+                />
+              </div>
             </div>
           </div>
         </main>
