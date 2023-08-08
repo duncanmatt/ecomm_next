@@ -47,7 +47,7 @@ module.exports = {
     extend: {
       height: {
         60: '60px',
-        main: 'calc(100vh - 60px)',
+        main: '100dvh',
       },
       flexBasis: {
         100: '100%',
