@@ -53,7 +53,7 @@ export const getServerSideProps: GetServerSideProps = async (
   const id = context.query?.productId;
 
   const res = await fetch(
-    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products/product/?id=${id}`,
+    `https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/products/product/?id=${id}`,
     {
       method: 'GET',
     }

@@ -85,7 +85,7 @@ export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const response = await fetchGetJSON(
-    'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/products'
+    'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/products'
   );
 
   const products: Product[] = response.Items;
