@@ -12,7 +12,7 @@ const Profile = () => {
     return (
       <>
         <Layout>
-          <div className='py-3 flex flex-col items-center justify-center'>
+          <div className='py-3rem flex flex-col items-center justify-center'>
             <div>Signed in as {session.user?.email}</div>
             <br />
             <button onClick={() => signOut()}>Sign out</button>
