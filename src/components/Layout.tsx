@@ -10,7 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header />
-      <div className='block pt-[60px] relative min-h-main max-w-container xl:mx-auto'>
+      <div className='block relative min-h-main max-w-container xl:mx-auto'>
         {children}
       </div>
       <Footer />
