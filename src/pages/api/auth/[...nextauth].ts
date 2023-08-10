@@ -23,7 +23,6 @@ export const authOptions: NextAuthOptions = {
 	}) as Adapter,
 	pages: {
 		signIn: '/Login',
-		newUser: '/auth/new-user',
 	},
 	secret: process.env.NEXTAUTH_SECRET,
 	session: {
