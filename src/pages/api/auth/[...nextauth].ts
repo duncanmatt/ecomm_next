@@ -24,7 +24,7 @@ export const authOptions: NextAuthOptions = {
 	pages: {
 		signIn: '/Login',
 	},
-	secret: process.env.NEXTAUTH_SECRET,
+	secret: process.env.NEXTAUTH_SECRET as string,
 	session: {
 		strategy: 'database',
 		maxAge: 30 * 24 * 60 * 60,
