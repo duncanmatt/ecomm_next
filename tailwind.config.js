@@ -26,6 +26,7 @@ module.exports = {
       50: '#868686',
       75: '#cbcbcb',
       80: '#d5d5d5',
+      95: '#f2f2f2f',
       g: '#eeeeee',
       b: '#070707',
       success: '#389466',
