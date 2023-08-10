@@ -31,7 +31,7 @@ export default ({
               <div className='w-full flex self-end p-1rem'>
                 <button
                   onClick={() => dispath(addToCart(product))}
-                  className='bg-b h-[2.4rem] font-xl font-semibold border-2 border-transparent text-white rounded-xs w-full'
+                  className='bg-5 h-[2.4rem] font-xl font-semibold border-2 border-transparent text-white rounded-xs w-full'
                 >
                   Add to cart
                 </button>
