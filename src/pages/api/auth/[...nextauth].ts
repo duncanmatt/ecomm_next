@@ -8,14 +8,14 @@ export const authOptions: NextAuthOptions = {
 	providers: [
 		Email({
 			server: {
-				host: process.env.SMTP_HOST,
+				host: process.env.SMTP_HOST as string,
 				port: Number(process.env.SMTP_PORT),
 				auth: {
-					user: process.env.SMTP_USER,
-					pass: process.env.SMTP_PASSWORD,
+					user: process.env.SMTP_USER as string,
+					pass: process.env.SMTP_PASSWORD as string,
 				},
 			},
-			from: process.env.EMAIL_FROM,
+			from: process.env.EMAIL_FROM as string,
 		}),
 	],
 	adapter: DynamoDBAdapter(client, {
