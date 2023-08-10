@@ -22,12 +22,14 @@ const Home = () => {
             </div>
             <div className='h-main w-full'>
               <div className='relative h-full w-full object-cover overflow-hidden'>
-                <Image
-                  alt='tile'
-                  src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg'
-                  fill
-                  className='-z-10'
-                />
+                <picture>
+                  <Image
+                    alt='tile'
+                    src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg'
+                    fill
+                    className='-z-10'
+                  />
+                </picture>
               </div>
             </div>
           </div>
