@@ -16,7 +16,7 @@ const QuantityBar = ({ pk, qty }: Qty) => {
 
   return (
     <div className='flex flex-row flex-nowrap items-center flex-1 gap-3'>
-      <div className='flex items-center border-1 border-60'>
+      <div className='flex items-center border-1 border-60 rounded-sm'>
         <button
           className='z-1 btn--minus relative w-[1.875rem] h-[1.875rem] rounded-circle'
           onClick={() => dispatch(decrementQty(pk))}
@@ -24,7 +24,7 @@ const QuantityBar = ({ pk, qty }: Qty) => {
           <span className='minus'></span>
         </button>
         <div className='h-[1.875rem] flex items-center border-1 border-transparent'>
-          <span className='mx-2 font-bold'>{qty}</span>
+          <span className='mx-2 font-medium'>{qty}</span>
         </div>
         <button
           className='z-1 btn--plus relative w-[1.875rem] h-[1.875rem] rounded-circle'

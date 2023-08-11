@@ -26,7 +26,10 @@ export default ({
         </div>
         <ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4'>
           {products?.map((product: Product, index: number) => (
-            <li className='mb-16 h-[inherit] bg-50 relative' key={index}>
+            <li
+              className='mb-16 h-[inherit] bg-60 rounded-md relative'
+              key={index}
+            >
               <span className='bg-white rounded-circle absolute z-10 top-3 right-4'>
                 <button
                   className='relative -translate-y-[1px] flex items-center justify-center h-[1.875rem] w-[1.875rem] z-5'

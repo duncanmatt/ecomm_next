@@ -40,7 +40,8 @@ module.exports = {
     },
     borderRadius: {
       xs: '0.75rem',
-      sm: '1.125rem',
+      sm: '0.90rem',
+      md: '1rem',
       reg: '1.25rem',
       circle: '1.875rem',
     },
