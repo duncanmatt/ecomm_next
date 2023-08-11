@@ -18,7 +18,7 @@ const links = [
 
 const Menu = ({ fn }: any) => {
   return (
-    <div className='h-[calc(100vh-60px)] bg-[#f9f9f9] w-full p-1rem'>
+    <div className='h-[calc(100vh-60px)] bg-faded w-full p-1rem'>
       <ul className='block relative transition-all'>
         {links.map((link) => (
           <li key={link.id} className='pb-2rem'>
