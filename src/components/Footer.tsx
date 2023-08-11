@@ -30,7 +30,7 @@ const mediaIcons = [
 
 export default () => {
   return (
-    <div className='border-t-1 border-25 p-1rem'>
+    <div className='px-1rem py-2rem'>
       <div className='flex flex-col'>
         <div className='flex flex-wrap w-full justify-between'>
           <h4 className='text-lg font-semibold tracking-wide text-center '>
