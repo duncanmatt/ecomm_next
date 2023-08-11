@@ -13,10 +13,11 @@ const Home = () => {
                 <h4 className='text-2xl uppercase font-d font-semibold tracking-wider'>
                   Summer 2023
                 </h4>
-                <Link className='z-10' href='/products/collection'>
-                  <p className='text-base font-light tracking-tight underline'>
-                    shop the collection
-                  </p>
+                <Link
+                  className='text-base font-light tracking-tight underline z-10'
+                  href='/products/collection'
+                >
+                  shop the collection
                 </Link>
               </div>
             </div>
@@ -26,7 +27,7 @@ const Home = () => {
                   alt='tile'
                   src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg'
                   fill
-                  quality={100}
+                  quality={95}
                   className='-z-10 bg-repeat'
                 />
               </div>
