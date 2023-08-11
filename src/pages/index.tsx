@@ -8,7 +8,7 @@ const Home = () => {
       <Layout>
         <main className='h-full'>
           <div className='animate-intro relative'>
-            <div className='absolute z-10 left-0 right-0 bottom-auto top-[40%] mx-auto'>
+            <div className='absolute z-10 left-0 right-0 bottom-auto top-[45%] mx-auto'>
               <div className='text-center p-8 text-white'>
                 <h4 className='text-2xl uppercase font-d font-semibold tracking-wider'>
                   Summer 2023
@@ -20,13 +20,14 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className='md:hidden h-main w-full'>
-              <div className='relative w-full h-full object-cover overflow-hidden'>
+            <div className='h-main w-full'>
+              <div className='relative  h-full w-full object-cover overflow-hidden'>
                 <Image
                   alt='tile'
-                  src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg'
+                  src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg'
                   fill
-                  className='-z-10'
+                  quality={100}
+                  className='-z-10 bg-repeat'
                 />
               </div>
             </div>
