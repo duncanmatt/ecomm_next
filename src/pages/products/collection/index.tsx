@@ -13,7 +13,7 @@ export default ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Layout>
-      <div className='p-1rem'>
+      <div className='px-1rem py-3rem'>
         <div className='mt-8 mb-2rem text-center uppercase'>
           <h2 className='font-medium text-2xl'>summer 2023</h2>
         </div>
