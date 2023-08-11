@@ -41,12 +41,12 @@ const Login = () => {
 
   return (
     <Layout>
-      <div className='min-h-main relative'>
-        <div className='p-3rem'>
-          <div className='flex flex-col justify-center'>
-            <div className='flex bg-[#f2f2f2] rounded-sm'>
+      <div className='min-h-main'>
+        <div className='mt-[160px]'>
+          <div className='flex flex-col justify-center p-3rem'>
+            <div className='flex px-4 py-5 bg-95 rounded-sm'>
               <form
-                className='p-4 justify-between flex flex-1 gap-3 flex-col '
+                className='justify-between flex flex-1 gap-3 flex-col '
                 onSubmit={handleSubmit}
               >
                 <div className='flex flex-col flex-1 gap-2'>
@@ -79,8 +79,8 @@ const Login = () => {
                     />
                   </span>
                 </div>
-                <div>
-                  <span className='flex mb-2 h-10'>
+                <div className='pt-3'>
+                  <span className='flex h-10'>
                     <input
                       className='border-2 border-transparent text-white font-bold bg-b hover:bg-[#c1c1c1] hover:text-b rounded-reg flex-1'
                       type='submit'
@@ -90,9 +90,11 @@ const Login = () => {
                 </div>
               </form>
             </div>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap my-2'>
               <span className='mx-1'>Don't have an account?</span>{' '}
-              <Link href='/Register'>Create</Link>
+              <Link className='hover:underline' href='/Register'>
+                Create
+              </Link>
             </div>
           </div>
         </div>
