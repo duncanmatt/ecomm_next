@@ -26,7 +26,7 @@ export default ({
             <div className='flex bg-[#cbcbcb] rounded-reg md:w-[24em] md:h-[12em] lg:w-[30em] lg:h-[16em] flex-wrap text-xs'>
               <div className='flex flex-wrap justify-between w-full p-1rem'>
                 <h2 className='font-bold uppercase'>{product.name}</h2>
-                <span className='text-warning'>sold out</span>
+                <span className=''>sold out</span>
               </div>
               <div className='w-full flex self-end p-1rem'>
                 <button

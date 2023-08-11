@@ -67,7 +67,7 @@ export default ({
                         {formatAmountForDisplay(Number(product.price), 'usd')}
                       </span>
                     </div>
-                    <span className='font-medium text-xs uppercase tracking-tight text-warning'>
+                    <span className='font-medium text-xs uppercase tracking-tight'>
                       sold out
                     </span>
                   </div>
