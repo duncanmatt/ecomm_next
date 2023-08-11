@@ -100,6 +100,21 @@ module.exports = {
         light: '#f9f9f9',
         body: '#fcfcfc',
       },
+      keyframes: {
+        fadeIn: {
+          '0%, 35%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        intro: {
+          '0%, 35%': { opacity: '0', transform: 'translateY(8px)' },
+          '60%': { opacity: '1' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-in-out 1',
+        intro: 'intro 0.5s',
+      },
     },
   },
   plugins: [],
