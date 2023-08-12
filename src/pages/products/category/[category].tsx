@@ -6,7 +6,6 @@ import type {
 } from 'next';
 import { Product } from '../../../../interfaces';
 import ProductCard from '@/components/products/ProductCard';
-import SearchIcon from '@/components/icons/SearchIcon';
 
 export default ({
   products,
