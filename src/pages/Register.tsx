@@ -45,91 +45,93 @@ const Register = () => {
   return (
     <Layout>
       <div className='min-h-main relative'>
-        <div className='p-3rem'>
-          <div className='flex flex-col justify-center'>
-            <div className='flex bg-[#f2f2f2] rounded-sm'>
+        <div className='mt-[100px]'>
+          <div className='flex flex-col m-auto w-[32em]'>
+            <div className='flex flex-col bg-[#f2f2f2] rounded-sm'>
+              <div className='my-3rem font-semibold text-lg text-center'>
+                <h3>Create your account</h3>
+              </div>
               <form
-                className='p-4 justify-between flex flex-1 gap-3 flex-col '
+                className='p-4 justify-between flex flex-1 flex-col w-full '
                 onSubmit={handleSubmit}
               >
-                <div className='flex flex-col flex-1 gap-2'>
-                  <span className='flex flex-row gap-2 items-center h-8'>
+                <div className='flex flex-col w-full '>
+                  <span className='my-1 h-9'>
                     <label
-                      className=' text-center font-semibold basis-30'
+                      className='font-semibold basis-30'
                       htmlFor='firstName'
                     >
-                      First Name
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        type='text'
+                        id='firstName'
+                        name='firstName'
+                        required
+                        placeholder='First Name'
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='text'
-                      id='firstName'
-                      name='firstName'
-                    />
                   </span>
-                  <span className='flex flex-row gap-2 items-center h-8'>
+                  <span className='my-1 h-9'>
                     <label
-                      className='text-center font-semibold basis-30'
+                      className='font-semibold basis-30'
                       htmlFor='lastName'
                     >
-                      Last Name
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        type='text'
+                        id='lastName'
+                        name='lastName'
+                        placeholder='Last Name'
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='text'
-                      id='lastName'
-                      name='lastName'
-                    />
                   </span>
-                  <span className='flex flex-row gap-2 items-center h-8'>
-                    <label
-                      className='text-center font-semibold basis-30'
-                      htmlFor='email'
-                    >
-                      Email
+                  <span className='h-9 my-1'>
+                    <label className='font-semibold' htmlFor='email'>
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex h-full w-full px-4'
+                        type='email'
+                        id='email'
+                        name='email'
+                        placeholder='Email'
+                        required
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='email'
-                      id='email'
-                      name='email'
-                      required
-                    />
                   </span>
-                  <span className='flex flex-row gap-2 items-center h-8'>
+                  <span className='my-1 h-9'>
                     <label
-                      className=' text-center font-semibold basis-30'
+                      className='font-semibold basis-30'
                       htmlFor='password'
                     >
-                      Password
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        type='password'
+                        id='password'
+                        name='password'
+                        placeholder='Password'
+                        required
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='password'
-                      id='password'
-                      name='password'
-                      required
-                    />
                   </span>
-                  <span className='flex flex-row gap-2 items-center h-8'>
+                  <span className='my-1 h-9'>
                     <label
-                      className='text-center font-semibold basis-30'
+                      className='font-semibold basis-30'
                       htmlFor='password2'
                     >
-                      Confirm Password
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        type='password'
+                        id='password2'
+                        name='password2'
+                        placeholder='Confirm Password'
+                        required
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='password'
-                      id='password2'
-                      name='password2'
-                    />
                   </span>
                 </div>
-                <div>
-                  <span className='flex mb-2 h-10'>
+                <div className='pt-1rem'>
+                  <span className='flex h-12'>
                     <input
-                      className='border-2 border-transparent text-white font-bold bg-b hover:bg-[#c1c1c1] hover:text-b rounded-reg flex-1'
+                      className='border-2 border-transparent text-white font-bold bg-b hover:bg-[#c1c1c1] hover:text-b rounded-sm flex-1'
                       type='submit'
                       value='Register'
                     />

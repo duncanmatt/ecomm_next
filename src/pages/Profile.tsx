@@ -12,10 +12,12 @@ const Profile = () => {
     return (
       <>
         <Layout>
-          <div className='py-3rem flex flex-col items-center justify-center'>
-            <div>Signed in as {session.user?.email}</div>
-            <br />
-            <button onClick={() => signOut()}>Sign out</button>
+          <div className='mt-[160px]'>
+            <div className='py-3rem flex flex-col items-center justify-center'>
+              <div>Signed in as {session.user?.email}</div>
+              <br />
+              <button onClick={() => signOut()}>Sign out</button>
+            </div>
           </div>
         </Layout>
       </>
