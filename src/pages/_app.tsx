@@ -10,12 +10,12 @@ const loaderProps: NextTopLoaderProps = {
   showSpinner: false,
   initialPosition: 0.08,
   height: 3,
-  color: '#555555',
+  color: '#070707',
   crawl: true,
   crawlSpeed: 200,
   easing: 'ease',
   speed: 200,
-  shadow: '0 0 10px #111111,0 0 5px #111111',
+  shadow: '0 0 6px #555555, 0 0 3px #aeaeae',
 };
 
 export default function App({

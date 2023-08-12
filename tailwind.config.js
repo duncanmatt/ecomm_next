@@ -64,6 +64,12 @@ module.exports = {
         60: '60px',
         main: '100dvh',
       },
+      lineHeight: {
+        20: '20px',
+      },
+      letterSpacing: {
+        logo: '-0.03rem',
+      },
       flexBasis: {
         100: '100%',
         60: '60%',
