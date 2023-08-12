@@ -48,8 +48,10 @@ const Register = () => {
         <div className='mt-[100px]'>
           <div className='flex flex-col m-auto w-[32em]'>
             <div className='flex flex-col bg-[#f2f2f2] rounded-sm'>
-              <div className='my-3rem font-semibold text-lg text-center'>
-                <h3>Create your account</h3>
+              <div className='my-3rem font-semibold text-center'>
+                <h3 className='text-xl tracking-wide uppercase'>
+                  register your new account
+                </h3>
               </div>
               <form
                 className='p-4 justify-between flex flex-1 flex-col w-full '
