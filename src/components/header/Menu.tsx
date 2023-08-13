@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
+import ProfileIcon from '../icons/ProfileIcon';
 
 const links = [
   {
@@ -24,7 +25,7 @@ const Menu = ({ fn }: any) => {
           <li key={link.id} className='pb-2rem'>
             <Link
               onClick={fn}
-              className='flex flex-1 flex-row justify-between items-center text-l font-semibold'
+              className='flex flex-1 flex-row justify-between items-center text-base hover:underline font-medium'
               href={{
                 pathname: `/products/category/${link.target}`,
                 query: { categoryId: link.id },
@@ -38,6 +39,16 @@ const Menu = ({ fn }: any) => {
           </li>
         ))}
       </ul>
+      <div className='my-3rem'>
+        <div>
+          <Link className='flex flex-row gap-3 items-center' href='/Profile'>
+            <span>
+              <ProfileIcon />
+            </span>
+            <span className='font-light text-base'>Account</span>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

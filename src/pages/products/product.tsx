@@ -7,6 +7,7 @@ import type {
 } from 'next';
 import { useDispatch } from '../../../lib/redux/store';
 import { addToCart } from '../../../lib/redux/slices/cartSlice';
+import { formatAmountForDisplay } from '../../../utils/stripe-helpers';
 
 export default ({
   product,
@@ -15,20 +16,39 @@ export default ({
 
   return (
     <Layout>
-      <div className='p-1rem'>
-        <div className='grid grid-cols-1 grid-rows-cart md:grid-cols-2'>
-          <div className='relative py-4 w-full h-full aspect-[168/227]'>
-            <div className='relative aspect-square h-full w-full p-3rem'>
-              <Image alt='description' src={product.imgUrl} fill />
+      <div className=''>
+        <div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2'>
+          <div className='relative w-full h-full'>
+            <Image
+              src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
+              alt='background'
+              fill
+              className='bg-repeat animate-fadeIn'
+            />
+            <div className='mt-[60px]'>
+              <div className='relative aspect-[5/6] h-full w-full'>
+                <Image alt='description' src={product.imgUrl} fill />
+              </div>
             </div>
           </div>
-          <div className='ps-1rem md:m-auto'>
-            <div className='flex bg-[#cbcbcb] rounded-reg md:w-[24em] md:h-[12em] lg:w-[30em] lg:h-[16em] flex-wrap text-xs'>
-              <div className='flex flex-wrap justify-between w-full p-1rem'>
-                <h2 className='font-bold uppercase'>{product.name}</h2>
-                <span className=''>sold out</span>
+          <div className='py-1rem md:my-auto'>
+            <div className='ps-1rem'>
+              <h4 className='text-lg font-semibold uppercase'>
+                {product.name}
+              </h4>
+              <p className='font-light tracking-wide'>{product.desc}</p>
+            </div>
+            <div className='px-1rem my-3rem'>
+              <div className='flex flex-wrap w-full justify-between self-center'>
+                <h2 className='font-bold uppercase'>
+                  {formatAmountForDisplay(product.price, 'usd')}
+                </h2>
+                <span>sold out</span>
               </div>
-              <div className='w-full flex self-end p-1rem'>
+              <div className='py-1rem'>
+                <span>Size</span>
+              </div>
+              <div className='w-full flex self-end py-1rem'>
                 <button
                   onClick={() => dispath(addToCart(product))}
                   className='bg-b h-[2.4rem] font-xl font-semibold border-2 border-transparent text-white rounded-xs w-full'
@@ -37,9 +57,6 @@ export default ({
                 </button>
               </div>
             </div>
-          </div>
-          <div className='w-full row-2 text-center py-1rem'>
-            <span className=''>{product.desc}</span>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export default ({
         </div>
         <div className='border-b-1 border-5 px-2 my-3rem'>
           <div className='w-full text-sm h-[2.125rem] flex flex-row justify-between items-center'>
-            <span>({quantity}) selections</span>
+            <span>{quantity} selections</span>
             <button>filter & sort</button>
           </div>
         </div>
