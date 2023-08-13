@@ -21,8 +21,8 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            <div className='h-[1200px] w-full'>
-              <div className='relative h-full w-full object-cover overflow-hidden'>
+            <div className='h-full w-full'>
+              <div className='relative h-main w-full object-cover overflow-hidden'>
                 <Image
                   alt='Summer 2023 collection'
                   src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg'
