@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
-import ProfileIcon from '../icons/ProfileIcon';
+// import ProfileIcon from '../icons/ProfileIcon';
 
 const links = [
   {
@@ -31,7 +31,7 @@ const Menu = ({ fn }: any) => {
                 query: { categoryId: link.id },
               }}
             >
-              <span className='uppercase'>{link.target}</span>
+              <span className='capitalize'>{link.target}</span>
               <span className='flex'>
                 <CaretRightIcon />
               </span>
@@ -41,11 +41,16 @@ const Menu = ({ fn }: any) => {
       </ul>
       <div className='my-3rem'>
         <div>
-          <Link className='flex flex-row gap-3 items-center' href='/Profile'>
-            <span>
+          <Link
+            className='flex flex-row gap-1 uppercase items-center hover:underline'
+            href='/Profile'
+          >
+            {/* <span className='p-1 py-3'>
               <ProfileIcon />
+            </span> */}
+            <span className='text-lg uppercase tracking-tight font-light'>
+              Account
             </span>
-            <span className='font-light text-base'>Account</span>
           </Link>
         </div>
       </div>

@@ -62,7 +62,7 @@ module.exports = {
     extend: {
       height: {
         60: '60px',
-        main: '100dvh',
+        main: '100vh',
       },
       lineHeight: {
         20: '20px',
@@ -89,6 +89,7 @@ module.exports = {
       },
       minHeight: {
         main: 'calc(100vh - 60px)',
+        1200: '1200px',
       },
       maxHeight: {
         main: 'calc(100vh - 60px)',
