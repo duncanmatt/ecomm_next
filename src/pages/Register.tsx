@@ -46,10 +46,10 @@ const Register = () => {
     <Layout>
       <div className='min-h-main relative'>
         <div className='mt-[100px]'>
-          <div className='flex flex-col justify-center px-1rem lg:w-[32rem] lg:m-auto'>
-            <div className='flex flex-col bg-[#f2f2f2] rounded-sm'>
+          <div className='flex flex-col justify-center max-sm:px-1rem sm:w-[40em] sm:m-auto'>
+            <div className='flex flex-col bg-95 rounded-sm'>
               <div className='my-3rem font-semibold text-center'>
-                <h3 className='text-xl tracking-wide uppercase'>
+                <h3 className='text-lg tracking-wide uppercase'>
                   register your new account
                 </h3>
               </div>
@@ -57,7 +57,7 @@ const Register = () => {
                 className='p-4 justify-between flex flex-1 flex-col w-full '
                 onSubmit={handleSubmit}
               >
-                <div className='flex flex-col w-full '>
+                <div className='flex flex-col w-full'>
                   <span className='my-1 h-9'>
                     <label
                       className='font-semibold basis-30'
@@ -143,7 +143,7 @@ const Register = () => {
             </div>
             <div className='flex flex-wrap'>
               <span className='mx-1'>Already have an account?</span>
-              <Link href='/Register'>Login</Link>
+              <Link href='/Login'>Login</Link>
             </div>
           </div>
         </div>
