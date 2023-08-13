@@ -15,7 +15,7 @@ const loaderProps: NextTopLoaderProps = {
   crawlSpeed: 200,
   easing: 'ease',
   speed: 200,
-  shadow: '0 0 6px #555555, 0 0 3px #aeaeae',
+  shadow: '',
 };
 
 export default function App({

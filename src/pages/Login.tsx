@@ -42,41 +42,45 @@ const Login = () => {
   return (
     <Layout>
       <div className='min-h-main'>
-        <div className='mt-[160px]'>
+        <div className='mt-[100px]'>
           <div className='flex flex-col justify-center p-3rem'>
-            <div className='flex px-4 py-5 bg-95 rounded-sm'>
+            <div className='flex flex-col px-4 py-5 bg-95 rounded-sm'>
+              <h6 className='w-full text-center text-xl pt-1rem pb-2rem tracking-wide'>
+                Login to access your account
+              </h6>
               <form
                 className='justify-between flex flex-1 gap-3 flex-col '
                 onSubmit={handleSubmit}
               >
-                <div className='flex flex-col flex-1 gap-2'>
-                  <span className='flex flex-row gap-2 items-center h-8'>
-                    <label
-                      className='text-center font-semibold basis-30'
-                      htmlFor='email'
-                    >
-                      Email
+                <div className='flex flex-col flex-1 '>
+                  <span className='h-9 mb-2'>
+                    <label className='font-semibold' htmlFor='email'>
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex h-full w-full px-4'
+                        type='email'
+                        id='email'
+                        name='email'
+                        placeholder='Email'
+                        aria-aria-placeholder='Email'
+                        required
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='email'
-                      id='email'
-                      name='email'
-                    />
                   </span>
-                  <span className='flex flex-row gap-2 items-center h-8'>
+                  <span className='h-9'>
                     <label
-                      className=' text-center font-semibold basis-30'
+                      className='font-semibold basis-30'
                       htmlFor='password'
                     >
-                      Password
+                      <input
+                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        type='password'
+                        id='password'
+                        name='password'
+                        placeholder='Password'
+                        aria-placeholder='Password'
+                        required
+                      />
                     </label>
-                    <input
-                      className='rounded-xl border-2 bg-inherit border-b rounded-xs flex flex-1 h-full flex-0 px-4'
-                      type='password'
-                      id='password'
-                      name='password'
-                    />
                   </span>
                 </div>
                 <div className='pt-3'>
