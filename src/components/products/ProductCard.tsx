@@ -41,17 +41,15 @@ const ProductCard = (product: Product) => {
           <div className='flex w-full'>
             <div className='flex flex-col w-full'>
               <div className=''>
-                <h5 className='text-lg font-medium tracking-wide'>
+                <h5 className='max-sm:text-sm sm:text-lg font-medium tracking-tight'>
                   {product.name}
                 </h5>
               </div>
-              <div className='flex flex-row justify-between items-center w-full'>
-                <span className='font-light text-base'>
+              <div className='py-1 flex flex-row justify-between items-center w-full'>
+                <span className='font-light text-sm max-sm:text-xs'>
                   {formatAmountForDisplay(Number(product.price), 'usd')}
                 </span>
-                <span className='font text-xs uppercase tracking-tight'>
-                  sold out
-                </span>
+                <span className='text-xs tracking-wide'>sold out</span>
               </div>
             </div>
           </div>
