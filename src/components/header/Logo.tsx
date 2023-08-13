@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Logo = () => {
   return (
     <span>
-      <Link className='font-semibold tracking-wide font-5 text-3xl' href='/'>
+      <Link className='font-light tracking-wider font-5 text-3xl' href='/'>
         BSW
       </Link>
     </span>
