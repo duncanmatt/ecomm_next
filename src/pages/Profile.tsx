@@ -17,8 +17,11 @@ const Profile = () => {
         <Layout>
           <div className='mt-[160px] px:1rem md:px-3rem'>
             <div className='py-3rem flex flex-col items-center justify-center'>
-              <div className='border-b-1 border-75 py-1'>
-                Welcome back, {profile.firstName} {profile.lastName}
+              <div className='border-b-1 border-75 py-1 text-xl'>
+                Welcome back,{' '}
+                <span className='font-semibold'>
+                  {profile.firstName} {profile.lastName}
+                </span>
               </div>
               <div>Email: {session.user?.email}</div>
               <div className='py-1rem'>
