@@ -17,7 +17,7 @@ const Profile = () => {
         <Layout>
           <div className='mt-[160px] px:1rem md:px-3rem'>
             <div className='py-3rem flex flex-col items-center justify-center'>
-              <div>
+              <div className='border-b-1 border-80'>
                 Welcome back {profile.firstName} {profile.lastName}
               </div>
               <div>Email: {session.user?.email}</div>
