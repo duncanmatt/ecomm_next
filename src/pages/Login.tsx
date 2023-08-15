@@ -26,7 +26,7 @@ const Login = () => {
 		const userData = { email, password };
 
 		const response = await fetch(
-			'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/user',
+			'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/login',
 			{
 				method: 'POST',
 				body: JSON.stringify(userData),
@@ -39,7 +39,7 @@ const Login = () => {
 			setMessage('User not found');
 		}
 
-		if (user && user.password === password) {
+		if (user) {
 			signIn('email', { redirect: false, email });
 			dispatch(setProfile({ email: user.email, id: user.id }));
 		}
