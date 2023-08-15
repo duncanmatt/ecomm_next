@@ -15,7 +15,7 @@ const Profile = () => {
     return (
       <>
         <Layout>
-          <div className='mt-[160px]'>
+          <div className='mt-[160px] px:1rem md:px-3rem'>
             <div className='py-3rem flex flex-col items-center justify-center'>
               <div>
                 Welcome back {profile.firstName} {profile.lastName}
