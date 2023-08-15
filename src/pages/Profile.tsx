@@ -21,8 +21,9 @@ const Profile = () => {
                 Welcome back {profile.firstName} {profile.lastName}
               </div>
               <div>Email: {session.user?.email}</div>
-              <br />
-              <button onClick={() => signOut()}>Sign out</button>
+              <div className='py-1rem'>
+                <button onClick={() => signOut()}>Sign out</button>
+              </div>
             </div>
           </div>
         </Layout>
