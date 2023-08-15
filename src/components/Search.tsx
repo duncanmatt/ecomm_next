@@ -29,18 +29,18 @@ const Search = ({ fn }: any) => {
 
   return (
     <>
-      <div className='h-full flex flex-row items-center justify-between'>
+      <div className='h-60 flex flex-row items-center justify-between'>
         <div className='flex flex-1'>
-          <div className='flex basis-60'>
+          <div className='flex w-full'>
             <input
-              className='w-full rounded-md'
+              className='w-full bg-body px-2 py-1 border-1 rounded-md border-25'
               type='search'
               placeholder='Search Products'
               onChange={handleChange}
             />
           </div>
         </div>
-        <span className='cursor-pointer' onClick={fn}>
+        <span className='cursor-pointer ps-8' onClick={fn}>
           <CloseIcon />
         </span>
       </div>

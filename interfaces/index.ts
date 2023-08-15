@@ -48,6 +48,7 @@ export interface Profile {
 	firstName: string | undefined;
 	lastName: string | undefined;
 	email: string;
+	emailVerified: string | undefined;
 	password: string;
 }
 

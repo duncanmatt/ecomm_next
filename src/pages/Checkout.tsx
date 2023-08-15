@@ -10,9 +10,9 @@ import {
 } from '../../lib/redux/slices/cartSlice/selectors';
 import { userProfile } from '../../lib/redux/slices/authSlice/selectors';
 import { useSelector } from '../../lib/redux/store';
-// import { getServerSession } from 'next-auth/next';
-// import { authOptions } from './api/auth/[...nextauth]';
-// import type { GetServerSidePropsContext } from 'next';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from './api/auth/[...nextauth]';
+import type { GetServerSidePropsContext } from 'next';
 
 const s = getStripe();
 
@@ -59,20 +59,20 @@ const Checkout = () => {
 	);
 };
 
-// export async function getServerSideProps(context: GetServerSidePropsContext) {
-//   const session = await getServerSession(context.req, context.res, authOptions);
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+	const session = await getServerSession(context.req, context.res, authOptions);
 
-//   if (session) {
-//     return { props: { user: { email: session.user?.email } } };
-//   }
+	if (session) {
+		return { props: { user: { email: session.user?.email } } };
+	}
 
-//   return {
-//     redirect: {
-//       permanent: false,
-//       destination: '/Login',
-//     },
-//     props: {},
-//   };
-// }
+	return {
+		redirect: {
+			permanent: false,
+			destination: '/Login',
+		},
+		props: {},
+	};
+}
 
 export default Checkout;

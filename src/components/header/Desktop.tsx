@@ -47,9 +47,7 @@ const Desktop = () => {
       ) : (
         <nav className='flex flex-row h-full items-center justify-between'>
           <div className='flex flex-row justify-between items-center basis-60'>
-            <span>
-              <Logo />
-            </span>
+            <span>{searchActive ? <></> : <Logo />}</span>
             <ul className='flex flex-row flex-1 justify-evenly ps-3rem'>
               {links.map((link) => (
                 <li key={link.id}>

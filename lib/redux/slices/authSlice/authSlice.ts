@@ -10,6 +10,7 @@ const initialState: AuthSliceState = {
 		firstName: '',
 		lastName: '',
 		email: '',
+		emailVerified: '',
 		password: '',
 	},
 };
@@ -19,8 +20,11 @@ export const authSlice = createSlice({
 	initialState,
 	reducers: {
 		setProfile: (state, action) => {
-			state.profile.email = action.payload.email;
 			state.profile.id = action.payload.id;
+			state.profile.firstName = action.payload.firstName;
+			state.profile.lastName = action.payload.lastName;
+			state.profile.email = action.payload.email;
+			state.profile.emailVerified = action.payload.emailVerified;
 		},
 	},
 });

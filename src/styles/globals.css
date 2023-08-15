@@ -94,9 +94,9 @@ svg {
 .btn--plus::before,
 .btn--minus::before {
   content: '';
-  width: 1.125rem;
-  height: 0.09rem;
-  background: #121212;
+  width: 0.825rem;
+  height: 0.0675rem;
+  background: #424242;
   position: absolute;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

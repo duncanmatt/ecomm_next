@@ -18,7 +18,7 @@ module.exports = {
       10: '#111111',
       15: '#1a1a1a',
       20: '#242424',
-      25: '#2e2e2e',
+      25: '2e2e2e',
       30: '#383838',
       35: '#555555',
       40: '#696969',
@@ -30,7 +30,9 @@ module.exports = {
       70: '#b7b7b7',
       75: '#cbcbcb',
       80: '#d5d5d5',
-      95: '#f2f2f2f',
+      85: '#dfdfdf',
+      90: '#e8e8e8',
+      95: '#f2f2f2',
       g: '#eeeeee',
       b: '#070707',
       success: '#389466',
@@ -40,7 +42,8 @@ module.exports = {
     },
     borderRadius: {
       xs: '0.75rem',
-      sm: '1.125rem',
+      sm: '0.90rem',
+      md: '1rem',
       reg: '1.25rem',
       circle: '1.875rem',
     },
@@ -59,7 +62,13 @@ module.exports = {
     extend: {
       height: {
         60: '60px',
-        main: '100dvh',
+        main: '100vh',
+      },
+      lineHeight: {
+        20: '20px',
+      },
+      letterSpacing: {
+        logo: '-0.03rem',
       },
       flexBasis: {
         100: '100%',
@@ -80,6 +89,7 @@ module.exports = {
       },
       minHeight: {
         main: 'calc(100vh - 60px)',
+        1200: '1200px',
       },
       maxHeight: {
         main: 'calc(100vh - 60px)',
@@ -98,6 +108,21 @@ module.exports = {
         faded: 'rgba(252,252,252,0.95)',
         light: '#f9f9f9',
         body: '#fcfcfc',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%, 35%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        intro: {
+          '0%, 35%': { opacity: '0', transform: 'translateY(8px)' },
+          '60%': { opacity: '1' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-in-out 1',
+        intro: 'intro 0.5s',
       },
     },
   },

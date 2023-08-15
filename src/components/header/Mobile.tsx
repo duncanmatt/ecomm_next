@@ -34,9 +34,7 @@ const Mobile = () => {
         <>
           <nav className='h-full flex items-center'>
             <div className='flex flex-row w-full justify-between items-center'>
-              <span>
-                <Logo />
-              </span>
+              <span>{menuOpen || searchActive ? <></> : <Logo />}</span>
               <ul className='flex flex-row justify-evenly items-center'>
                 {!menuOpen && (
                   <>

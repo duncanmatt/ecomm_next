@@ -24,10 +24,12 @@ const Cart = () => {
         {items.length === 0 ? (
           <Empty />
         ) : (
-          <>
-            <h2 className='font-bold font-ss text-xl text-center'>
-              Cart ({count})
-            </h2>
+          <div className='py-2rem'>
+            <div className='my-2rem'>
+              <h2 className='font-semibold font-ss text-2xl tracking-wide text-center'>
+                Cart ({count})
+              </h2>
+            </div>
             <div className='grid grid-cols-1 grid-rows-cart md:grid-cols-2 md:grid-rows-1'>
               <div className='flex py-1rem '>
                 <ul className='p-1rem w-full'>
@@ -61,7 +63,7 @@ const Cart = () => {
                   ))}
                 </ul>
               </div>
-              <div className='md:self-end p-1rem rounded-sm h-min bg-[#e8e8e8]'>
+              <div className='md:self-end p-1rem md:ms-2rem lg:ms-3rem rounded-sm h-min bg-[#e8e8e8]'>
                 <div className='flex flex-row pb-2 justify-between my-3'>
                   <span className='font-medium'>Shipping</span>
                   <span className='font-medium'>FREE</span>
@@ -86,7 +88,7 @@ const Cart = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
       </div>
     </Layout>
