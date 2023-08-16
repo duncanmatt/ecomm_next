@@ -76,7 +76,7 @@ const Login = () => {
                   <span className='h-9 mb-2'>
                     <label className='font-semibold' htmlFor='email'>
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex h-full w-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex h-full w-full px-4'
                         type='email'
                         id='email'
                         name='email'
@@ -92,7 +92,7 @@ const Login = () => {
                       htmlFor='password'
                     >
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex w-full h-full px-4'
                         type='password'
                         id='password'
                         name='password'
@@ -106,7 +106,7 @@ const Login = () => {
                 <div className='pt-3'>
                   <span className='flex h-10'>
                     <input
-                      className='border-2 border-transparent text-white font-bold bg-b hover:bg-[#c1c1c1] hover:text-b rounded-reg flex-1'
+                      className='border-2 border-transparent text-white font-bold bg-b hover:bg-[#c1c1c1] hover:text-b rounded-sm flex-1'
                       type='submit'
                       value='Login'
                     />

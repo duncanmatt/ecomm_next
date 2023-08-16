@@ -64,7 +64,7 @@ const Register = () => {
                       htmlFor='firstName'
                     >
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex w-full h-full px-4'
                         type='text'
                         id='firstName'
                         name='firstName'
@@ -79,7 +79,7 @@ const Register = () => {
                       htmlFor='lastName'
                     >
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex w-full h-full px-4'
                         type='text'
                         id='lastName'
                         name='lastName'
@@ -90,7 +90,7 @@ const Register = () => {
                   <span className='h-9 my-1'>
                     <label className='font-semibold' htmlFor='email'>
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex h-full w-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex h-full w-full px-4'
                         type='email'
                         id='email'
                         name='email'
@@ -105,7 +105,7 @@ const Register = () => {
                       htmlFor='password'
                     >
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex w-full h-full px-4'
                         type='password'
                         id='password'
                         name='password'
@@ -120,7 +120,7 @@ const Register = () => {
                       htmlFor='password2'
                     >
                       <input
-                        className='rounded-xl border-2 bg-inherit border-b rounded-xs flex w-full h-full px-4'
+                        className='rounded-xs border-2 bg-inherit border-b flex w-full h-full px-4'
                         type='password'
                         id='password2'
                         name='password2'

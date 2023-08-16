@@ -22,13 +22,13 @@ const Home = () => {
               </div>
             </div>
             <div className='h-full w-full'>
-              <div className='relative h-main animate-fadeIn w-full object-cover overflow-hidden'>
+              <div className='relative h-main w-full object-cover overflow-hidden'>
                 <Image
                   alt='Summer 2023 collection'
                   src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg'
                   fill
                   quality={95}
-                  className='-z-10 bg-repeat'
+                  className='-z-10 bg-repeat animate-fadeIn'
                 />
               </div>
             </div>
