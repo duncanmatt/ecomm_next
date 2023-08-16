@@ -33,8 +33,8 @@ export default () => {
     <footer>
       <div className='grid grid-cols-1 grid-rows-2'>
         <div className='flex flex-col'>
-          <div className='flex items-bottom flex-wrap sm:p-2 max-sm:py-5 w-full max-sm:text-center h-[4.5rem] border-y-1 border-80  justify-between'>
-            <h6 className='max-sm:w-full font-semibold tracking-normal'>
+          <div className='flex items-center flex-wrap sm:p-3 max-sm:py-6 w-full max-sm:text-center h-[4.5rem] border-y-1 border-90  justify-between'>
+            <h6 className='max-sm:w-full font-medium tracking-wide'>
               the black sheep
             </h6>
             <p className='max-sm:w-full text-xs'>
@@ -53,7 +53,7 @@ export default () => {
               ))}
             </ul>
           </div>
-          <div className='text-center py-1rem font-light text-xs border-y-1 border-80'>
+          <div className='text-center py-1rem font-light text-xs border-y-1 border-85'>
             2023 Black Sheep World
           </div>
         </div>
