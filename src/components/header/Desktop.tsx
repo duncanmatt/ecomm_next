@@ -52,7 +52,7 @@ const Desktop = () => {
               {links.map((link) => (
                 <li key={link.id}>
                   <Link
-                    className='hover:underline uppercase text-sm font-semibold'
+                    className='hover:underline uppercase text-sm tracking-normal font-medium'
                     href={{
                       pathname: `/products/category/${link.target}`,
                       query: { categoryId: link.id },

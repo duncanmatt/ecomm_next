@@ -11,7 +11,7 @@ const ProductCard = (product: Product) => {
 
   return (
     <li className='mb-16 h-[inherit] bg-85 rounded-md relative'>
-      <span className='bg-white rounded-circle absolute z-10 top-3 right-4'>
+      <span className='bg-white rounded-circle absolute z-10 max-sm:top-1.5 max-sm:right-2 top-3 right-4'>
         <button
           className='relative -translate-y-[1px] flex items-center justify-center h-[1.875rem] w-[1.875rem] z-5'
           onClick={() => dispatch(addToCart(product))}
