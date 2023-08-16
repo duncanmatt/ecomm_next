@@ -16,7 +16,7 @@ const Profile = () => {
       <>
         <Layout>
           <div className='mt-[160px]'>
-            <div className='py-3rem m-auto w-full flex flex-col items-center justify-center'>
+            <div className='py-3rem mx-auto flex flex-col items-center justify-center'>
               <div className='text-xl'>
                 Welcome back,{' '}
                 <span className='font-semibold'>
