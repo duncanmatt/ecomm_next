@@ -15,8 +15,8 @@ const Profile = () => {
     return (
       <>
         <Layout>
-          <div className='mt-[160px] px:1rem md:px-3rem'>
-            <div className='py-3rem flex flex-col items-center justify-center'>
+          <div className='mt-[160px]'>
+            <div className='py-3rem px:1rem md:px-3rem w-full flex flex-col items-center justify-center'>
               <div className='text-xl'>
                 Welcome back,{' '}
                 <span className='font-semibold'>
@@ -24,9 +24,9 @@ const Profile = () => {
                 </span>
               </div>
               <div className='py-1rem'>Email: {session.user?.email}</div>
-              <div className='py-1rem'>
+              <div className='py-1rem flex w-full'>
                 <button
-                  className='border-2 border-transparent text-bold w-full rounded-reg text-white bg-5 hover:bg-50 hover:text-5'
+                  className='border-2 border-transparent text-bold flex-1 rounded-reg text-white bg-5 hover:bg-50 hover:text-5'
                   onClick={() => signOut()}
                 >
                   Sign out
