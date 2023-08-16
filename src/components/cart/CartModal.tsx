@@ -28,7 +28,13 @@ const CartModal = () => {
                     <li className='mb-3' key={index}>
                       <div className='flex w-full flex-row'>
                         <div className='relative h-[7.25rem] w-[5.75rem]'>
-                          <Image alt={item.name} src={item.imgUrl} fill />
+                          <Image
+                            alt={item.name}
+                            src={item.imgUrl}
+                            fill
+                            placeholder='blur'
+                            blurDataURL={item.imgUrl}
+                          />
                         </div>
                         <div className='flex flex-1 justify-around ps-1rem flex-col'>
                           <div className='flex items-center justify-between'>
