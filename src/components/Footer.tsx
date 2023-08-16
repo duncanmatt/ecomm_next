@@ -47,7 +47,7 @@ export default () => {
               {mediaIcons.map((icon, index) => (
                 <li className='bg-[#f2f2f2] rounded-circle' key={index}>
                   <span className='flex items-center justify-center shrink h-[1.875rem] w-[1.875rem]'>
-                    {icon.icon}
+                    {/* {icon.icon} */}
                   </span>
                 </li>
               ))}
