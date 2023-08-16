@@ -122,6 +122,7 @@ module.exports = {
       },
       animation: {
         fadeIn: 'fadeIn 0.3s ease-in-out 1',
+        fadeInFast: 'fadeIn 0.185s ease-in-out 1',
         intro: 'intro 0.5s',
       },
     },
