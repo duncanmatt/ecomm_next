@@ -26,7 +26,7 @@ const Profile = () => {
               <div className='py-1rem'>Email: {session.user?.email}</div>
               <div className='py-1rem flex justify-center'>
                 <button
-                  className='border-2 border-transparent text-bold w-[6rem] md:w-[8rem] flex-1 md rounded-reg text-white bg-5 hover:bg-50 hover:text-5'
+                  className='border-2 border-transparent font-bold w-[7.5rem] md:w-[9rem] flex-1 md rounded-reg text-white bg-5 hover:bg-50 hover:text-5'
                   onClick={() => signOut()}
                 >
                   Sign out
