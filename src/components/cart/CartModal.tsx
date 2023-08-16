@@ -8,6 +8,7 @@ import { CartItem } from '../../../interfaces';
 import Image from 'next/image';
 import Empty from './Empty';
 import Link from 'next/link';
+import { formatAmountForDisplay } from '../../../utils/stripe-helpers';
 
 const CartModal = () => {
   const items = useSelector(cartItems);
@@ -55,7 +56,7 @@ const CartModal = () => {
                     <div className='flex flex-row'>
                       Subtotal
                       <span className='flex flex-1 justify-end font-semibold'>
-                        ${price}
+                        {formatAmountForDisplay(price, 'usd')}
                       </span>
                     </div>
                   </div>

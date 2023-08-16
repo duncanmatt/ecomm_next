@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Empty = () => {
   return (
     <>
-      <h3 className='uppercase text-center font-semibold'>
+      <h3 className='uppercase text-center font-semibold py-1rem'>
         your shopping cart is empty
       </h3>
       <div className='flex flex-col mt-2rem gap-2'>

@@ -20,11 +20,11 @@ const Cart = () => {
 
   return (
     <Layout>
-      <div className='p-2rem'>
+      <div className='mt-[60px] p-2rem'>
         {items.length === 0 ? (
           <Empty />
         ) : (
-          <div className='py-2rem'>
+          <div className='py-1rem'>
             <div className='my-2rem'>
               <h2 className='font-semibold font-ss text-2xl tracking-wide text-center'>
                 Cart ({count})
