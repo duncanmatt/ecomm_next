@@ -32,7 +32,7 @@ const ProductCard = (product: Product) => {
             alt='description'
             src={product.imgUrl}
             placeholder='blur'
-            blurDataURL='ttps://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
+            blurDataURL='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
             fill
             className='flex animate-fadeIn'
           />

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
-// import ProfileIcon from '../icons/ProfileIcon';
 
 const links = [
   {
@@ -20,9 +19,9 @@ const links = [
 const Menu = ({ fn }: any) => {
   return (
     <div className='h-[calc(100vh-60px)] bg-faded w-full p-1rem'>
-      <ul className='block relative animate-fadeInFast transition-all'>
+      <ul className='block relative transition-all'>
         {links.map((link) => (
-          <li key={link.id} className='pb-1rem'>
+          <li key={link.id} className='pb-1rem animate-fadeIn'>
             <Link
               onClick={fn}
               className='flex flex-1 flex-row justify-between items-center text-base hover:underline font-medium'
@@ -45,9 +44,6 @@ const Menu = ({ fn }: any) => {
             className='flex flex-row gap-1 uppercase items-center hover:underline'
             href='/Profile'
           >
-            {/* <span className='p-1 py-3'>
-              <ProfileIcon />
-            </span> */}
             <span className='text-lg uppercase tracking-tight font-light'>
               Account
             </span>
