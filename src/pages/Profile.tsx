@@ -17,15 +17,20 @@ const Profile = () => {
         <Layout>
           <div className='mt-[160px] px:1rem md:px-3rem'>
             <div className='py-3rem flex flex-col items-center justify-center'>
-              <div className='border-b-1 border-75 py-1 text-xl'>
+              <div className='text-xl'>
                 Welcome back,{' '}
                 <span className='font-semibold'>
                   {profile.firstName} {profile.lastName}
                 </span>
               </div>
-              <div>Email: {session.user?.email}</div>
+              <div className='py-1rem'>Email: {session.user?.email}</div>
               <div className='py-1rem'>
-                <button onClick={() => signOut()}>Sign out</button>
+                <button
+                  className='border-2 border-transparent text-bold w-full rounded-reg text-white bg-5 hover:bg-50 hover:text-5'
+                  onClick={() => signOut()}
+                >
+                  Sign out
+                </button>
               </div>
             </div>
           </div>
