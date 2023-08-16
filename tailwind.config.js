@@ -67,6 +67,9 @@ module.exports = {
       lineHeight: {
         20: '20px',
       },
+      fontSize: {
+        cart: '10px',
+      },
       letterSpacing: {
         logo: '-0.03rem',
       },

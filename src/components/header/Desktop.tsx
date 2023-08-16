@@ -6,6 +6,8 @@ import Search from '../Search';
 import SearchIcon from '../icons/SearchIcon';
 import CartIcon from '../icons/CartIcon';
 import ProfileIcon from '../icons/ProfileIcon';
+import { useSelector } from '../../../lib/redux/store';
+import { cartCount } from '../../../lib/redux/slices/cartSlice/selectors';
 
 const links = [
   {
@@ -25,6 +27,8 @@ const links = [
 const Desktop = () => {
   const [searchActive, setSearchActive] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
+
+  const cartQty = useSelector(cartCount);
 
   const toggleSearch = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -52,7 +56,7 @@ const Desktop = () => {
               {links.map((link) => (
                 <li key={link.id}>
                   <Link
-                    className='hover:underline uppercase text-sm tracking-normal font-medium'
+                    className='hover:underline uppercase text-xs tracking-wide font-medium'
                     href={{
                       pathname: `/products/category/${link.target}`,
                       query: { categoryId: link.id },
@@ -67,9 +71,16 @@ const Desktop = () => {
           <div>
             <ul>
               <li className='py-2 inline-block'>
-                <span onClick={toggleCart} className='flex cursor-pointer'>
-                  <CartIcon />
-                </span>
+                <button className='flex' onClick={toggleCart}>
+                  <div className='relative'>
+                    <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
+                      <span className='pt-[6px]'>{cartQty}</span>
+                    </div>
+                    <span className='flex'>
+                      <CartIcon />
+                    </span>
+                  </div>
+                </button>
               </li>
               <li className='py-2 mx-1rem inline-block'>
                 <span onClick={toggleSearch} className='flex cursor-pointer'>

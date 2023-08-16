@@ -7,10 +7,14 @@ import SearchIcon from '../icons/SearchIcon';
 import CartIcon from '../icons/CartIcon';
 import BurgerIcon from '../icons/BurgerIcon';
 import CloseIcon from '../icons/CloseIcon';
+import { useSelector } from '../../../lib/redux/store';
+import { cartCount } from '../../../lib/redux/slices/cartSlice/selectors';
 
 const Mobile = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
+
+  const cartQty = useSelector(cartCount);
 
   const toggleMenu = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -39,11 +43,17 @@ const Mobile = () => {
                 {!menuOpen && (
                   <>
                     <li className='py-2 inline-block'>
-                      <span className='flex'>
-                        <Link href='/Cart'>
-                          <CartIcon />
-                        </Link>
-                      </span>
+                      <Link className='flex' href='/Cart'>
+                        <div className='relative'>
+                          <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
+                            <span className='pt-[6px]'>{cartQty}</span>
+                          </div>
+
+                          <span className='flex'>
+                            <CartIcon />
+                          </span>
+                        </div>
+                      </Link>
                     </li>
                     <li className='py-2 inline-block'>
                       <span
