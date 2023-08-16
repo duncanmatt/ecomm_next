@@ -29,7 +29,7 @@ const Profile = () => {
                   className='border-2 border-transparent font-bold w-[7.5rem] md:w-[9rem] flex-1 md rounded-reg text-white bg-5 hover:bg-50 hover:text-5'
                   onClick={() => signOut()}
                 >
-                  Sign out
+                  Logout
                 </button>
               </div>
             </div>
