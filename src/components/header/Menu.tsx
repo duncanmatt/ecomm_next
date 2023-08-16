@@ -19,10 +19,10 @@ const links = [
 
 const Menu = ({ fn }: any) => {
   return (
-    <div className='h-[calc(100vh-60px)] bg-faded w-full p-1rem'>
+    <div className='h-[calc(100vh-60px)] animate-fadeIn bg-faded w-full p-1rem'>
       <ul className='block relative transition-all'>
         {links.map((link) => (
-          <li key={link.id} className='pb-2rem'>
+          <li key={link.id} className='pb-1rem'>
             <Link
               onClick={fn}
               className='flex flex-1 flex-row justify-between items-center text-base hover:underline font-medium'
