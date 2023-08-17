@@ -22,7 +22,7 @@ const Register = () => {
     }
 
     const response = await fetch(
-      'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/register',
+      (process.env.API_URL + '/api/auth/register') as string,
       {
         method: 'POST',
         body: JSON.stringify({
@@ -37,7 +37,7 @@ const Register = () => {
 
     const profile = await response.json();
 
-    if (profile.httpStatusCode === 200) {
+    if (profile.status === 200) {
       router.push('/Login');
     }
   };
