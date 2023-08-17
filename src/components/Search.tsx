@@ -12,7 +12,7 @@ const Search = ({ fn }: any) => {
   useEffect(() => {
     const getProducts = async () => {
       const { Items } = await fetchGetJSON(
-        (process.env.API_URL + '/api/products/') as string
+        (process.env.API_URL + '/api/products') as string
       );
       setProducts(Items);
     };

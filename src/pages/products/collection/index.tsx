@@ -40,7 +40,7 @@ export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const response = await fetchGetJSON(
-    (process.env.API_URL + '/api/products/') as string
+    (process.env.API_URL + '/api/products') as string
   );
 
   const products: Product[] = response.Items;
