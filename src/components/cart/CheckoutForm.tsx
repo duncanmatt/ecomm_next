@@ -88,6 +88,7 @@ const CheckoutForm = () => {
 
   return (
     <div className='mt-[60px]'>
+      <div className='py-1rem w-full text-center'>{message}</div>
       <form id='payment-form' onSubmit={handleSubmit}>
         <LinkAuthenticationElement
           id='link-authentication-element'
