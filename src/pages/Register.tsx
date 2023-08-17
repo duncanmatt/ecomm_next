@@ -22,7 +22,7 @@ const Register = () => {
     }
 
     const response = await fetch(
-      (process.env.API_URL + '/api/auth/register') as string,
+      'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/register',
       {
         method: 'POST',
         body: JSON.stringify({

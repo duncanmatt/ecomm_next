@@ -26,7 +26,7 @@ const Login = () => {
     const userData = { existingEmail: email, existingPassword: password };
 
     const response = await fetch(
-      (process.env.API_URL + '/api/auth/login') as string,
+      'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/login' as string,
       {
         method: 'POST',
         body: JSON.stringify(userData),
