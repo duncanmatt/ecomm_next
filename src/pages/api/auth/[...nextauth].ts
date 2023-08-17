@@ -4,6 +4,7 @@ import Email from 'next-auth/providers/email';
 import { DynamoDBAdapter } from '@auth/dynamodb-adapter';
 import type { Adapter } from 'next-auth/adapters';
 
+
 export const authOptions: NextAuthOptions = {
 	providers: [
 		Email({
@@ -23,6 +24,7 @@ export const authOptions: NextAuthOptions = {
 	}) as Adapter,
 	pages: {
 		signIn: '/Login',
+		newUser: '/Register'
 	},
 	secret: process.env.NEXTAUTH_SECRET as string,
 	session: {
