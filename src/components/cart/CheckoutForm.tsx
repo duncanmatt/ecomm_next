@@ -88,7 +88,6 @@ const CheckoutForm = () => {
 
   return (
     <div className='mt-[60px]'>
-      <div className='py-1rem w-full text-center'>{message}</div>
       <form id='payment-form' onSubmit={handleSubmit}>
         <LinkAuthenticationElement
           id='link-authentication-element'
@@ -97,6 +96,7 @@ const CheckoutForm = () => {
           }
         />
         <PaymentElement id='payment-element' options={paymentElementOptions} />
+        {/* SHIPPING INFO INPUTS */}
         <button disabled={isLoading || !stripe || !elements} id='submit'>
           <span id='button-text'>
             {isLoading ? (
@@ -107,7 +107,11 @@ const CheckoutForm = () => {
           </span>
         </button>
         {/* Show any error or success messages */}
-        {message && <div id='payment-message'>{message}</div>}
+        {message && (
+          <div className='text-xl text-center' id='payment-message'>
+            {message}
+          </div>
+        )}
       </form>
     </div>
   );
