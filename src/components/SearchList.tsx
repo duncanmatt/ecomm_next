@@ -1,4 +1,4 @@
-import { Product, SearchItem } from '../../interfaces';
+import { SearchItem } from '../../interfaces';
 import Link from 'next/link';
 
 const SearchList = ({ filteredProducts }: any) => {
@@ -7,7 +7,7 @@ const SearchList = ({ filteredProducts }: any) => {
       <Link
         className='hover:underline text-lg'
         href={{
-          pathname: 'products/product',
+          pathname: `/products/product/`,
           query: { productId: product.productId },
         }}
       >
