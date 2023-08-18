@@ -21,6 +21,8 @@ const Register = () => {
       throw new Error("passwords don't match");
     }
 
+    //TODO: setLoading
+
     const response = await fetch(
       'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/register',
       {
@@ -43,7 +45,7 @@ const Register = () => {
   return (
     <Layout>
       <div className='min-h-main relative'>
-        <div className='mt-[100px]'>
+        <div className='mt-[160px]'>
           <div className='flex flex-col justify-center max-sm:px-1rem sm:w-[40em] sm:m-auto'>
             <div className='flex flex-col bg-95 rounded-sm'>
               <div className='my-3rem font-semibold text-center'>

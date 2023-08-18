@@ -57,9 +57,9 @@ const Login = () => {
   return (
     <Layout>
       <div className='min-h-main'>
-        <div className='mt-[100px]'>
+        <div className='mt-[160px]'>
           <div className='h-[2rem] text-center'>
-            <p className='font-semibold'>{message}</p>
+            <p className='font-semibold animate-bounce'>{message}</p>
           </div>
           <div className='flex flex-col justify-center max-sm:px-1rem sm:w-[40em] sm:m-auto'>
             <div className='flex flex-col bg-95 rounded-sm'>
