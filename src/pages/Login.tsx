@@ -58,15 +58,15 @@ const Login = () => {
     <Layout>
       <div className='min-h-main'>
         <div className='mt-[120px]'>
-          <div className='h-[2rem] text-center'>
-            <p className='font-semibold animate-ping'>{message}</p>
-          </div>
           <div className='flex flex-col justify-center max-sm:px-1rem sm:w-[40em] sm:m-auto'>
             <div className='flex flex-col bg-95 rounded-sm'>
-              <div className='my-3rem font-semibold text-center'>
+              <div className='my-3rem font-semibold text-center px-2'>
                 <h3 className='uppercase text-lg tracking-wide'>
                   Login to access your account
                 </h3>
+              </div>
+              <div className='pb-1rem px-2 h-[2rem] text-center'>
+                <p className='tracking-tight animate-bounce'>{message}</p>
               </div>
               <form
                 className='justify-between p-4 flex flex-1 gap-3 flex-col w-full'
