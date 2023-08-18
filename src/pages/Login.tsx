@@ -23,7 +23,7 @@ const Login = () => {
     const email = formData.get('email');
     const password = formData.get('password');
 
-    setMessage('verifing account...');
+    setMessage('verifying account...');
 
     const userData = { existingEmail: email, existingPassword: password };
 
