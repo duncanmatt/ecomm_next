@@ -30,16 +30,22 @@ const Home = ({
         <main className='h-full'>
           <div className='relative'>
             <div className='absolute z-10 left-0 right-0 bottom-auto top-[50%] mx-auto animate-fadeIn'>
-              <div className='text-center text-white'>
-                <h4 className='text-2xl uppercase font-d font-semibold tracking-wider'>
-                  Summer 2023
-                </h4>
-                <Link
-                  className='text-base font-light tracking-tight underline z-10'
-                  href='/products/collection'
-                >
-                  shop the collection
-                </Link>
+              <div className='text-white'>
+                <div className='text-center'>
+                  <h4 className='text-2xl uppercase font-d font-semibold tracking-wide'>
+                    Summer 2023
+                  </h4>
+                </div>
+                <div className='flex justify-center'>
+                  <span className='flex items-center justify-center animate-intro'>
+                    <Link
+                      className='text-md font-extralight tracking-reg underline underline-offset-auto hover:no-underline'
+                      href='/products/collection'
+                    >
+                      explore the collection
+                    </Link>
+                  </span>
+                </div>
               </div>
             </div>
             <div className='h-full w-full'>

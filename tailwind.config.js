@@ -72,6 +72,7 @@ module.exports = {
       },
       letterSpacing: {
         logo: '-0.03rem',
+        reg: '0.03px',
       },
       flexBasis: {
         100: '100%',
@@ -126,7 +127,7 @@ module.exports = {
       animation: {
         fadeIn: 'fadeIn 0.3s ease-in-out 1',
         fadeInFast: 'fadeIn 0.185s ease-in-out 1',
-        intro: 'intro 0.5s',
+        intro: 'intro 0.875s ',
       },
     },
   },
