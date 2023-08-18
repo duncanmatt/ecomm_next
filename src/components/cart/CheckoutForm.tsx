@@ -8,7 +8,6 @@ import {
 } from '@stripe/react-stripe-js';
 import type {
 	StripePaymentElementOptions,
-	Address,
 	StripeAddressElementOptions,
 	StripeAddressElementChangeEvent,
 	StripeLinkAuthenticationElementChangeEvent,
