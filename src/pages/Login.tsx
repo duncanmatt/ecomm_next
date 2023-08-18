@@ -37,21 +37,20 @@ const Login = () => {
 
     const user = await response.json();
 
-    if (user) {
-      signIn('email', { redirect: false, email });
-      setMessage('Check your email for a verification link');
-      dispatch(
-        setProfile({
-          email: user.email,
-          id: user.id,
-          emailVerified: user.emailVerified,
-          firstName: user.firstName,
-          lastName: user.lastName,
-        })
-      );
+    if (!user) {
+      setMessage('account not recognized');
     }
-
-    setMessage('account not recognized');
+    signIn('email', { redirect: false, email });
+    setMessage('Check your email for a verification link');
+    dispatch(
+      setProfile({
+        email: user.email,
+        id: user.id,
+        emailVerified: user.emailVerified,
+        firstName: user.firstName,
+        lastName: user.lastName,
+      })
+    );
   };
 
   return (
