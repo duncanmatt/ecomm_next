@@ -6,6 +6,7 @@ import type { InferGetStaticPropsType, GetStaticProps } from 'next';
 type LandingImg = {
   alt: string;
   src: string;
+  blurUrl: string;
 };
 
 export const getStaticProps: GetStaticProps<{
@@ -14,6 +15,8 @@ export const getStaticProps: GetStaticProps<{
   const landingImg = {
     src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg',
     alt: 'black sheep background',
+    blurUrl:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk/w8AARMBCIPIuo4AAAAASUVORK5CYII=',
   };
   return { props: { landingImg } };
 };
@@ -26,7 +29,7 @@ const Home = ({
       <Layout>
         <main className='h-full'>
           <div className='relative'>
-            <div className='absolute z-10 left-0 right-0 bottom-auto top-[50%] mx-auto'>
+            <div className='absolute z-10 left-0 right-0 bottom-auto top-[50%] mx-auto animate-fadeIn'>
               <div className='text-center text-white'>
                 <h4 className='text-2xl uppercase font-d font-semibold tracking-wider'>
                   Summer 2023
@@ -45,11 +48,11 @@ const Home = ({
                   alt={landingImg.alt}
                   src={landingImg.src}
                   placeholder='blur'
-                  blurDataURL={landingImg.src}
+                  blurDataURL={landingImg.blurUrl}
                   fill
                   sizes='(min-width: 850px) 80vw, 100vw'
                   quality={95}
-                  className='-z-10 object-cover animate-fadeIn'
+                  className='-z-10 object-cover'
                 />
               </div>
             </div>
