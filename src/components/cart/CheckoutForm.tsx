@@ -130,7 +130,6 @@ const CheckoutForm = () => {
 					options={paymentElementOptions}
 				/>
 				<button
-					className='my-1rem'
 					disabled={isLoading || !stripe || !elements}
 					id='submit'>
 					<span id='button-text'>
