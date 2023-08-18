@@ -40,15 +40,16 @@ const Home = ({
               </div>
             </div>
             <div className='h-full w-full'>
-              <div className='relative h-main w-full object-cover overflow-hidden'>
+              <div className='relative h-main w-full overflow-hidden'>
                 <Image
                   alt={landingImg.alt}
                   src={landingImg.src}
                   placeholder='blur'
                   blurDataURL={landingImg.src}
                   fill
+                  sizes='(min-width: 850px) 80vw, 100vw'
                   quality={95}
-                  className='-z-10 bg-repeat animate-fadeIn'
+                  className='-z-10 object-cover animate-fadeIn'
                 />
               </div>
             </div>
