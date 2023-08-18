@@ -103,7 +103,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className='px-1rem'>
+    <div className='px-1rem md:px-3rem'>
       <form id='payment-form' onSubmit={handleSubmit}>
         <LinkAuthenticationElement
           id='link-authentication-element'

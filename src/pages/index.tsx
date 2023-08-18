@@ -1,14 +1,14 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
+import type { InferGetStaticPropsType, GetStaticProps } from 'next';
 
 type LandingImg = {
   alt: string;
   src: string;
 };
 
-export const getServerSideProps: GetServerSideProps<{
+export const getStaticProps: GetStaticProps<{
   landingImg: LandingImg;
 }> = async () => {
   const landingImg = {
@@ -20,7 +20,7 @@ export const getServerSideProps: GetServerSideProps<{
 
 const Home = ({
   landingImg,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Layout>
