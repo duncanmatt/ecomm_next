@@ -103,7 +103,7 @@ const CheckoutForm = () => {
 	};
 
 	return (
-		<div className='mt-[120px]'>
+		<div>
 			<form
 				id='payment-form'
 				onSubmit={handleSubmit}>

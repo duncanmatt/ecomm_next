@@ -46,8 +46,11 @@ const Checkout = () => {
 	return (
 		<Layout>
 			{clientSecret && (
-				<div className='p-1rem'>
-					<h2 className='font-bold text-center'>${total}.00</h2>
+				<div className='mt-[120px]'>
+					<div className='text-center'>
+						<h5 className='text-xl uppercase'>Checkout</h5>
+						<span className='font-light'>${total}.00</span>
+					</div>
 					<Elements
 						options={options}
 						stripe={s}>
