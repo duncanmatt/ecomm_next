@@ -105,7 +105,10 @@ const CheckoutForm = () => {
 	};
 
 	return (
-		<div className='mt-[60px]'>
+		<div className='mt-[120px]'>
+			<div className='uppercase text-center py-1rem'>
+				<h3>Checkout</h3>
+			</div>
 			<form
 				id='payment-form'
 				onSubmit={handleSubmit}>
@@ -127,6 +130,7 @@ const CheckoutForm = () => {
 					options={paymentElementOptions}
 				/>
 				<button
+					className='my-1rem'
 					disabled={isLoading || !stripe || !elements}
 					id='submit'>
 					<span id='button-text'>
