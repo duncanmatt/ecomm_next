@@ -35,9 +35,7 @@ const Register = () => {
       }
     );
 
-    const profile = await response.json();
-
-    if (profile.status === 200) {
+    if (response.status === 200) {
       router.push('/Login');
     }
   };
