@@ -23,6 +23,8 @@ const Login = () => {
     const email = formData.get('email');
     const password = formData.get('password');
 
+    setMessage('verifing account...');
+
     const userData = { existingEmail: email, existingPassword: password };
 
     const response = await fetch(
@@ -34,10 +36,6 @@ const Login = () => {
     );
 
     const user = await response.json();
-
-    if (!user) {
-      setMessage('User not found');
-    }
 
     if (user) {
       signIn('email', { redirect: false, email });
@@ -52,6 +50,8 @@ const Login = () => {
         })
       );
     }
+
+    setMessage('account not recognized');
   };
 
   return (
