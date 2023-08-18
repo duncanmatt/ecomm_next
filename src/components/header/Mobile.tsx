@@ -71,24 +71,26 @@ const Mobile = () => {
                   </span>
                 </li>
               </ul>
-              {menuOpen && (
-                <>
-                  <div
-                    id='mobileMenu'
-                    style={{
-                      position: 'absolute',
-                      top: '60px',
-                      left: '0',
-                      right: '0',
-                      bottom: '0',
-                      height: '100%',
-                      width: '100%',
-                    }}
-                  >
-                    <Menu fn={toggleMenu} />
-                  </div>
-                </>
-              )}
+              {/* {menuOpen && (
+                <> */}
+              <div
+                id='mobileMenu'
+                className='ease-in-out duration-300'
+                style={{
+                  position: 'absolute',
+                  top: '60px',
+                  left: menuOpen ? '0' : '100%',
+                  right: '0',
+                  bottom: '0',
+                  height: '100%',
+                  width: '100%',
+                  zIndex: menuOpen ? '3' : '0',
+                }}
+              >
+                <Menu fn={toggleMenu} />
+              </div>
+              {/* </>
+              )} */}
             </div>
           </nav>
         </>

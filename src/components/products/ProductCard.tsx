@@ -32,8 +32,8 @@ const ProductCard = (product: Product) => {
             alt='description'
             src={product.imgUrl}
             placeholder='blur'
-            blurDataURL='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
             fill
+            blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
             className='flex animate-fadeIn'
           />
         </div>
