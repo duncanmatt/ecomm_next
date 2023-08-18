@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import React from 'react';
 import Layout from '@/components/Layout';
@@ -6,6 +7,7 @@ import { uid } from '../../utils/uid';
 
 const Register = () => {
   const router = useRouter();
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,11 +19,10 @@ const Register = () => {
     const lastName = formData.get('lastName');
 
     if (password2 !== password) {
-      // toast message
-      throw new Error("passwords don't match");
+      setMessage("passwords don't match");
     }
 
-    //TODO: setLoading
+    setMessage('registration in progress...');
 
     const response = await fetch(
       'https://c4z5zswbfk.execute-api.us-east-1.amazonaws.com/api/auth/register',
@@ -40,6 +41,8 @@ const Register = () => {
     if (response.status === 200) {
       router.push('/Login');
     }
+
+    setMessage('registration unsuccessfull');
   };
 
   return (
@@ -52,6 +55,9 @@ const Register = () => {
                 <h3 className='text-lg tracking-wide uppercase'>
                   register your new account
                 </h3>
+              </div>
+              <div className='pb-1rem px-2 h-[2rem] text-center'>
+                <p className='tracking-tight animate-bounce'>{message}</p>
               </div>
               <form
                 className='p-4 justify-between flex flex-1 flex-col w-full '
