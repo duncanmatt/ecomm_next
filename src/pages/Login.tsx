@@ -57,7 +57,7 @@ const Login = () => {
   return (
     <Layout>
       <div className='min-h-main'>
-        <div className='my-auto'>
+        <div className='mt-[120px]'>
           <div className='h-[2rem] text-center'>
             <p className='font-semibold animate-ping'>{message}</p>
           </div>

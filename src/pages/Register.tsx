@@ -45,7 +45,7 @@ const Register = () => {
   return (
     <Layout>
       <div className='min-h-main relative'>
-        <div className='my-auto'>
+        <div className='mt-[120px]'>
           <div className='flex flex-col justify-center max-sm:px-1rem sm:w-[40em] sm:m-auto'>
             <div className='flex flex-col bg-95 rounded-sm'>
               <div className='my-3rem font-semibold text-center'>

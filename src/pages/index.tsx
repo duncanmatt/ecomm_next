@@ -1,8 +1,26 @@
 import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 
-const Home = () => {
+type LandingImg = {
+  alt: string;
+  src: string;
+};
+
+export const getServerSideProps: GetServerSideProps<{
+  landingImg: LandingImg;
+}> = async () => {
+  const landingImg = {
+    src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg',
+    alt: 'black sheep background',
+  };
+  return { props: { landingImg } };
+};
+
+const Home = ({
+  landingImg,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
       <Layout>
@@ -24,10 +42,10 @@ const Home = () => {
             <div className='h-full w-full'>
               <div className='relative h-main w-full object-cover overflow-hidden'>
                 <Image
-                  alt='Summer 2023 collection'
-                  src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg'
+                  alt={landingImg.alt}
+                  src={landingImg.src}
                   placeholder='blur'
-                  blurDataURL='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg'
+                  blurDataURL={landingImg.src}
                   fill
                   quality={95}
                   className='-z-10 bg-repeat animate-fadeIn'
