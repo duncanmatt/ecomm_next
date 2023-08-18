@@ -13,7 +13,6 @@ import type {
 	StripeAddressElementChangeEvent,
 	StripeLinkAuthenticationElementChangeEvent,
 } from '@stripe/stripe-js';
-import { split } from 'postcss/lib/list';
 
 const CheckoutForm = () => {
 	const stripe = useStripe();
@@ -106,9 +105,6 @@ const CheckoutForm = () => {
 
 	return (
 		<div className='mt-[120px]'>
-			<div className='uppercase text-center py-1rem'>
-				<h3>Checkout</h3>
-			</div>
 			<form
 				id='payment-form'
 				onSubmit={handleSubmit}>
