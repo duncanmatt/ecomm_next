@@ -48,10 +48,11 @@ const Mobile = () => {
                   {!searchActive && (
                     <Link className='flex' href='/Cart'>
                       <div className='relative'>
-                        <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
-                          <span className='pt-[6px]'>{cartQty}</span>
-                        </div>
-
+                        {cartQty > 0 && (
+                          <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
+                            <span className='pt-[6px]'>{cartQty}</span>
+                          </div>
+                        )}
                         <span className='flex'>
                           <CartIcon />
                         </span>
@@ -79,7 +80,7 @@ const Mobile = () => {
                 <> */}
           <div
             id='mobileMenu'
-            className='ease-menu duration-[0.5s]'
+            className='ease-menu duration-[0.425s]'
             style={{
               position: 'absolute',
               top: '60px',

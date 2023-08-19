@@ -73,9 +73,11 @@ const Desktop = () => {
               <li className='py-2 inline-block'>
                 <button className='flex' onClick={toggleCart}>
                   <div className='relative'>
-                    <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
-                      <span className='pt-[6px]'>{cartQty}</span>
-                    </div>
+                    {cartQty > 0 && (
+                      <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
+                        <span className='pt-[6px]'>{cartQty}</span>
+                      </div>
+                    )}
                     <span className='flex'>
                       <CartIcon />
                     </span>
