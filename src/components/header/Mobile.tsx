@@ -79,7 +79,7 @@ const Mobile = () => {
                 <> */}
           <div
             id='mobileMenu'
-            className='ease-in-out duration-300'
+            className='ease-menu duration-[0.65s]'
             style={{
               position: 'absolute',
               top: '60px',

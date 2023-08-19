@@ -113,6 +113,9 @@ module.exports = {
         light: '#f9f9f9',
         body: '#fcfcfc',
       },
+      transitionTimingFunction: {
+        menu: 'cubic-bezier(0.42,0,0.58,1)',
+      },
       keyframes: {
         fadeIn: {
           '0%, 35%': { opacity: '0' },
