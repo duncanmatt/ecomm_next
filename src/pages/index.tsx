@@ -29,7 +29,7 @@ const Home = ({
       <Layout>
         <main className='h-full'>
           <div className='relative'>
-            <div className='absolute z-10 left-0 right-0 bottom-auto top-[50%] mx-auto animate-fadeIn'>
+            <div className='absolute z-10 left-0 right-0 bottom-auto top-[50%] mx-auto animate-intro'>
               <div className='text-white'>
                 <div className='text-center'>
                   <h4 className='text-2xl uppercase font-d font-semibold tracking-wide'>
@@ -37,7 +37,7 @@ const Home = ({
                   </h4>
                 </div>
                 <div className='flex justify-center'>
-                  <span className='flex items-center justify-center animate-intro'>
+                  <span className='flex items-center justify-center'>
                     <Link
                       className='text-md font-extralight tracking-reg underline underline-offset-auto hover:no-underline'
                       href='/products/collection'

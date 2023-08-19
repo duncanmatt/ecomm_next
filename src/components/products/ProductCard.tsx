@@ -45,8 +45,8 @@ const ProductCard = (product: Product) => {
                   {product.name}
                 </h5>
               </div>
-              <div className='py-1 flex flex-row justify-between items-center w-full'>
-                <span className='font-light text-sm max-sm:text-xs'>
+              <div className='font-light py-1 flex flex-row justify-between items-center w-full'>
+                <span className='text-sm max-sm:text-xs'>
                   {formatAmountForDisplay(Number(product.price), 'usd')}
                 </span>
                 <span className='text-xs tracking-wide'>sold out</span>
