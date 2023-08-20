@@ -42,6 +42,37 @@ header[data-action='down'] {
   transform: translateY(-100%);
 }
 
+header[data-action='rest'],
+#mobileNavBar {
+  background-color: transparent;
+}
+
+header > div > nav > div > ul > li > span > svg {
+  stroke: #121212;
+}
+
+header[data-action='rest'] > div > nav > div > span {
+  color: #fff;
+}
+
+header[data-action='rest'],
+#desktopNavLinks > li > link {
+  color: #fff;
+}
+
+header[data-action='rest'] > div > nav > div > ul > li > span > svg {
+  stroke: #fff;
+}
+
+header,
+.cartIcon {
+  stroke: #121212;
+}
+header[data-action='rest'],
+.cartIcon {
+  stroke: #fff;
+}
+
 body {
   color: var(--font-color);
   background-color: var(--bg-color);

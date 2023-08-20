@@ -1,9 +1,9 @@
 type ScrollProps = {
-	children: React.ReactNode;
+  children: React.ReactNode;
 };
 
 const SearchScroll = ({ children }: ScrollProps) => {
-	return <div className='min-h-main overflow-y-scroll'>{children}</div>;
+  return <div>{children}</div>;
 };
 
 export default SearchScroll;

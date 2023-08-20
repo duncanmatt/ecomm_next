@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import Menu from './Menu';
-import Search from '../Search';
 import SearchIcon from '../icons/SearchIcon';
 import CartIcon from '../icons/CartIcon';
 import BurgerIcon from '../icons/BurgerIcon';
@@ -30,16 +29,11 @@ const Mobile = () => {
 
   return (
     <>
-      {searchActive && (
-        <>
-          <div className='ease-in-out duration-1000 '>
-            {' '}
-            <Search fn={toggleSearch} />
-          </div>
-        </>
-      )}
       <nav className='h-full flex items-center'>
-        <div className='flex flex-row w-full justify-between items-center'>
+        <div
+          id='mobileNavBar'
+          className='bg-faded flex h-[54px] px-1rem flex-row w-full justify-between items-center'
+        >
           <span>{menuOpen || searchActive ? <></> : <Logo />}</span>
           <ul className='flex flex-row justify-evenly items-center'>
             {!menuOpen && (
@@ -76,26 +70,7 @@ const Mobile = () => {
               </span>
             </li>
           </ul>
-          {/* {menuOpen && (
-                <> */}
-          <div
-            id='mobileMenu'
-            className='ease-menu duration-[0.425s]'
-            style={{
-              position: 'absolute',
-              top: '60px',
-              left: menuOpen ? '0' : '100%',
-              right: '0',
-              bottom: '0',
-              height: '100%',
-              width: '100%',
-              zIndex: menuOpen ? '3' : '0',
-            }}
-          >
-            <Menu fn={toggleMenu} />
-          </div>
-          {/* </>
-              )} */}
+          <Menu active={menuOpen} />
         </div>
       </nav>
     </>

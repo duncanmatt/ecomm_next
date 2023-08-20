@@ -5,7 +5,11 @@ import { SearchItem } from '../../interfaces';
 import CloseIcon from './icons/CloseIcon';
 import { fetchGetJSON } from '../../utils/api-helpers';
 
-const Search = ({ fn }: any) => {
+type Status = {
+  active: boolean;
+};
+
+const Search = ({ active }: Status) => {
   const [search, setSearch] = useState('');
   const [products, setProducts] = useState([]);
 
@@ -28,8 +32,11 @@ const Search = ({ fn }: any) => {
   };
 
   return (
-    <>
-      <div className='h-60 flex flex-row items-center justify-between'>
+    <div
+      style={{ height: active ? '100%' : '0' }}
+      className='absolute top-0 left-0 h-full w-full overflow-hidden'
+    >
+      <div className='flex h-60 flex-row items-center justify-between px-1rem md:px-3rem'>
         <div className='flex flex-1'>
           <div className='flex w-full'>
             <input
@@ -40,11 +47,8 @@ const Search = ({ fn }: any) => {
             />
           </div>
         </div>
-        <span className='cursor-pointer ps-8' onClick={fn}>
-          <CloseIcon />
-        </span>
       </div>
-      <div className='absolute top-[60px] ease-in-out duration-300 bg-faded backdrop-blur-6xl left-0 right-0 z-7'>
+      <div className=''>
         <div className='relative w-full h-full'>
           <div className='p-1rem'>
             <div className='flex flex-col'>
@@ -55,7 +59,7 @@ const Search = ({ fn }: any) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

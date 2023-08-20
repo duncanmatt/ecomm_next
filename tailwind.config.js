@@ -107,6 +107,7 @@ module.exports = {
       },
       gridTemplateRows: {
         cart: '1fr, min-content',
+        menu: '60px, calc(100vh - 60px)',
       },
       backgroundColor: {
         faded: 'rgba(252,252,252,0.95)',
