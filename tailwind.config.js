@@ -11,7 +11,7 @@ module.exports = {
       d: 'Playfair Display, serif',
     },
     maxWidth: {
-      container: '1400px',
+      container: '1920px',
     },
     colors: {
       5: '#070707',

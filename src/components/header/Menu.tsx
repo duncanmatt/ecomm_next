@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
 import ProfileIcon from '../icons/ProfileIcon';
-import CloseIcon from '../icons/CloseIcon';
 
 const links = [
   {
@@ -25,6 +25,7 @@ type Status = {
 const Menu = ({ active }: Status) => {
   return (
     <div
+      id='navMenu'
       style={{
         transform: active ? 'translateX(0)' : 'translateX(-100%)',
       }}

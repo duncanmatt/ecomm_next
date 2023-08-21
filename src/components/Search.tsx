@@ -53,7 +53,7 @@ const Search = ({ active }: Status) => {
             </div>
           </div>
         </div>
-        <div className=''>
+        <div>
           <div>
             <div className='p-1rem'>
               <div className='flex flex-col'>

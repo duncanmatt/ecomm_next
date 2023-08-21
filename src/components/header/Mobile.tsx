@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import Menu from './Menu';
@@ -23,6 +23,17 @@ const Mobile = ({ searchActive }: Status) => {
   ) => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    if (document.getElementById('searchToggler')) {
+      const searchToggler = document.getElementById('searchToggler');
+      menuOpen
+        ? searchToggler?.setAttribute('z-index', '0')
+        : searchToggler?.setAttribute('z-index', '61');
+
+      console.log(searchToggler);
+    }
+  }, []);
 
   return (
     <>
