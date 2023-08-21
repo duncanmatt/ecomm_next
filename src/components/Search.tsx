@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import SearchList from './SearchList';
 import SearchScroll from './SearchScroll';
 import { SearchItem } from '../../interfaces';
-import CloseIcon from './icons/CloseIcon';
 import { fetchGetJSON } from '../../utils/api-helpers';
 
 type Status = {
@@ -37,7 +36,7 @@ const Search = ({ active }: Status) => {
         transform: active ? 'translateY(0)' : 'translateY(-100%)',
         zIndex: active ? '59' : '0',
       }}
-      className='absolute top-0 left-0 h-full w-full right-0 overflow-y-hidden'
+      className='absolute top-0 left-0 h-full w-full right-0 overflow-y-hidden bg-[rgba(0,0,0,0.04)] backdrop-blur-[150px] backdrop-contrast-[1.8]'
     >
       <div className='relative px-1rem'>
         <div className='flex h-[54px] items-center justify-between border-b-1 border-25'>
@@ -56,7 +55,7 @@ const Search = ({ active }: Status) => {
         <div>
           <div>
             <div className='p-1rem'>
-              <div className='flex flex-col'>
+              <div style={{}} className='flex flex-col'>
                 <SearchScroll>
                   <SearchList filteredProducts={filteredProducts} />
                 </SearchScroll>

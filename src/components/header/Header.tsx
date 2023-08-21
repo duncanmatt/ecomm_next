@@ -75,7 +75,7 @@ const Header = () => {
         }}
         className={`fixed h-[54px] z-[60] bottom-auto top-0 right-0 left-0 max-w-container xl:mx-auto`}
       >
-        <span className='absolute top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem]'>
+        <span className='absolute top-0 h-[54px]  flex flex-grow-0 items-center right-[3.2rem]'>
           <button
             id='searchToggler'
             className='disabled:hidden disabled:pointer-events-none pointer-events-auto'

@@ -14,6 +14,7 @@ type Status = {
 };
 
 const Mobile = ({ searchActive }: Status) => {
+  const path = window.location.pathname;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const cartQty = useSelector(cartCount);
@@ -35,16 +36,20 @@ const Mobile = ({ searchActive }: Status) => {
     }
   }, []);
 
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [path]);
+
   return (
     <>
       <nav className='h-full flex items-center w-full'>
-        <div className='flex h-[54px] px-1rem flex-row w-full me-[4.25rem] justify-between items-center'>
+        <div className='flex h-[54px] px-1rem flex-row w-full justify-between items-center'>
           <span>{menuOpen || searchActive ? <></> : <Logo />}</span>
           {!searchActive && (
             <ul className='flex flex-row justify-end items-center'>
               {!menuOpen && (
                 <>
-                  <li className='py-2 inline-block'>
+                  <li className='py-2 inline-block translate-x-[-4.25rem]'>
                     {!searchActive && (
                       <Link className='flex' href='/Cart'>
                         <div className='relative'>
