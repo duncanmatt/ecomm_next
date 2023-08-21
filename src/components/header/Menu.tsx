@@ -27,9 +27,9 @@ const Menu = ({ active }: Status) => {
     <div
       id='navMenu'
       style={{
-        transform: active ? 'translateX(0)' : 'translateX(-100%)',
+        transform: active ? 'translateX(0)' : 'translateX(100%)',
       }}
-      className='absolute left-0 top-0 overflow-x-hidden w-full bg-faded backdrop-blur-xl'
+      className='absolute left-0 top-0 overflow-x-hidden w-full bg-faded backdrop-blur-xl transition-transform'
     >
       <div className='h-main w-full pt-[54px]'>
         <nav className='flex flex-col px-1rem'>
@@ -37,14 +37,18 @@ const Menu = ({ active }: Status) => {
             {links.map((link) => (
               <li key={link.id} className='pb-1rem text-5'>
                 <Link
-                  // onClick={fn}
                   className='flex flex-1 flex-row justify-between items-center text-base hover:underline font-medium'
                   href={{
                     pathname: `/products/category/${link.target}`,
                     query: { categoryId: link.id },
                   }}
                 >
-                  <span className='capitalize'>{link.target}</span>
+                  <span
+                    style={{ opacity: active ? '1' : '0' }}
+                    className='capitalize transition-[opacity] duration-[0.45s] ease-menu'
+                  >
+                    {link.target}
+                  </span>
                   <span className='flex'>
                     <CaretRightIcon />
                   </span>
