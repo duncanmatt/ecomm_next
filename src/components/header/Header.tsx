@@ -3,23 +3,31 @@ import Mobile from './Mobile';
 import Desktop from './Desktop';
 import React from 'react';
 import Search from '../Search';
-import Menu from './Menu';
+import CloseIcon from '../icons/CloseIcon';
+import SearchIcon from '../icons/SearchIcon';
 
 const Header = () => {
-  const isHome = window.location.pathname === '/' ? 'rest' : 'up';
+  const path = window.location.pathname;
+  const isHome = path === '/' ? 'rest' : 'up';
 
   const [scrollDir, setScrollDir] = useState(isHome);
   const [searchActive, setSearchActive] = useState(false);
 
+  const toggleSearch = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    setSearchActive(!searchActive);
+  };
+
+  // SCROLL
   useEffect(() => {
     const threshold = 3;
     let lastY = window.scrollY;
     let ticking = false;
-    console.log(lastY);
 
     const updateScrollDir = () => {
       const y = window.scrollY;
-      const initial = lastY < threshold;
+      const initial = lastY < 15;
 
       if (Math.abs(y - lastY) < threshold) {
         ticking = false;
@@ -44,7 +52,6 @@ const Header = () => {
       if (!ticking) {
         window.requestAnimationFrame(updateScrollDir);
         ticking = true;
-        console.log(window.scrollY);
       }
     };
 
@@ -53,17 +60,43 @@ const Header = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [scrollDir]);
 
+  // SEARCH
+  useEffect(() => {
+    setSearchActive(false);
+  }, [path]);
+
   return (
     <>
       <header
         data-action={`${scrollDir}`}
-        className={`h-60 z-[60] fixed bottom-auto top-0 right-0 left-0`}
+        style={{
+          pointerEvents: searchActive ? 'none' : 'auto',
+          // opacity: searchActive ? '0' : '1',
+        }}
+        className={`fixed h-[54px] z-[60] bottom-auto top-0 right-0 left-0`}
       >
+        <span
+          style={{ pointerEvents: 'all' }}
+          className='absolute top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem]'
+        >
+          <button
+            id='searchToggler'
+            className='relative'
+            style={{
+              stroke: scrollDir === 'rest' ? '#fff' : '#121212',
+              zIndex: '61',
+              pointerEvents: 'all',
+            }}
+            onClick={toggleSearch}
+          >
+            {searchActive ? <CloseIcon /> : <SearchIcon />}
+          </button>
+        </span>
         <div className='md:hidden block'>
-          <Mobile />
+          <Mobile searchActive={searchActive} />
         </div>
         <div className='hidden md:block'>
-          <Desktop />
+          <Desktop searchActive={searchActive} />
         </div>
       </header>
       <Search active={searchActive} />

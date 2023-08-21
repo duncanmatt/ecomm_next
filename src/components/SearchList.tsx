@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const SearchList = ({ filteredProducts }: any) => {
   return filteredProducts.map((product: SearchItem) => (
-    <div key={product.productId} className='pt-1'>
+    <div key={product.productId} className='pt-1 z-50'>
       <Link
         className='hover:underline text-lg'
         href={{

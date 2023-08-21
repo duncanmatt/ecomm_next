@@ -9,9 +9,12 @@ import CloseIcon from '../icons/CloseIcon';
 import { useSelector } from '../../../lib/redux/store';
 import { cartCount } from '../../../lib/redux/slices/cartSlice/selectors';
 
-const Mobile = () => {
+type Status = {
+  searchActive: boolean;
+};
+
+const Mobile = ({ searchActive }: Status) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchActive, setSearchActive] = useState(false);
 
   const cartQty = useSelector(cartCount);
 
@@ -21,55 +24,48 @@ const Mobile = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const toggleSearch = (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    setSearchActive(!searchActive);
-  };
-
   return (
     <>
-      <nav className='h-full flex items-center'>
-        <div
-          id='mobileNavBar'
-          className='bg-faded flex h-[54px] px-1rem flex-row w-full justify-between items-center'
-        >
+      <nav className='h-full flex items-center w-full'>
+        <div className='flex h-[54px] px-1rem flex-row w-full me-[4.25rem] justify-between items-center'>
           <span>{menuOpen || searchActive ? <></> : <Logo />}</span>
-          <ul className='flex flex-row justify-evenly items-center'>
-            {!menuOpen && (
-              <>
-                <li className='py-2 inline-block'>
-                  {!searchActive && (
-                    <Link className='flex' href='/Cart'>
-                      <div className='relative'>
-                        {cartQty > 0 && (
-                          <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
-                            <span className='pt-[6px]'>{cartQty}</span>
-                          </div>
-                        )}
-                        <span className='flex'>
-                          <CartIcon />
-                        </span>
-                      </div>
-                    </Link>
-                  )}
-                </li>
-                <li className='py-2 inline-block'>
-                  <span
-                    onClick={toggleSearch}
-                    className='flex mx-1rem cursor-pointer'
-                  >
-                    <SearchIcon />
-                  </span>
-                </li>
-              </>
-            )}
-            <li className='py-2 inline-block'>
-              <span className='flex cursor-pointer' onClick={toggleMenu}>
-                {menuOpen ? <CloseIcon /> : <BurgerIcon />}
-              </span>
-            </li>
-          </ul>
+          {!searchActive && (
+            <ul className='flex flex-row justify-end items-center'>
+              {!menuOpen && (
+                <>
+                  <li className='py-2 inline-block'>
+                    {!searchActive && (
+                      <Link className='flex' href='/Cart'>
+                        <div className='relative'>
+                          {cartQty > 0 && (
+                            <div className='absolute w-full h-full flex justify-center items-center font-medium text-cart'>
+                              <span className='pt-[6px]'>{cartQty}</span>
+                            </div>
+                          )}
+                          <span className='flex'>
+                            <CartIcon />
+                          </span>
+                        </div>
+                      </Link>
+                    )}
+                  </li>
+                </>
+              )}
+              <li className='py-2 inline-block'>
+                <button
+                  style={{
+                    zIndex: menuOpen ? '6' : '0',
+                    stroke: menuOpen ? '#121212' : 'inherit',
+                  }}
+                  className='absolute top-0 h-[54px] flex flex-grow-0 items-center right-[1rem]'
+                  onClick={toggleMenu}
+                  disabled={searchActive ? true : false}
+                >
+                  {menuOpen ? <CloseIcon /> : <BurgerIcon />}
+                </button>
+              </li>
+            </ul>
+          )}
           <Menu active={menuOpen} />
         </div>
       </nav>

@@ -28,18 +28,11 @@ const Menu = ({ active }: Status) => {
       style={{
         transform: active ? 'translateX(0)' : 'translateX(-100%)',
       }}
-      className='absolute left-0 top-0 overflow-x-hidden h-full bg-faded backdrop-blur-xl'
+      className='absolute left-0 top-0 overflow-x-hidden w-full bg-faded backdrop-blur-xl'
     >
-      <nav className='flex flex-col'>
-        <div className='flex items-center'>
-          <span className='flex justify-end w-full'>
-            <button className='flex stroke-5'>
-              <CloseIcon />
-            </button>
-          </span>
-        </div>
-        <div>
-          <ul className='block h-full'>
+      <div className='h-main w-full pt-[54px]'>
+        <nav className='flex flex-col px-1rem'>
+          <ul className='block'>
             {links.map((link) => (
               <li key={link.id} className='pb-1rem text-5'>
                 <Link
@@ -73,9 +66,8 @@ const Menu = ({ active }: Status) => {
               </Link>
             </div>
           </div>
-        </div>
-      </nav>
-      //{' '}
+        </nav>
+      </div>
     </div>
   );
 };

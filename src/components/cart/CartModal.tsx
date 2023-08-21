@@ -38,8 +38,12 @@ const CartModal = () => {
                         </div>
                         <div className='flex flex-1 justify-around ps-1rem flex-col'>
                           <div className='flex items-center justify-between'>
-                            <span className='font-bold'>{item.name}</span>
-                            <span>${item.price * item.qty}</span>
+                            <span className='font-semibold text-20'>
+                              {item.name}
+                            </span>
+                            <span className='text-30'>
+                              ${item.price * item.qty}
+                            </span>
                           </div>
                           <div className='flex justify-between'>
                             <div className='flex items-center flex-row'>
@@ -51,14 +55,14 @@ const CartModal = () => {
                     </li>
                   ))}
                 </ul>
-                <div className='flex shrink gap-2 flex-col self-end font-medium'>
-                  <div className='w-full'>
+                <div className=' text-35 flex shrink gap-2 flex-col self-end font-medium'>
+                  <div>
                     <div className='flex flex-row '>
                       Tax
                       <span className='flex flex-1 justify-end'>TBD</span>
                     </div>
                   </div>
-                  <div className='w-full'>
+                  <div>
                     <div className='flex flex-row'>
                       Subtotal
                       <span className='flex flex-1 justify-end font-semibold'>

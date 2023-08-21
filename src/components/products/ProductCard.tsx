@@ -37,7 +37,7 @@ const ProductCard = (product: Product) => {
             className='flex animate-fadeIn'
           />
         </div>
-        <div className='px-3 pb-2 z-[4]'>
+        <div className='px-3 pb-2 z-0'>
           <div className='flex w-full'>
             <div className='flex flex-col w-full'>
               <div className=''>

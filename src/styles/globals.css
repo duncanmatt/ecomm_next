@@ -42,9 +42,14 @@ header[data-action='down'] {
   transform: translateY(-100%);
 }
 
-header[data-action='rest'],
-#mobileNavBar {
-  background-color: transparent;
+/* MOBILE */
+header[data-action='up'] > div > nav > div {
+  background-color: rgba(252, 252, 252, 0.95);
+}
+
+/* DESKTOP */
+header[data-action='up'] {
+  background-color: rgba(252, 252, 252, 0.95);
 }
 
 header > div > nav > div > ul > li > span > svg {
@@ -61,6 +66,10 @@ header[data-action='rest'],
 }
 
 header[data-action='rest'] > div > nav > div > ul > li > span > svg {
+  stroke: #fff;
+}
+
+header[data-action='rest'] > div > nav > div > ul > li > span > button > svg {
   stroke: #fff;
 }
 

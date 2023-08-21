@@ -33,28 +33,34 @@ const Search = ({ active }: Status) => {
 
   return (
     <div
-      style={{ height: active ? '100%' : '0' }}
-      className='absolute top-0 left-0 h-full w-full overflow-hidden'
+      style={{
+        transform: active ? 'translateY(0)' : 'translateY(-100%)',
+        zIndex: active ? '59' : '0',
+      }}
+      className='absolute top-0 left-0 h-full w-full right-0 overflow-y-hidden'
     >
-      <div className='flex h-60 flex-row items-center justify-between px-1rem md:px-3rem'>
-        <div className='flex flex-1'>
-          <div className='flex w-full'>
-            <input
-              className='w-full bg-body px-2 py-1 border-1 rounded-md border-25'
-              type='search'
-              placeholder='Search Products'
-              onChange={handleChange}
-            />
+      <div className='relative px-1rem'>
+        <div className='flex h-[54px] items-center justify-between border-b-1 border-25'>
+          <div className=''>
+            <div className='flex'>
+              <input
+                style={{ zIndex: 'inherit' }}
+                className='bg-transparent px-2 py-1 '
+                type='search'
+                placeholder='Search Products'
+                onChange={handleChange}
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div className=''>
-        <div className='relative w-full h-full'>
-          <div className='p-1rem'>
-            <div className='flex flex-col'>
-              <SearchScroll>
-                <SearchList filteredProducts={filteredProducts} />
-              </SearchScroll>
+        <div className=''>
+          <div>
+            <div className='p-1rem'>
+              <div className='flex flex-col'>
+                <SearchScroll>
+                  <SearchList filteredProducts={filteredProducts} />
+                </SearchScroll>
+              </div>
             </div>
           </div>
         </div>
