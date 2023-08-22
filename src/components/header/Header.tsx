@@ -72,8 +72,12 @@ const Header = () => {
         style={{
           pointerEvents: searchActive ? 'none' : 'auto',
           opacity: searchActive ? '0' : '1',
+          color:
+            scrollDir === 'up' ? '#121212' : path === '/' ? '#fff' : '#121212',
+          stroke:
+            scrollDir === 'up' ? '#121212' : path === '/' ? '#fff' : '#121212',
         }}
-        className={`fixed h-[54px] z-[60] bottom-auto top-0 right-0 left-0 max-w-container xl:mx-auto`}
+        className={`fixed z-[60] bottom-auto top-0 right-0 left-0 max-w-container xl:mx-auto`}
       >
         <div className='md:hidden block'>
           <Mobile searchActive={searchActive} />
@@ -94,9 +98,14 @@ const Header = () => {
       >
         <button
           id='searchToggler'
-          className='disabled:opacity-0 disabled:pointer-events-none pointer-events-all relative z-[61]'
+          className='disabled:opacity-0 disabled:pointer-events-none pointer-events-all relative'
           style={{
-            stroke: scrollDir === 'rest' ? '#fff' : '#121212',
+            stroke:
+              scrollDir === 'up'
+                ? '#121212'
+                : path === '/'
+                ? '#fff'
+                : '#121212',
           }}
           onClick={toggleSearch}
         >

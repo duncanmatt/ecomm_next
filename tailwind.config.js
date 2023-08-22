@@ -52,8 +52,7 @@ module.exports = {
     },
     boxShadow: {
       bag: '0px 0px 10px -6px',
-      glass:
-        'w-full h-full bg-gray-500 bg-clip-padding backdrop-filter backdrop-blur bg-opacity-50 saturate-100 backdrop-contrast-100',
+      head: 'inset 0 -1px 0 0 #eae8e4',
     },
     borderWidth: {
       1: '1px',
