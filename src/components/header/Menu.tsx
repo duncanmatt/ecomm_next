@@ -29,10 +29,10 @@ const Menu = ({ active }: Status) => {
       style={{
         transform: active ? 'translateX(0)' : 'translateX(100%)',
       }}
-      className='absolute left-0 top-0 overflow-x-hidden w-full bg-faded backdrop-blur-xl transition-transform'
+      className='absolute left-0 top-0 overflow-x-hidden w-full bg-[rgba(242,242,242,0.24)] backdrop-contrast-100 bg-clip-padding backdrop-filter backdrop-blur-[150px] saturate-[1.8] transition-transform'
     >
-      <div className='h-main w-full pt-[54px]'>
-        <nav className='flex flex-col px-1rem'>
+      <div className=' w-full h-menu'>
+        <nav className='flex flex-col pt-[100px] px-1rem'>
           <ul className='block'>
             {links.map((link) => (
               <li key={link.id} className='pb-1rem text-5'>

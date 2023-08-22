@@ -36,15 +36,15 @@ const Search = ({ active }: Status) => {
         transform: active ? 'translateY(0)' : 'translateY(-100%)',
         zIndex: active ? '59' : '0',
       }}
-      className='absolute top-0 left-0 h-full w-full right-0 overflow-y-hidden bg-[rgba(0,0,0,0.04)] backdrop-blur-[150px] backdrop-contrast-[1.8]'
+      className='absolute top-0 left-0 h-full w-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-scroll bg-clip-padding backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 saturate-[1.8] '
     >
       <div className='relative px-1rem'>
-        <div className='flex h-[54px] items-center justify-between border-b-1 border-25'>
-          <div className=''>
-            <div className='flex'>
+        <div className='flex h-[54px] items-center justify-between w-full'>
+          <div className='w-full me-[2rem]'>
+            <div className='flex w-full h-54px items-center'>
               <input
-                style={{ zIndex: 'inherit' }}
-                className='bg-transparent px-2 py-1 '
+                style={{ zIndex: '61' }}
+                className='rounded-xs w-full py-1 border-b border-1'
                 type='search'
                 placeholder='Search Products'
                 onChange={handleChange}

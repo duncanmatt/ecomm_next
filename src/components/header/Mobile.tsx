@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import Menu from './Menu';
-import SearchIcon from '../icons/SearchIcon';
 import CartIcon from '../icons/CartIcon';
 import BurgerIcon from '../icons/BurgerIcon';
 import CloseIcon from '../icons/CloseIcon';
@@ -30,7 +29,7 @@ const Mobile = ({ searchActive }: Status) => {
       const searchToggler = document.getElementById('searchToggler');
       menuOpen
         ? searchToggler?.setAttribute('z-index', '0')
-        : searchToggler?.setAttribute('z-index', '61');
+        : searchToggler?.setAttribute('z-index', '100');
 
       console.log(searchToggler);
     }

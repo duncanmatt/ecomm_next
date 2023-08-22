@@ -63,6 +63,7 @@ module.exports = {
       height: {
         60: '60px',
         main: '100vh',
+        menu: 'calc(100vh + 54px)',
       },
       lineHeight: {
         20: '20px',
