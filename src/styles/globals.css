@@ -31,7 +31,8 @@ header {
   font-family: var(--font-ss);
 }
 
-header {
+header,
+#searchTogglerWrapper {
   -webkit-transition: -webkit-transform 0.5s ease-in-out;
   transition: -webkit-transform 0.5s ease-in-out;
   transition: transform 0.5s ease-in-out;

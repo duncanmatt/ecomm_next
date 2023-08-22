@@ -85,9 +85,11 @@ const Header = () => {
       <Search active={searchActive} />
       <span
         id='searchTogglerWrapper'
-        className='absolute top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem] pointer-events-auto'
+        className='fixed top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem] pointer-events-auto z-[61]'
         style={{
           right: searchActive ? '1rem' : '3.2rem',
+          transform:
+            scrollDir === 'down' ? 'translateY(-100%)' : 'translateY(0px)',
         }}
       >
         <button
