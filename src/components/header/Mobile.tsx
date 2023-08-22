@@ -14,7 +14,10 @@ type Status = {
 
 const Mobile = ({ searchActive }: Status) => {
   const path = window.location.pathname;
-  const [menuOpen, setMenuOpen] = useState(false);
+  const menu = document.getElementById('navMenu');
+  const menuPos = menu?.style.transform;
+  const menuStatus = menuPos === 'translateX(0)' ? true : false;
+  const [menuOpen, setMenuOpen] = useState(menuStatus);
 
   const cartQty = useSelector(cartCount);
 
@@ -23,17 +26,6 @@ const Mobile = ({ searchActive }: Status) => {
   ) => {
     setMenuOpen(!menuOpen);
   };
-
-  useEffect(() => {
-    if (document.getElementById('searchToggler')) {
-      const searchToggler = document.getElementById('searchToggler');
-      menuOpen
-        ? searchToggler?.setAttribute('disabled', 'true')
-        : searchToggler?.removeAttribute('disabled');
-
-      console.log(searchToggler);
-    }
-  }, []);
 
   useEffect(() => {
     setMenuOpen(false);

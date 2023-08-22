@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
 import ProfileIcon from '../icons/ProfileIcon';
@@ -22,6 +23,19 @@ type Status = {
 };
 
 const Menu = ({ active }: Status) => {
+  const menuOpen = active;
+
+  useEffect(() => {
+    if (document.getElementById('searchToggler')) {
+      const searchToggler = document.getElementById('searchToggler');
+      menuOpen
+        ? searchToggler?.setAttribute('disabled', 'true')
+        : searchToggler?.removeAttribute('disabled');
+
+      console.log(menuOpen);
+    }
+  }, [menuOpen]);
+
   return (
     <div
       id='navMenu'
