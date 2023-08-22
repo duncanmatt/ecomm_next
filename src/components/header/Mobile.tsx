@@ -33,7 +33,7 @@ const Mobile = ({ searchActive }: Status) => {
 
       console.log(searchToggler);
     }
-  }, [menuOpen]);
+  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
