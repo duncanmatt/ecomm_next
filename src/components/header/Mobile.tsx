@@ -28,12 +28,12 @@ const Mobile = ({ searchActive }: Status) => {
     if (document.getElementById('searchToggler')) {
       const searchToggler = document.getElementById('searchToggler');
       menuOpen
-        ? searchToggler?.setAttribute('z-index', '0')
-        : searchToggler?.setAttribute('z-index', '100');
+        ? searchToggler?.setAttribute('disabled', 'true')
+        : searchToggler?.removeAttribute('disabled');
 
       console.log(searchToggler);
     }
-  }, []);
+  }, [menuOpen]);
 
   useEffect(() => {
     setMenuOpen(false);

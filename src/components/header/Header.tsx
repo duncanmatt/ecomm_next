@@ -8,7 +8,7 @@ import SearchIcon from '../icons/SearchIcon';
 
 const Header = () => {
   const path = window.location.pathname;
-  const isHome = path === '/' ? 'rest' : '';
+  const isHome = path === '/' ? 'rest' : 'up';
 
   const [scrollDir, setScrollDir] = useState(isHome);
   const [searchActive, setSearchActive] = useState(false);
@@ -71,24 +71,10 @@ const Header = () => {
         data-action={`${scrollDir}`}
         style={{
           pointerEvents: searchActive ? 'none' : 'auto',
+          opacity: searchActive ? '0' : '1',
         }}
         className={`fixed h-[54px] z-[60] bottom-auto top-0 right-0 left-0 max-w-container xl:mx-auto`}
       >
-        <span
-          className='absolute top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem]'
-          style={{ right: searchActive ? '1rem' : '3.2rem' }}
-        >
-          <button
-            id='searchToggler'
-            className='disabled:hidden disabled:pointer-events-none pointer-events-auto'
-            style={{
-              stroke: scrollDir === 'rest' ? '#fff' : '#121212',
-            }}
-            onClick={toggleSearch}
-          >
-            {searchActive ? <CloseIcon /> : <SearchIcon />}
-          </button>
-        </span>
         <div className='md:hidden block'>
           <Mobile searchActive={searchActive} />
         </div>
@@ -97,6 +83,24 @@ const Header = () => {
         </div>
       </header>
       <Search active={searchActive} />
+      <span
+        id='searchTogglerWrapper'
+        className='absolute top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem] pointer-events-auto'
+        style={{
+          right: searchActive ? '1rem' : '3.2rem',
+        }}
+      >
+        <button
+          id='searchToggler'
+          className='disabled:opacity-0 disabled:pointer-events-none pointer-events-all relative z-[61]'
+          style={{
+            stroke: scrollDir === 'rest' ? '#fff' : '#121212',
+          }}
+          onClick={toggleSearch}
+        >
+          {searchActive ? <CloseIcon /> : <SearchIcon />}
+        </button>
+      </span>
     </>
   );
 };

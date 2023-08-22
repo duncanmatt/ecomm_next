@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
 import ProfileIcon from '../icons/ProfileIcon';
