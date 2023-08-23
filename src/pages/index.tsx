@@ -36,15 +36,15 @@ const Home = ({
                     Summer 2023
                   </h4>
                 </div>
-                <div className='flex justify-center'>
-                  <span className='flex items-center justify-center'>
+                <div className='flex justify-center my-4'>
+                  <button className='flex items-center justify-center hover:-translate-y-[1px] hover:bg-gradi border-2 border-[rgba(0,0,0,0.20)] rounded-reg'>
                     <Link
-                      className='text-md font-extralight tracking-reg underline underline-offset-auto hover:no-underline'
+                      className='px-4 py-1 text-5 tracking-wide font-medium bg-white rounded-reg'
                       href='/products/collection'
                     >
                       explore collection
                     </Link>
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
