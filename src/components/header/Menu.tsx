@@ -30,7 +30,9 @@ const Menu = ({ active }: Status) => {
       const searchToggler = document.getElementById('searchToggler');
       menuOpen
         ? searchToggler?.setAttribute('disabled', 'true')
-        : searchToggler?.removeAttribute('disabled');
+        : setTimeout(() => {
+            searchToggler?.removeAttribute('disabled');
+          }, 250);
 
       console.log(menuOpen);
     }
