@@ -33,17 +33,17 @@ const Search = ({ active }: Status) => {
   return (
     <div
       style={{
-        transform: active ? 'translateY(0)' : 'translateY(-100%)',
-        zIndex: active ? '60' : '0',
+        transform: active ? 'translateY(0px)' : 'translateY(-100%)',
+        zIndex: active ? '61' : '0',
       }}
-      className='fixed top-0 left-0 h-main w-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-scroll bg-clip-padding backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 saturate-[1.8] transition-[transform] ease-in'
+      className='fixed top-0 left-0 h-full w-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-clip-padding bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 saturate-[1.8] transition-[transform] ease-menu'
     >
       <div className='relative px-1rem'>
         <div className='flex h-[54px] items-center justify-between w-full'>
           <div className='w-full me-[2rem]'>
             <div className='flex w-full h-54px items-center'>
               <input
-                style={{ zIndex: '62' }}
+                style={{ zIndex: 'inherit' }}
                 className='rounded-xs w-full py-1 border-b border-1'
                 type='search'
                 placeholder='Search Products'

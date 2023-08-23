@@ -49,7 +49,7 @@ const Home = ({
               </div>
             </div>
             <div className='h-full w-full'>
-              <div className='relative h-main w-full overflow-hidden'>
+              <div className='relative h-main w-full overflow-hidden bg-cover bg-transparent'>
                 <Image
                   alt={landingImg.alt}
                   src={landingImg.src}
@@ -58,7 +58,7 @@ const Home = ({
                   fill
                   sizes='(min-width: 850px) 80vw, 100vw'
                   quality={95}
-                  className='-z-10 object-cover bg-clip-padding'
+                  className='-z-10 object-cover bg-cover bg-clip-padding overflow-hiden'
                 />
               </div>
             </div>
