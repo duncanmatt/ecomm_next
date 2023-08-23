@@ -16,7 +16,7 @@ const Mobile = ({ searchActive }: Status) => {
   const path = window.location.pathname;
   const menu = document.getElementById('navMenu');
   const menuPos = menu?.style.transform;
-  const menuStatus = menuPos === 'translateX(0)' ? true : false;
+  const menuStatus = menuPos === 'translateX(0px)' ? true : false;
   const [menuOpen, setMenuOpen] = useState(menuStatus);
 
   const cartQty = useSelector(cartCount);

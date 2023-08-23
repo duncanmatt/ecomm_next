@@ -21,11 +21,7 @@ const ProductCard = (product: Product) => {
       </span>
       <Link
         className='z-0 h-full w-full'
-        // as='/products/product'
-        href={{
-          pathname: `/products/product`,
-          query: { productId: product.productId },
-        }}
+        href={`/products/product/${product.productId}`}
       >
         <div className='relative bg-gradi aspect-[0.9/1]'>
           <Image

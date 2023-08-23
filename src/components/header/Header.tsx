@@ -8,6 +8,9 @@ import SearchIcon from '../icons/SearchIcon';
 
 const Header = () => {
   const path = window.location.pathname;
+  // const search = document.getElementById('globalSearch');
+  // const searchPos = search?.style.transform;
+  // const searchStatus = searchPos === 'translateY(0px)' ? true : false;
   const isHome = path === '/' ? 'rest' : 'up';
 
   const [scrollDir, setScrollDir] = useState(isHome);

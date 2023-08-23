@@ -32,11 +32,12 @@ const Search = ({ active }: Status) => {
 
   return (
     <div
+      id='globalSearch'
       style={{
         transform: active ? 'translateY(0px)' : 'translateY(-100%)',
         zIndex: active ? '61' : '0',
       }}
-      className='fixed top-0 left-0 h-full w-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-clip-padding bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 saturate-[1.8] transition-[transform] ease-menu'
+      className='fixed top-0 left-0 h-full w-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-clip-padding bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 saturate-[1.8] transition-[transform] ease delay-0'
     >
       <div className='relative px-1rem'>
         <div className='flex h-[54px] items-center justify-between w-full'>

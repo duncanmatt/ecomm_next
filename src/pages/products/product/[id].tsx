@@ -5,9 +5,9 @@ import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
 } from 'next';
-import { useDispatch } from '../../../lib/redux/store';
-import { addToCart } from '../../../lib/redux/slices/cartSlice';
-import { formatAmountForDisplay } from '../../../utils/stripe-helpers';
+import { useDispatch } from '../../../../lib/redux/store';
+import { addToCart } from '../../../../lib/redux/slices/cartSlice';
+import { formatAmountForDisplay } from '../../../../utils/stripe-helpers';
 
 export default ({
   product,
@@ -67,7 +67,8 @@ export default ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const id = context.query?.productId;
+  const pid = context.query?.productId;
+  const id = context.params?.id;
 
   const res = await fetch(
     (process.env.API_URL + `/api/products/product/?id=${id}`) as string,
