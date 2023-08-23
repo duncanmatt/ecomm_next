@@ -37,9 +37,9 @@ const Home = ({
                   </h4>
                 </div>
                 <div className='flex justify-center my-4'>
-                  <button className='flex items-center justify-center hover:-translate-y-[1px] hover:bg-gradi border-2 border-[rgba(0,0,0,0.20)] rounded-reg'>
+                  <button className='flex items-center justify-center hover:-translate-y-[1px] rounded-xs'>
                     <Link
-                      className='px-4 py-1 text-5 tracking-wide font-medium bg-white rounded-reg'
+                      className='px-4 py-2 text-5 tracking-wide font-medium bg-white rounded-xs'
                       href='/products/collection'
                     >
                       explore collection
