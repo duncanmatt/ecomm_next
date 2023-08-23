@@ -27,7 +27,7 @@ const Header = () => {
 
     const updateScrollDir = () => {
       const y = window.scrollY;
-      const initial = lastY < 15;
+      const initial = lastY < 5;
 
       if (Math.abs(y - lastY) < threshold) {
         ticking = false;
@@ -92,8 +92,11 @@ const Header = () => {
         className='fixed top-0 h-[54px] flex flex-grow-0 items-center right-[3.2rem] pointer-events-auto z-[61]'
         style={{
           right: searchActive ? '1rem' : '3.2rem',
-          transform:
-            scrollDir === 'down' ? 'translateY(-100%)' : 'translateY(0px)',
+          transform: searchActive
+            ? 'none'
+            : scrollDir === 'down'
+            ? 'translateY(-100%)'
+            : 'translateY(0px)',
         }}
       >
         <button

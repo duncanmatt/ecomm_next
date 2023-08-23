@@ -58,7 +58,7 @@ const Home = ({
                   fill
                   sizes='(min-width: 850px) 80vw, 100vw'
                   quality={95}
-                  className='-z-10 object-cover'
+                  className='-z-10 object-cover bg-clip-padding'
                 />
               </div>
             </div>
