@@ -31,7 +31,7 @@ const Home = ({
           <div className='relative'>
             <div className='absolute z-10 left-0 right-0 bottom-auto top-[50%] mx-auto animate-intro'>
               <div className='text-white'>
-                <div className='text-center'>
+                <div className='text-center selection:bg-transparent'>
                   <h4 className='text-2xl uppercase font-d font-semibold tracking-wide'>
                     Summer 2023
                   </h4>
@@ -42,13 +42,13 @@ const Home = ({
                       className='text-md font-extralight tracking-reg underline underline-offset-auto hover:no-underline'
                       href='/products/collection'
                     >
-                      explore the collection
+                      explore collection
                     </Link>
                   </span>
                 </div>
               </div>
             </div>
-            <div className='h-full w-full'>
+            <div className='h-full selection:bg-transparent w-full'>
               <div className='relative h-main w-full overflow-hidden bg-cover bg-transparent'>
                 <Image
                   alt={landingImg.alt}
@@ -58,7 +58,7 @@ const Home = ({
                   fill
                   sizes='(min-width: 850px) 80vw, 100vw'
                   quality={95}
-                  className='-z-10 object-cover bg-cover bg-clip-padding overflow-hiden'
+                  className='-z-10 object-cover bg-cover bg-clip-border overflow-hiden'
                 />
               </div>
             </div>
