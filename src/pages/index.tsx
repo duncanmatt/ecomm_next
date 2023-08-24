@@ -2,6 +2,7 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { InferGetStaticPropsType, GetStaticProps } from 'next';
+import Head from 'next/head';
 
 type LandingImg = {
   alt: string;
@@ -18,6 +19,7 @@ export const getStaticProps: GetStaticProps<{
     blurUrl:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMM/Q8AAa8BVlfOay4AAAAASUVORK5CYII=',
   };
+
   return { props: { landingImg } };
 };
 
@@ -58,6 +60,7 @@ const Home = ({
                   fill
                   sizes='(min-width: 850px) 80vw, 100vw'
                   quality={95}
+                  rel='preload'
                   className='-z-10 object-cover bg-cover bg-clip-border overflow-hiden'
                 />
               </div>
