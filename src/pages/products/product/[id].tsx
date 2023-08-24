@@ -20,21 +20,25 @@ export default ({
               src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
               alt='background'
               fill
-              placeholder='blur'
-              blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
             />
             <div className='mt-[60px]'>
               <div className='relative aspect-[5/6] h-full w-full'>
-                <Image alt='description' src={product.imgUrl} fill />
+                <Image
+                  alt='description'
+                  src={product.imgUrl}
+                  fill
+                  placeholder='blur'
+                  blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
+                />
               </div>
             </div>
           </div>
-          <div className='md:my-auto my-1rem'>
+          <div className='md:my-auto'>
             <div className='w-full p-1rem'>
               <Controls product={product} />
             </div>
             <div>
-              <div className='text-center mt-2rem'>
+              <div className='text-center py-1rem'>
                 <h4 className='text-lg font-semibold uppercase'>
                   {product.name}
                 </h4>
