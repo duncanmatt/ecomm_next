@@ -56,7 +56,7 @@ const Home = ({
                   alt={landingImg.alt}
                   src={landingImg.src}
                   placeholder='blur'
-                  blurDataURL={landingImg.blurUrl}
+                  // blurDataURL={landingImg.blurUrl}
                   fill
                   sizes='(min-width: 850px) 1218px, 100vw'
                   quality={95}
