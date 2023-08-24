@@ -22,6 +22,7 @@ export const cartSlice = createSlice({
 					price: action.payload?.price,
 					pk: action.payload?.pk,
 					imgUrl: action.payload?.imgUrl,
+					size: action.payload?.size,
 				});
 			}
 		},

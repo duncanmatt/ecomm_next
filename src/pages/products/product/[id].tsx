@@ -5,15 +5,12 @@ import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
 } from 'next';
-import { useDispatch } from '../../../../lib/redux/store';
-import { addToCart } from '../../../../lib/redux/slices/cartSlice';
 import { formatAmountForDisplay } from '../../../../utils/stripe-helpers';
+import Controls from '@/components/products/Controls';
 
 export default ({
   product,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const dispath = useDispatch();
-
   return (
     <Layout>
       <div className=''>
@@ -31,30 +28,30 @@ export default ({
               </div>
             </div>
           </div>
-          <div className='py-1rem md:my-auto'>
-            <div className='ps-1rem'>
-              <h4 className='text-lg font-semibold uppercase'>
-                {product.name}
-              </h4>
-              <p className='font-light tracking-wide'>{product.desc}</p>
+          <div className='md:my-auto'>
+            <div className='w-full'>
+              <Controls product={product} />
             </div>
-            <div className='px-1rem my-3rem'>
-              <div className='flex flex-wrap w-full justify-between self-center'>
-                <h2 className='font-bold uppercase'>
+            <div>
+              <div className='text-center mt-2rem'>
+                <h4 className='text-lg font-semibold uppercase'>
+                  {product.name}
+                </h4>
+              </div>
+              <div className='flex flex-wrap w-full px-1rem justify-between self-center'>
+                <h2 className='font-medium uppercase'>
                   {formatAmountForDisplay(product.price, 'usd')}
                 </h2>
-                <span>sold out</span>
+                <span>
+                  {product.stock === 0 ? (
+                    <p className='text-warning'>sold out</p>
+                  ) : (
+                    <></>
+                  )}
+                </span>
               </div>
-              <div className='py-1rem'>
-                <span>Size</span>
-              </div>
-              <div className='w-full flex self-end py-1rem'>
-                <button
-                  onClick={() => dispath(addToCart(product))}
-                  className='bg-b h-[2.4rem] font-xl font-semibold border-2 border-transparent text-white rounded-xs w-full'
-                >
-                  Add to cart
-                </button>
+              <div className='p-1rem'>
+                <p className='font-light tracking-wide'>{product.desc}</p>
               </div>
             </div>
           </div>

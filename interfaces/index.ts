@@ -32,6 +32,7 @@ export interface CartItem {
 	price: number;
 	imgUrl: string;
 	qty: number;
+	size: string;
 }
 
 export interface SearchItem {
