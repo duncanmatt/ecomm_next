@@ -38,17 +38,16 @@ const Search = ({ active }: Status) => {
         opacity: active ? '1' : '0',
         zIndex: active ? '60' : '0',
       }}
-      className='fixed top-0 left-0 w-full h-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 transition-[transform,opacity] ease delay-75 duration-300'
+      className='fixed top-0 left-0 w-full h-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 transition-[transform,opacity] ease-in duration-300'
     >
       <div className='px-1rem'>
         <div className='flex h-[54px] items-center justify-between w-full'>
           <div className='w-full me-[2rem]'>
-            <div className='flex w-full h-54px items-center'>
+            <div className='flex w-full items-center'>
               <input
-                style={{ zIndex: 'inherit' }}
-                className='rounded-xs w-full py-1 border-b border-1'
+                className='rounded-xs w-full border-b border-1 ps-2'
                 type='search'
-                placeholder='Search Products'
+                placeholder='Search'
                 onChange={handleChange}
               />
             </div>

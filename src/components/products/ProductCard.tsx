@@ -10,7 +10,7 @@ const ProductCard = (product: Product) => {
   // const dispatch = useDispatch();
 
   return (
-    <li className='mb-16 h-[inherit] bg-85 rounded-md relative'>
+    <li className='mb-16 h-[inherit] bg-90 rounded-md relative'>
       {/* <span className='bg-white rounded-circle absolute z-10 max-sm:top-1.5 max-sm:right-2 top-3 right-4'>
         <button
           className='relative stroke-5 -translate-y-[1px] flex items-center justify-center h-[1.875rem] w-[1.875rem] z-5'
@@ -23,14 +23,14 @@ const ProductCard = (product: Product) => {
         className='z-0 h-full w-full'
         href={`/products/product/${product.productId}`}
       >
-        <div className='relative bg-gradi aspect-[0.9/1]'>
+        <div className='relative aspect-[0.9/1]'>
           <Image
-            alt='description'
+            alt={product.desc}
             src={product.imgUrl}
             placeholder='blur'
             fill
             blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
-            className='flex animate-fadeIn'
+            className='bg-auto bg-gradi'
           />
         </div>
         <div className='px-3 pb-2 z-0'>
