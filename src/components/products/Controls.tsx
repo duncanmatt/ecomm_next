@@ -10,7 +10,7 @@ type ProductControls = {
 const Controls = ({ product }: ProductControls) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [message, setMessage] = useState('');
-  const [size, setSize] = useState('');
+  const [size, setSize] = useState('size');
 
   const dispatch = useDispatch();
 
@@ -26,30 +26,31 @@ const Controls = ({ product }: ProductControls) => {
     <div className='w-full h-auto'>
       <div className='text-center'>{message}</div>
       <div className='flex flex-wrap w-full h-auto'>
-        <div className='flex flex-col basis-50 border-1 border-10'>
+        <div className='flex flex-col basis-1/3 bg-white shadow-bag rounded-md'>
           <button
-            className='bg-white flex justify-center items-center w-full h-[2.4rem]'
+            className='flex justify-center rounded-t-md h-[2.4rem] items-center w-full'
             onClick={toggleDropdown}
           >
             {size}
           </button>
-          <div className='w-full'>
+          <div className='w-full pt-2'>
             {dropdownOpen && (
-              <ul className='flex flex-col w-full text-center text-35'>
+              <ul className='border-t-1 border-95 flex flex-col w-full text-center text-35'>
                 {possibleSizes.map((pSize, index) => (
-                  <li
-                    className='mb-2'
-                    onClick={() => setSize(pSize)}
-                    key={index}
-                  >
-                    <button>{pSize}</button>
+                  <li className='mb-2' key={index}>
+                    <button
+                      className='w-full h-full'
+                      onClick={() => setSize(pSize)}
+                    >
+                      {pSize}
+                    </button>
                   </li>
                 ))}
               </ul>
             )}
           </div>
         </div>
-        <div className='flex basis-50'>
+        <div className='flex basis-1/2 mx-auto'>
           <div className='h-[2.4rem] w-full'>
             <button
               onClick={() =>
@@ -63,8 +64,8 @@ const Controls = ({ product }: ProductControls) => {
                   })
                 )
               }
-              disabled={size === '' ? true : false}
-              className='bg-5 hover:bg-35 h-full font-xl font-semibold border-2 border-transparent text-white w-full'
+              disabled={size === 'size' ? true : false}
+              className='bg-5 hover:bg-35 rounded-xs h-full font-xl font-semibold border-2 border-transparent text-white w-full'
             >
               Add to cart
             </button>

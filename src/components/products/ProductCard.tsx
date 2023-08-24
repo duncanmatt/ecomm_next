@@ -1,24 +1,24 @@
-import { useDispatch } from '../../../lib/redux/store';
-import { addToCart } from '../../../lib/redux/slices/cartSlice';
+// import { useDispatch } from '../../../lib/redux/store';
+// import { addToCart } from '../../../lib/redux/slices/cartSlice';
 import { formatAmountForDisplay } from '../../../utils/stripe-helpers';
 import { Product } from '../../../interfaces';
 import Image from 'next/image';
 import Link from 'next/link';
-import CartIcon from '@/components/icons/CartIcon';
+// import CartIcon from '@/components/icons/CartIcon';
 
 const ProductCard = (product: Product) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   return (
     <li className='mb-16 h-[inherit] bg-85 rounded-md relative'>
-      <span className='bg-white rounded-circle absolute z-10 max-sm:top-1.5 max-sm:right-2 top-3 right-4'>
+      {/* <span className='bg-white rounded-circle absolute z-10 max-sm:top-1.5 max-sm:right-2 top-3 right-4'>
         <button
           className='relative stroke-5 -translate-y-[1px] flex items-center justify-center h-[1.875rem] w-[1.875rem] z-5'
           onClick={() => dispatch(addToCart(product))}
         >
           <CartIcon />
         </button>
-      </span>
+      </span> */}
       <Link
         className='z-0 h-full w-full'
         href={`/products/product/${product.productId}`}

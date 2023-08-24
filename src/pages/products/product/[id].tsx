@@ -20,7 +20,8 @@ export default ({
               src='https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/tile.jpg'
               alt='background'
               fill
-              className='bg-repeat animate-fadeIn'
+              placeholder='blur'
+              blurDataURL='data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='
             />
             <div className='mt-[60px]'>
               <div className='relative aspect-[5/6] h-full w-full'>
@@ -28,8 +29,8 @@ export default ({
               </div>
             </div>
           </div>
-          <div className='md:my-auto'>
-            <div className='w-full'>
+          <div className='md:my-auto my-1rem'>
+            <div className='w-full p-1rem'>
               <Controls product={product} />
             </div>
             <div>
