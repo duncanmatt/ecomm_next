@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps<{
     src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg',
     alt: 'black sheep background',
     blurUrl:
-      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mO0+A8AAXUBOV32RbQAAAAASUVORK5CYII=',
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMM/Q8AAa8BVlfOay4AAAAASUVORK5CYII=',
   };
   return { props: { landingImg } };
 };
