@@ -21,9 +21,9 @@ export default ({
           </h2>
         </div>
         <div className='border-b-1 border-5 px-2 my-3rem'>
-          <div className='w-full text-sm h-[2.125rem] flex flex-row justify-between items-center'>
-            <span>{quantity} selections</span>
-            <button>filter & sort</button>
+          <div className='w-full font-light text-sm h-[2.125rem] flex flex-row justify-between items-center'>
+            <span>{quantity}</span>
+            <button>selections</button>
           </div>
         </div>
         <ul className='grid grid-rows-1 grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-x-4'>
