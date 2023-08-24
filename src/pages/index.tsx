@@ -51,16 +51,16 @@ const Home = ({
               </div>
             </div>
             <div className='h-main selection:bg-transparent w-full'>
-              <div className='h-full relative aspect-[768/1218] w-full overflow-hidden bg-cover bg-transparent'>
+              <div className='h-full relative aspect-[0.6/1] w-full overflow-hidden bg-cover bg-transparent'>
                 <Image
                   alt={landingImg.alt}
                   src={landingImg.src}
                   placeholder='blur'
-                  // blurDataURL={landingImg.blurUrl}
+                  blurDataURL={landingImg.blurUrl}
                   fill
                   sizes='(min-width: 850px) 1218px, 100vw'
                   quality={95}
-                  rel='preload'
+                  priority={true}
                   className='-z-10 object-cover bg-repeat bg-cover bg-clip-border overflow-hiden'
                 />
               </div>
