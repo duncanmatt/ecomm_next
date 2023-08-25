@@ -37,10 +37,11 @@ const Search = ({ active }: Status) => {
         transform: active ? 'translateY(0px)' : 'translateY(-100%)',
         opacity: active ? '1' : '0',
         zIndex: active ? '60' : '0',
+        paddingInline: active ? '1rem' : '0',
       }}
-      className='fixed top-0 left-0 w-full h-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 transition-search  ease-search duration-300'
+      className='fixed top-0 left-0 w-full h-full right-0 overflow-y-hidden bg-[rgba(252,252,252,0.24)] bg-scroll backdrop-filter backdrop-blur-[150px] backdrop-contrast-100 transition-search  ease-search duration-search delay-search'
     >
-      <div className='px-1rem'>
+      <div className='relative'>
         <div className='flex h-[54px] items-center justify-between w-full'>
           <div className='w-full me-[2rem]'>
             <div className='flex w-full items-center'>
@@ -57,12 +58,16 @@ const Search = ({ active }: Status) => {
           <div>
             <div className='py-1rem'>
               <div style={{}} className='flex flex-col'>
-                <SearchScroll>
-                  <SearchList
-                    active={active}
-                    filteredProducts={filteredProducts}
-                  />
-                </SearchScroll>
+                {filteredProducts ? (
+                  <SearchScroll>
+                    <SearchList
+                      active={active}
+                      filteredProducts={filteredProducts}
+                    />
+                  </SearchScroll>
+                ) : (
+                  <div className='h-full'></div>
+                )}
               </div>
             </div>
           </div>

@@ -115,11 +115,17 @@ module.exports = {
         body: '#fcfcfc',
       },
       transitionProperty: {
-        search: 'transform, opacity',
+        search: 'transform, opacity, padding',
+      },
+      transitionDuration: {
+        search: '300ms 300ms 75ms',
+      },
+      transitionDelay: {
+        search: '0s, 0s, 0.3s',
       },
       transitionTimingFunction: {
         menu: 'cubic-bezier(0.42,0,0.58,1)',
-        search: 'cubic-bezier(0.39, 0.575, 0.565, 1)',
+        search: 'ease-out, ease-out, cubic-bezier(0.39, 0.575, 0.565, 1)',
       },
       keyframes: {
         fadeIn: {
