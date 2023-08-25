@@ -114,8 +114,12 @@ module.exports = {
         light: '#f9f9f9',
         body: '#fcfcfc',
       },
+      transitionProperty: {
+        search: 'transform, opacity',
+      },
       transitionTimingFunction: {
         menu: 'cubic-bezier(0.42,0,0.58,1)',
+        search: 'cubic-bezier(0.39, 0.575, 0.565, 1)',
       },
       keyframes: {
         fadeIn: {
