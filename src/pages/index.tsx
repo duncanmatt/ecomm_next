@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps<{
   landingImg: LandingImg;
 }> = async () => {
   const landingImg = {
-    src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg',
+    src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg',
     alt: 'black sheep background',
     blurUrl:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMM/Q8AAa8BVlfOay4AAAAASUVORK5CYII=',
@@ -50,7 +50,7 @@ const Home = ({
               </div>
             </div>
             <div className='h-main selection:bg-transparent w-full'>
-              <div className='h-full relative aspect-[0.6/1] w-full overflow-hidden bg-cover bg-transparent'>
+              <div className='h-full relative aspect-[0.6/1] w-full overflow-hidden bg-contain bg-transparent'>
                 <Image
                   alt={landingImg.alt}
                   src={landingImg.src}
