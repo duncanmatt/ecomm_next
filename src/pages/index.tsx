@@ -2,7 +2,6 @@ import Layout from '@/components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { InferGetStaticPropsType, GetStaticProps } from 'next';
-import Head from 'next/head';
 
 type LandingImg = {
   alt: string;
@@ -14,7 +13,7 @@ export const getStaticProps: GetStaticProps<{
   landingImg: LandingImg;
 }> = async () => {
   const landingImg = {
-    src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg-2.jpg',
+    src: 'https://ecomm-imgs-test.s3.amazonaws.com/ecomm-imgs-test/landing-bg.jpg',
     alt: 'black sheep background',
     blurUrl:
       'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mMM/Q8AAa8BVlfOay4AAAAASUVORK5CYII=',
