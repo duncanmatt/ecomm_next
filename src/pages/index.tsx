@@ -60,7 +60,7 @@ const Home = ({
                   sizes='(min-width: 850px) 1218px, 100vw'
                   quality={95}
                   priority={true}
-                  className='object-cover bg-repeat bg-cover bg-clip-border border-transparent overflow-hiden'
+                  className='object-cover bg-repeat bg-cover overflow-hiden'
                 />
               </div>
             </div>
