@@ -49,8 +49,8 @@ const Home = ({
                 </div>
               </div>
             </div>
-            <div className='h-main selection:bg-transparent w-full'>
-              <div className='h-full relative aspect-[0.6/1] w-full bg-transparent'>
+            <div className='h-full selection:bg-transparent w-full'>
+              <div className='relative h-main aspect-[0.6/1] w-full bg-transparent'>
                 <Image
                   alt={landingImg.alt}
                   src={landingImg.src}
@@ -60,7 +60,7 @@ const Home = ({
                   sizes='(min-width: 850px) 1218px, 100vw'
                   quality={95}
                   priority={true}
-                  className='object-cover bg-repeat w-full overflow-hidden'
+                  className='object-cover bg-cover w-full h-full overflow-hidden'
                 />
               </div>
             </div>
