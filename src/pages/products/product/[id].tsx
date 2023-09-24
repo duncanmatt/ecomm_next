@@ -7,10 +7,14 @@ import type {
 } from 'next';
 import { formatAmountForDisplay } from '../../../../utils/stripe-helpers';
 import Controls from '@/components/products/Controls';
+import NotFound from '@/components/NotFound';
 
 export default ({
   product,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  if (!product) {
+    return <NotFound />;
+  }
   return (
     <Layout>
       <div className=''>
@@ -80,6 +84,10 @@ export const getServerSideProps: GetServerSideProps = async (
   );
 
   const data = await res.json();
+
+  if (data && !data.Item) {
+    return { props: { product: null } };
+  }
 
   return { props: { product: data.Item } };
 };

@@ -46,13 +46,7 @@ const Desktop = ({ searchActive }: Status) => {
         }}
       >
         <nav className='flex flex-row h-full items-center justify-between px-1rem'>
-          <div
-            // style={{
-            //   opacity: searchActive ? '0' : '100%',
-            //   pointerEvents: searchActive ? 'none' : 'all',
-            // }}
-            className='h-[54px] flex flex-row justify-between items-center basis-60'
-          >
+          <div className='h-[54px] flex flex-row justify-between items-center basis-60'>
             <span>
               <Logo />
             </span>
@@ -61,10 +55,7 @@ const Desktop = ({ searchActive }: Status) => {
                 <li key={link.id}>
                   <Link
                     className='hover:underline uppercase text-xs tracking-wide font-medium'
-                    href={{
-                      pathname: `/products/category/${link.target}`,
-                      query: { categoryId: link.id },
-                    }}
+                    href={`/products/category/${link.target}`}
                   >
                     {link.target}
                   </Link>

@@ -6,12 +6,18 @@ import type {
 } from 'next';
 import { Product } from '../../../../interfaces';
 import ProductCard from '@/components/products/ProductCard';
+import NotFound from '@/components/NotFound';
 
 export default ({
   products,
   category,
   quantity,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  const invalid = !products || quantity === 0 || !category;
+
+  if (invalid) {
+    return <NotFound />;
+  }
   return (
     <Layout>
       <div className='px-1rem mt-[7.45rem]'>
@@ -39,11 +45,20 @@ export default ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const id = context.query?.categoryId;
   const category = context.params?.category;
 
+  const valid =
+    category === 'shirts' ||
+    category === 'sweatshirts' ||
+    category === 'outerwear';
+
+  if (!valid) {
+    return { props: { products: null, quantity: 0, category: null } };
+  }
+
   const response = await fetch(
-    (process.env.API_URL + `/api/products/category/?id=${id}`) as string,
+    (process.env.API_URL +
+      `/api/products/category/?name=${category}`) as string,
     {
       method: 'GET',
     }

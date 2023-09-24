@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import CaretRightIcon from '../icons/CaretRightIcon';
 import ProfileIcon from '../icons/ProfileIcon';
@@ -53,10 +53,7 @@ const Menu = ({ active }: Status) => {
               <li key={link.id} className='pb-1rem text-5'>
                 <Link
                   className='flex flex-1 flex-row justify-between items-center text-base hover:underline font-medium'
-                  href={{
-                    pathname: `/products/category/${link.target}`,
-                    query: { categoryId: link.id },
-                  }}
+                  href={`/products/category/${link.target}`}
                 >
                   <span
                     style={{ opacity: active ? '1' : '0' }}
