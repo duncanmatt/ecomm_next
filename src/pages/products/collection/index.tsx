@@ -7,13 +7,18 @@ import Layout from '@/components/Layout';
 import { fetchGetJSON } from '../../../../utils/api-helpers';
 import { Product } from '../../../../interfaces';
 import ProductCard from '@/components/products/ProductCard';
+import NotFound from '@/components/NotFound';
 
-export default ({
+const CollectionPage = ({
   products,
   quantity,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+  if (!products || quantity <= 0) {
+    return <NotFound />;
+  }
+
   return (
-    <Layout>
+    <>
       <div className='px-1rem mt-[7.45rem]'>
         <div className='text-center uppercase'>
           <h2 className='font-semibold font-10 text-lg tracking-widest'>
@@ -32,9 +37,15 @@ export default ({
           ))}
         </ul>
       </div>
-    </Layout>
+    </>
   );
 };
+
+CollectionPage.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
+};
+
+export default CollectionPage;
 
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext

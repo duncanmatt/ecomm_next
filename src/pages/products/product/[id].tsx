@@ -9,15 +9,15 @@ import { formatAmountForDisplay } from '../../../../utils/stripe-helpers';
 import Controls from '@/components/products/Controls';
 import NotFound from '@/components/NotFound';
 
-export default ({
+const ProductPage = ({
   product,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   if (!product) {
     return <NotFound />;
   }
   return (
-    <Layout>
-      <div className=''>
+    <>
+      <div className='h-full'>
         <div className='grid grid-cols-1 grid-rows-2 md:grid-cols-2'>
           <div className='relative w-full h-full'>
             <Image
@@ -38,7 +38,7 @@ export default ({
             </div>
           </div>
           <div className='md:my-auto'>
-            <div className='w-full p-1rem'>
+            <div className='w-full px-1rem py-1'>
               <Controls product={product} />
             </div>
             <div>
@@ -66,14 +66,19 @@ export default ({
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
+
+ProductPage.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
+};
+
+export default ProductPage;
 
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const pid = context.query?.productId;
   const id = context.params?.id;
 
   const res = await fetch(

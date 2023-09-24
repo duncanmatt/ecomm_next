@@ -8,7 +8,7 @@ import { Product } from '../../../../interfaces';
 import ProductCard from '@/components/products/ProductCard';
 import NotFound from '@/components/NotFound';
 
-export default ({
+const CategoryPage = ({
   products,
   category,
   quantity,
@@ -19,7 +19,7 @@ export default ({
     return <NotFound />;
   }
   return (
-    <Layout>
+    <>
       <div className='px-1rem mt-[7.45rem]'>
         <div className='uppercase text-center'>
           <h2 className='font-10 font-semibold text-lg tracking-widest'>
@@ -38,9 +38,15 @@ export default ({
           ))}
         </ul>
       </div>
-    </Layout>
+    </>
   );
 };
+
+CategoryPage.getLayout = function getLayout(page: React.ReactElement) {
+  return <Layout>{page}</Layout>;
+};
+
+export default CategoryPage;
 
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext

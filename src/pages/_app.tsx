@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import NextTopLoader, { NextTopLoaderProps } from 'nextjs-toploader';
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
@@ -15,21 +16,35 @@ const loaderProps: NextTopLoaderProps = {
   crawlSpeed: 200,
   easing: 'ease',
   speed: 200,
-  shadow: '',
+  shadow: false,
 };
 
-export default function App({
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: React.ReactElement) => React.ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+const App = ({
   Component,
   pageProps: { session, ...pageProps },
-}: AppProps) {
+}: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  const pageContent = getLayout(<Component {...pageProps} />);
+
   return (
     <Providers>
       <PersistGate loading={null} persistor={persistor}>
         <SessionProvider session={session}>
           <NextTopLoader {...loaderProps} />
-          <Component {...pageProps} />
+          {pageContent}
         </SessionProvider>
       </PersistGate>
     </Providers>
   );
-}
+};
+
+export default App;
